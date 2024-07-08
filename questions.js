@@ -2,7 +2,7 @@ const questions = [
     {
         question: "If engine anti-ice is planned to be used during takeoff, until reaching which altitude should it be considered to be ON?",
         answers: ["MSA", "ACC", "EOACC", "THRRED"],
-        correct: 3
+        correct: 2
     },
     {
         question: "A 'contaminated runway' describes a surface where a certain percentage of the runway is covered by what depth of contaminant?",
