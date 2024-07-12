@@ -196,7 +196,7 @@ const questions = [
     },
     {
         question: "If a runway is wet and NOTAMed 'slippery when wet', what is the correct EFB TO PERF input for RWY COND?",
-        answers: ["WATERW", "ICY", "WET", "DRY"],
+        answers: ["WATER 1/2", "ICY", "WET", "DRY"],
         correct: 0
     },
     {
