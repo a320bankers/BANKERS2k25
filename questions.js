@@ -975,11 +975,7 @@ const questions = [
         answers: ["THS is frozen.", "THS reverts to a mechanical standby.", "THS reverts to direct pitch control.", "THS remains active."],
         correct: 2
     },
-    {
-        question: "When do the Flight Warning Computers (FWCs) inhibit aural alerts?",
-        answers: ["From 80 knots to 1,500 ft AGL on take-off.", "From 100 knots to 400 ft AGL on landing.", "From 80 knots to 100 ft AGL on landing.", "From 100 knots to 1,500 ft AGL on take-off."],
-        correct: 0
-    },
+  
     {
         question: "What is the function of the Ram Air Turbine (RAT)?",
         answers: ["To provide AC power during an emergency.", "To provide hydraulic pressure during an emergency.", "To provide bleed air during an emergency.", "To provide essential electrical power in the event of an emergency."],
