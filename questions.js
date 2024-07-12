@@ -219,16 +219,7 @@ const questions = [
         answers: ["A 1.67 factor on landing distance", "A 1.15 factor on landing distance", "A 1.3 factor on landing distance"],
         correct: 1
     },
-    {
-        question: "What is considered to be a 'standard' CG at landing?",
-        answers: ["More than or equal to 27%", "More than 27%", "More than 30%", "More than or equal to 30%"],
-        correct: 0
-    },
-    {
-        question: "What is considered to be a 'forward' CG at landing?",
-        answers: ["less than or equal to 30%", "less than or equal to 27%", "less than 30%", "less than 27%"],
-        correct: 3
-    },
+
     {
         question: "What is the standard operating procedure for the EOSID stop altitude?",
         answers: ["MSA", "MHA", "No procedure specified", "SID stop altitude"],
