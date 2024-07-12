@@ -62,7 +62,7 @@ const questions = [
  {
         question: "In the event of a QNH reduction by 2 hPa on taxi-out what correction must be applied?",
         answers: ["No correction available. Recalculate speeds and flex.", "Initial calculations cover this change. No action required.", "Subtract one degree from flex", "Subtract two degrees from flex"],
-        correct: 2
+        correct: 0
     },
     {
         question: "In the event of a QNH reduction by 3 hPa on taxi-out, what correction must be applied?",
