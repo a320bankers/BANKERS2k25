@@ -1207,7 +1207,7 @@ const questions = [
     correct: 0
 },
 {
-    question: "In the MEL 'Remarks or Exceptions' column, what is signified by (0)?",
+    question: "In the MEL 'Remarks or Exceptions' column, what is signified by (O)?",
     answers: ["Aircraft may be flown back to base for rectification.", "An operational procedure must be carried out.", "A procedure to be carried out by maintenance.", "Dispatch is not allowed."],
     correct: 1
 },
