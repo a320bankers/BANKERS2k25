@@ -12,7 +12,7 @@ const questions = [
    {
         question: "Who is CM1 and CM2 out of Frankie and Mohammed?",
         answers: ["Frankie", "Relax its Mohammed", "Neither", "Mitch"],
-        correct: 1
+        correct: 0
    },
     {
         question: "After a landing performance calculation. Flysmart generates amber figures in the computations area. What does this mean?",
@@ -67,7 +67,7 @@ const questions = [
     {
         question: "In the event of a QNH reduction by 3 hPa on taxi-out, what correction must be applied?",
         answers: ["Subtract two degrees from flex", "Initial calculations cover this change. No action required.", "No correction available. Recalculate speeds and flex.", "Subtract one degree from flex"],
-        correct: 0
+        correct: 2
     },
     {
         question: "In the event of a last minute decision to use engine bleed to supply packs, what correction must be applied?",
