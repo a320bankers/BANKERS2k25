@@ -2209,7 +2209,7 @@ const questions = [
 {
     question: "Which computer controls all datalink communications between the aircraft and the ground (Airline and or ATC)?",
     answers: ["RMP", "FMGC", "MCDU", "ATSU"],
-    correct: 1
+    correct: 3
 },
 {
     question: "After an ND failure, which of the following statements is correct?",
@@ -2350,5 +2350,70 @@ const questions = [
     question: "How can the flight crew arm the LOC and GS modes in order to fly an ILS approach?",
     answers: ["Push the APP pushbutton on the FCCJ. Once LOC and G/S are armed ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels", "Push the APP pushbutton on the FCU. The ILS information (including LOC and G/S scales) will not be displayed on the PFD unless the LS push button is selected on the EFIS panels", "Push the LS button the EFIS panel located on the glareshield", "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels"],
     correct: 1
+},
+{
+    question: "Both engines and the APU are running, what must the flight crew do before selecting APU bleed? (X-BLEED set to AUTO)",
+    answers: ["The engine bleeds must be selected OFF, and crossbleed set to OPEN, before selecting the APU bleed to ON", "The engine bleeds must be selected OFF before selecting the APU bleed to ON. The crossbleed valve can remain in AUTO as it will open automatically", "Nothing, upon selecting APU bleed the crossbleed valve will automatically open, and each engine bleed valve will automatically close", "Turn ENG 1 bleed OFF, and confirm that the crossbleed is closed, before selecting APU bleed ON"],
+    correct: 2 
+},
+{
+    question: "When does the green AVAIL light illuminate on the APU start push button?",
+    answers: ["When N is above 93%", "When N is above 90%", "When N is above 95%", "N = 100%"],
+    correct: 2
+},
+{
+    question: "Which ECAM alert level signifies a dangerous configuration, flight condition or a system failure that alters flight safety?",
+    answers: ["Level 3", "Advisory", "Level 2", "Level 1"],
+    correct: 0
+},
+{
+    question: "During gravity gear extension, in which direction should the GRAVITY GEAR EXTENSION handle be rotated, and what happens during each turn?",
+    answers: ["Clockwise, 2 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors and allows the gear to drop into the extended position", "Clockwise, 3 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors, the third releases the uplocks and allows the gear to drop into the extended position", "Anti-clockwise, one complete rotation will isolate the landing gear from the hydraulic system, and simultaneously release the up-locks. The gear will push the doors open as it extends", "Anti-clockwise, 3 turns. The first turn isolates the gear from the yellow hydraulic system, the second unlocks the doors, the third releases the up-locks and allows the gear to drop into the extended position"],
+    correct: 1
+},
+{
+    question: "How many igniters are used during an automatic engine start?",
+    answers: ["Both igniters are used for all engines starts, unless a circuit breaker for an individual igniter has been pulled", "Igniter A is used by default for all start attempts on the ground, if A fails then B is automatically selected In flight both igniters are used", "Only one igniter (A or B) is used for all automatic start attempts", "One igniter (A or B) is used on the first automatic start attempt on the ground. In flight both igniters are used for all start attempts"],
+    correct: 3
+},
+{
+    question: "In which areas of the engine are the fire detection loops located?",
+    answers: ["In the engine core and in the engine fan section", "In the fan and turbine sections", "In the engine core and the N2 gearbox", "In the pylon nacelle, in the engine core, and in the engine fan section"],
+    correct: 3
+},
+{
+    question: "What is the significance of a NW STRG DISC memo?",
+    answers: ["The memo appears when the nose wheel steering selector is in the towing position. It is always GREEN", "The memo appears when the nose wheel steering selector is in the towing position. It will be GREEN when the engines are not running, and AMBER when at least one engine is running", "It indicates that the BSCU has been switched off", "The PF has pushed the rudder PEDALS DISC push button on the hand wheel, to disconnect the rudder pedals from the nose wheel during the flight control check"],
+    correct: 1
+},
+{
+    question: "If a SEC fails, what happens to the spoiler(s) it controls?",
+    answers: ["The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical deployment of the spoilers", "The effected spoiler retains the deflection it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmetrical spoiler deployment", "The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited"],
+    correct: 3
+},
+{
+    question: "Which of the following statements about the use of APU bleed air is correct?",
+    answers: ["The use of APU bleed air for wing anti-ice is permitted, provided one pack is turned off", "The use of APU bleed air for dual pack operation in flight is prohibited", "APU bleed air is available for air conditioning throughout the flight envelope", "The use of APU bleed air for wing anti-ice is not permitted"],
+    correct: 3
+},
+{
+    question: "Select the correct statement about an engine relight in flight:",
+    answers: ["APU bleed can be used to assist with an engine start throughout the entire flight envelope", "During an automatic start in flight, the FADEC may not need to engage the starter motor if the engine is wind milling at a sufficient N2", "In flight the FADEC always commands a starter-assisted air start", "Automatic start is unavailable in flight"],
+    correct: 1
+},
+{
+    question: "What happens if you take off without V2 being entered on the PERF page?",
+    answers: ["You cannot take off. V2 entry is mandatory", "You will not be able to climb after VR", "If V2 is not inserted, the Indicated Air Speed will not engage for go-around", "If V2 is not inserted, the speed reference system SRS will not engage for takeoff"],
+    correct: 3
+},
+{
+    question: "What is the meaning of a AMBER light in a flight deck pushbutton?",
+    answers: ["Normal system operation", "A failure that the flight crew should be aware of, but does not call for immediate action", "An abnormal pushbutton position", "A failure requiring immediate action"],
+    correct: 1
+},
+{
+    question: "When is pack flow automatically increased to HIGH, regardless of the position of the PACK FLOW control knob?",
+    answers: ["When using APU bleed or during single pack operation", "Only when using APU bleed", "The pack flow never exceeds the selection on the AIR COND panel", "When temperature demand cannot be satisfied"],
+    correct: 0
 }
 ];
