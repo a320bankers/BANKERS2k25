@@ -3,24 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A320 Quiz</title>
+    <title>A320 Quiz NEW</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script>
-        // Your Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyByiPxHqzo_mtULQrKiLzvzRUJ5m3bhPXM",
-            authDomain: "bankv2-71e7d.firebaseapp.com",
-            databaseURL: "https://bankv2-71e7d-default-rtdb.firebaseio.com",
-            projectId: "bankv2-71e7d",
-            storageBucket: "bankv2-71e7d.appspot.com",
-            messagingSenderId: "724662638213",
-            appId: "1:724662638213:web:6b5ff904f0258c9edf3bec"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
 </head>
 <body>
     <div id="start-container">
@@ -35,13 +19,6 @@
         <button id="next-btn" class="btn next-btn">Next</button>
         <div id="timer">Time: 0:00</div>
         <div id="remaining-questions">Questions Remaining: <span id="questions-left"></span></div>
-        <div id="comments-section">
-            <h3>Comments</h3>
-            <div id="comments"></div>
-            <input type="text" id="name" placeholder="Your name">
-            <input type="text" id="comment" placeholder="Your comment">
-            <button id="submit-comment" class="btn">Submit</button>
-        </div>
     </div>
     <div id="result-container" class="hide">
         <h2 id="result-message"></h2>
@@ -52,3 +29,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
