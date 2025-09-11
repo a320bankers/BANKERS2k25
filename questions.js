@@ -1450,7 +1450,8 @@ const questions = [
     question: "What is the default situation if electrical control to the Wing Anti-Ice and Engine Anti-Ice is lost?",
     answers: ["Wing Anti-Ice OFF, Engine Anti-Ice ON.", "Wing Anti-Ice ON, Engine Anti-Ice OFF.", "Both ON.", "Both OFF."],
     correct: 0
-}{
+},
+{
     question: "What do amber boxes on a MCDU page indicate?",
     answers: ["An optional data entry", "A mandatory data entry", "A compulsory reporting point", "The waypoint indicated will be overflown"],
     correct: 1
@@ -2266,3 +2267,4 @@ const questions = [
     correct: 3
 }
 ];
+
