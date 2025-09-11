@@ -9,11 +9,6 @@ const questions = [
         answers: ["More than 1 mm", "More than 3 mm", "More than 7 mm", "More than 5 mm"],
         correct: 1
     },
-   {
-        question: "Who is CM1 and CM2 out of Frankie and Mohammed?",
-        answers: ["Frankie", "Relax its Mohammed", "Neither", "Mitch"],
-        correct: 0
-   },
     {
         question: "After a landing performance calculation. Flysmart generates amber figures in the computations area. What does this mean?",
         answers: ["Single engine performance is not available", "Autoland not available", "Factored landing distance exceeds available landing distance", "Calculated stop point within 300 m of runway end"],
@@ -1455,5 +1450,819 @@ const questions = [
     question: "What is the default situation if electrical control to the Wing Anti-Ice and Engine Anti-Ice is lost?",
     answers: ["Wing Anti-Ice OFF, Engine Anti-Ice ON.", "Wing Anti-Ice ON, Engine Anti-Ice OFF.", "Both ON.", "Both OFF."],
     correct: 0
+}{
+    question: "What do amber boxes on a MCDU page indicate?",
+    answers: ["An optional data entry", "A mandatory data entry", "A compulsory reporting point", "The waypoint indicated will be overflown"],
+    correct: 1
+},
+{
+    question: "What would cause TCAS: REDUCE RANGE to appear on the ND?",
+    answers: ["It will be displayed only for a resolution advisory, and ND range is above 80NM.", "It would be displayed when a TA or RA is detected, and the ND is in PLAN mode", "It displays when a TA or RA is detected, and the ND range is above 80NM", "It displays when a TA or RA is detected, and the ND range is above 40NM"],
+    correct: 3
+},
+{
+    question: "Which system/computer provides the reactive windshear detection function?",
+    answers: ["ADIRU 1", "FAC", "The weather radar", "SDAC"],
+    correct: 1
+},
+{
+    question: "When the PACK FLOW selector is positioned to HI, airflow is:",
+    answers: ["100% of normal", "50% more than normal", "80% of normal", "120% of normal"],
+    correct: 3
+},
+{
+    question: "On the PFD, what causes the indicated barometric altitude to change colour (digital value)?",
+    answers: ["At and below 400RA: the current altitude digits are steady amber", "Passing 750ft to go to FCU altitude: The current altitude digits turn steady amber", "Below MDA (or the MDH) entered in the MCDU Perf App: The current altitude digits are steady amber", "Diverging > 250ft from FCU altitude: The current altitude digits turn steady amber"],
+    correct: 2
+},
+{
+    question: "Regarding ALPHA FLOOR, which of the following statements is true?",
+    answers: ["It is available at all times in flight", "It will engage even if the A/THR is switched off.", "After activation, A.FLOOR will disengage as soon as the thrust levers are moved by the flight crew", "It is only available if the aircraft is in the clean configuration"],
+    correct: 1
+},
+{
+    question: "After a takeoff in CONFIG 1+F, what would happen if FLAP 0 is not selected as the aircraft accelerates?",
+    answers: ["At 210 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "At 200 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "The flaps will be overstressed as the VFE of 215kt is exceeded", "At 230 kt the slats and flaps will automatically retract changing the config from 1+F to 0. This prevents slat/flap overspeed"],
+    correct: 0
+},
+{
+    question: "What is the cockpit handset typically used for?",
+    answers: ["To transmit to ATC via HF", "To transmit to ATC via VHF", "PA announcements to the cabin only", "For PAs and SATCOM"],
+    correct: 2
+},
+{
+    question: "Which of the following statements best describes bank angle protection?",
+    answers: ["The bank angle limit in flight mode is 67°, this reduces to 33° while HIGH SPEED protection is active, and 40° when HIGH AoA protection is active.", "Full sidestick deflection will give a roll rate of 30% and the bank angle will not exceed 67°", "An input is required on the sidestick to hold any bank attitude. When the sidestick is released the aircraft will automatically roll wings level. Full deflection will give a roll rate of 15% and the bank angle will not exceed 67°", "Above 33° an input on the sidestick will be required to hold the bank attitude. Full deflection will give a roll rate of 15% and the bank angle will not exceed 67°"],
+    correct: 3
+},
+{
+    question: "What impact does a HYD G+Y SYS LO PR alert have on the braking system?",
+    answers: ["The system will automatically select alternate brakes without anti-skid, using the brake accumulator only. The accumulator can supply at least 7 full brake applications.", "The system will automatically select alternate brakes with anti-skid, using the blue hydraulic system.", "The system will automatically select alternate brakes with anti-skid, using the yellow hydraulic system accumulator only. Anti-skid remains available because the BSCU is serviceable.", "Normal braking will be lost. To recover brakes, the flight crew must manually select alternate brakes by moving the A/SKID and NW STRG switch to OFF. Up to 7 brake applications will be possible using the braking accumulator."],
+    correct: 2
+},
+{
+    question: "How is an armed slide indicated on the DOOR/OXY page?",
+    answers: ["The word SLIDE appears in GREEN next to the associated door", "The message SLIDES ARMED appears in WHITE under the DOOR/OXY title", "The word SLIDE appears in WHITE next to the associated door", "No label is seen next to the associated door (if the door was disarmed SLIDE DISARMED would be displayed in AMBER)"],
+    correct: 2
+},
+{
+    question: "Roll control is provided by:",
+    answers: ["Ailerons and spoilers 2, 3 and 4", "Ailerons and spoilers 3, 4, and 5", "Ailerons and spoilers 2, 3, 4 and 5", "Ailerons and spoilers 4 and 5"],
+    correct: 2
+},
+{
+    question: "Speed brakes are provided by spoilers:",
+    answers: ["1, 2, 3, 4", "2, 3, 4", "2, 3, 4, 5", "3, 4, 5"],
+    correct: 1
+},
+{
+    question: "If AP 2 is engaged, which FMGC is master and controls the A/THR?",
+    answers: ["FMGC 1", "FMGC 2", "Both FMGC always work in parallel and therefore share this task.", "A/THR never uses information from the FMGS."],
+    correct: 1
+},
+{
+    question: "When does the FUEL L (R) WING TK LO LVL ECAM alert trigger?",
+    answers: ["When the associated inner fuel tank quantity is below 1,500 kg", "When the associated inner fuel tank quantity is below 750 kg", "When the combined inner and outer tank quantity on the same wing is below 750 kg", "When the combined inner and outer tank quantity on the same wing is below 1,500 kg"],
+    correct: 1
+},
+{
+    question: "What is the significance of the triple click aural warning?",
+    answers: ["It is used to highlight all FMA mode changes", "It indicates a landing capability downgrade, or some cases of mode reversion", "It is heard for all mode reversions", "Its only purpose is to indicate a landing capability downgrade"],
+    correct: 1
+},
+{
+    question: "What is the take-off and go around EGT limit for the CFM engine?",
+    answers: ["950°C", "725°C", "915°C", "625°C"],
+    correct: 0
+},
+{
+    question: "What is the meaning of a BLUE light in a flight deck pushbutton?",
+    answers: ["Normal system operation", "An abnormal pushbutton position", "Normal operation of a system used temporarily", "A test result or maintenance information"],
+    correct: 2
+},
+{
+    question: "During final approach, when is LAND annunciated on the FMA?",
+    answers: ["It engages at MDA, and can be disengaged by setting TOGA thrust", "It engages <400 ft RA until approximately 40RA when it is replaced by FLARE. It can be disengaged by pushing the APPR pushbutton on FCU to cancel the approach", "It engages at 1,000 ft RA with the aircraft in the Landing Configuration (Flap 3 or Flap FULL)", "It engages <400 ft RA until approximately 40RA when it is replaced by FLARE. It can be disengaged by setting TOGA thrust, or by disconnecting both AP and FD"],
+    correct: 3
+},
+{
+    question: "Where is the LP ground air supply connector located?",
+    answers: ["On the left hand side of the fuselage belly fairing, just ahead of the wing leading edge", "On the bottom of the fuselage behind the trailing edge of the wing", "On the underside of the left hand wing, between the engine pylon and fuselage", "On the aft fuselage next to Water Filling and/or Draining service panel"],
+    correct: 0
+},
+{
+    question: "What impact does a single lane failure of ACSC 2 have on the air conditioning system?",
+    answers: ["Only PACK 2 flow control valve, and cockpit trim valve close", "PACK 2 flow control valve closes, PACK 1 is automatically set to HIGH flow, hot air pressure regulating valve and trim air valves all close", "There is no impact: loss of redundancy only", "PACK 1 and PACK 2 are automatically set to HIGH flow, hot air pressure regulating valve and trim air valves all close"],
+    correct: 2
+},
+{
+    question: "When does the generator load turn amber on the ELEC SD page?",
+    answers: ["The engine generator load is above 105%", "The engine generator load is above 100%", "The engine generator load is above 108% for more than 10 sec", "The engine generator load is above 108%"],
+    correct: 1
+},
+{
+    question: "During a routine flight, which of the following would result after the loss of GEN 2 and the subsequent start of the APU?",
+    answers: ["GEN 1 continues to power AC bus 1. The APU powers AC bus 2", "All systems return to normal and the RAT must be re-stowed", "The APU will power both AC bus 1 and 2", "GEN 1 will power both AC bus 1 and 2. The APU generator will remain in standby for redundancy"],
+    correct: 0
+},
+{
+    question: "Which of the following statements is true regarding the APU Fire Extinguishing system (select the most complete answer)?",
+    answers: ["3 sec after an APU FIRE warning on the ground, the APU performs an emergency shutdown, and the extinguisher bottle discharges automatically", "Immediately after an APU fire warning on the ground, the APU automatically shuts down, and the extinguisher bottle discharges automatically", "There are two fire agent bottles for the APU; one is discharged automatically if a fire is detected on the ground, and the other can be discharged by the flight crew at any time", "3 sec after a fire warning, the APU automatically shuts down. The flight crew should follow ECAM actions to secure the APU and fire the squib"],
+    correct: 0
+},
+{
+    question: "What is the significance of a flashing red light on a cabin door?",
+    answers: ["It indicates low pressure in the slide inflation cylinder", "It flashes red if the door is unlocked when at least one engine is running", "The light flashes red if the door control handle is operated, and the slide is armed", "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.9mbar"],
+    correct: 3
+},
+{
+    question: "If a C/B trips what action should the flight crew take?",
+    answers: ["Consult the C/B Tripped procedure in the QRH for guidance. On the ground a C/B can be reengaged on the direction of maintenance. In flight a C/B should not be reengaged under any circumstances.", "The C/B can be re-engaged as many times as necessary if required for the safe conduct of the flight.", "On the ground any C/B can be re-engaged without consulting maintenance so long as it doesn’t have a red colour. In flight a C/B can be re-engaged no more than two times.", "Consult the C/B Tripped procedure in the QRH for guidance. On the ground the first step is to contact maintenance to identify the cause. In flight the C/B would not be reengaged unless the captain deems it necessary for the safe continuation of the flight (only one reengagement is permitted)."],
+    correct: 3
+},
+{
+    question: "How can the secondary flight plan be activated in flight?",
+    answers: ["When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This prompt will not be available in NAV unless the active leg in the primary and secondary are the same.", "The secondary flight plan can only be activated while the NAV mode is engaged. When this condition is met the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU.", "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times.", "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan."],
+    correct: 0
+},
+{
+    question: "Which LGCIU normally controls the retraction cycle?",
+    answers: ["LGCIU 1 is the master, and LGCIU 2 is the slave if LGCIU 1 fails. LGCIU 2 takes over all functions automatically", "LGCIU 1 controls the left hand main and nose gears. LGCIU 2 controls the right hand main gear", "One LGCIU controls one complete gear cycle, then switches over automatically to the other LGCIU at the completion of the retraction cycle. It also switches over in the case of failure", "LGCIU 1 is the master when either AP is off or AP1 is engaged, otherwise LGCIU 2 is the master"],
+    correct: 2
+},
+{
+    question: "During an automatic start sequence on the ground when does the ignition start and stop?",
+    answers: ["Ignition starts when the MODE selector is set to IGN/START, and stops when N2 is greater than 43%", "Ignition starts at 22% N2, and stops when N2 is more than 56%", "Ignition starts at an N2 of 16%, and stops when N2 is more than 50%", "Ignition starts as soon as the engine MASTER is set to ON, and stops when N2 is more than 50%"],
+    correct: 2
+},
+{
+    question: "When the low level sensors detect that the centre tank is empty, the pumps will run for an additional ______ min, and then stop",
+    answers: ["10", "1", "5", "2"],
+    correct: 2
+},
+{
+    question: "Can you reset an IDG in flight?",
+    answers: ["Yes, push and hold the IDG pb until the GEN fault light is no longer illuminated", "Yes, but only after contacting maintenance control", "Yes, provided the engine is running or windmilling", "No. It is not possible"],
+    correct: 3
+},
+{
+    question: "How many fire extinguisher bottles are there for the engines and APU?",
+    answers: ["2 bottles for each engine and 1 bottle for the APU", "2 bottles shared by both engines and 1 bottle for the APU", "1 bottle for each engine and 1 bottle for the APU", "2 bottles shared by both engines and 2 bottles for the APU"],
+    correct: 0
+},
+{
+    question: "Below what height do the FWC’s generate height announcements?",
+    answers: ["2,500 ft", "3,000 ft", "1,500 ft", "2,000 ft"],
+    correct: 0
+},
+{
+    question: "What will happen to the flight guidance modes when the altitude knob is pulled on the FCU?",
+    answers: ["OPEN CLIMB or OPEN DESCENT engages depending on selected V/S", "The current altitude constraint is cancelled", "OPEN CLIMB will always engage", "Managed CLIMB or Managed DESCENT engages"],
+    correct: 0
+},
+{
+    question: "When the ND is set to the PLAN mode, how is the map orientated?",
+    answers: ["To true north", "Corrected along the flight plan track", "To the current true track", "To the current magnetic track"],
+    correct: 0
+},
+{
+    question: "What has happened if the ELEC system page appears automatically on the lower ECAM DU, and there are no accompanying ECAM alerts?",
+    answers: ["An INDEPENDENT failure has occurred", "An ADVISORY has occurred; the drifting parameter will be amber", "A PRIMARY failure has occurred", "An ADVISORY has occurred; the drifting parameter will be pulsing green"],
+    correct: 1
+},
+{
+    question: "If the FO fully deflects the hand wheel while manoeuvring on the ground, what angle will the nose wheel be at?",
+    answers: ["95°", "70°", "75°", "80°"],
+    correct: 2
+},
+{
+    question: "The NAV and LOGO switch has two positions, 1 and 2. What is the difference between the two positions?",
+    answers: ["Position 2 is for emergency use only", "Brightness intensity, where 1 is the brightest", "Position 1 is for emergency use only", "Position 1 turns on the logo lights and the first set of navigation lights, position 2 turns on the logo lights and the second set of navigation lights"],
+    correct: 3
+},
+{
+    question: "What impact does selecting engine and or wing anti-ice have on the engines?",
+    answers: ["The N1 or EPR limit is automatically increased to maintain the appropriate thrust rating", "The N1 or EPR limit is automatically reduced, and the idle N1 or EPR is automatically increased", "Engine anti-ice reduces the N1 or EPR limit, wing anti-ice has a negligible effect on the maximum thrust output of the engines", "There is no impact on the maximum thrust of the engines"],
+    correct: 3
+},
+{
+    question: "What is the maximum altitude that the APU can be used for electrical power?",
+    answers: ["39,100 ft", "22,500 ft", "14,500 ft", "Maximum certified altitude"],
+    correct: 3
+},
+{
+    question: "All communications radios can be controlled:",
+    answers: ["From any one of the three radio management panels (RMPs)", "From the audio control panels (ACPs)", "From RMP 1 and RMP 2 only", "By the F/O"],
+    correct: 0
+},
+{
+    question: "Select the correct statement about the FIRE detection and fault logic for the ENG and APU (select the most complete answer)",
+    answers: ["It is not possible for a Fire Detection Unit (FDU) to distinguish between a loop failure and fire detection", "When both fire detection loops are serviceable, a fire warning will be triggered whenever one or more loops detect a fire", "Fire detection loops A and B must both detect a fire to trigger a warning. If one of these loops fails, then FIRE detection is lost for the associated ENG/APU. The flight crew will be notified via ECAM", "A fire warning is triggered if a break occurs in both fire detection loops within 5 sec of each other (flame effect)."],
+    correct: 3
+},
+{
+    question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independent failure? (PTU is operative, and hydraulic pressures are normal)",
+    answers: ["Primary", "Secondary", "Independent", "Both primary and secondary"],
+    correct: 2
+},
+{
+    question: "What happens when the landing gear is selected down on approach?",
+    answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
+    correct: 2
+},
+{
+    question: "When is auto-start abort and automatic dry cranking available?",
+    answers: ["During any engine start (manual or automatic) on the ground. However when in flight auto start abort is only available during automatic starts", "During an automatic engine start in any phase of flight", "Auto start abort is available during any automatic start cycle. However the flight crew must consider applying the engine ventilation (dry cranking) procedure following a start abort", "During an automatic start on the ground only"],
+    correct: 3
+},
+{
+    question: "When will the ground spoilers fully extend?",
+    answers: ["If the ground spoilers are armed, the wheel speed exceeds 72 kt and both thrust levers are reset to idle.", "When at least one landing gear is on the ground, and both thrust levers are at or below idle", "When the speedbrake control lever is set to the FULL position", "If the ground spoilers are armed, the wheel speed exceeds 60 kt and both thrust levers are reset to idle"],
+    correct: 0
+},
+{
+    question: "Which hydraulic system is used for landing gear retraction and extension?",
+    answers: ["Green", "Blue", "Yellow", "Green or yellow"],
+    correct: 0
+},
+{
+    question: "Select the most complete statement about the APPR pushbutton on the FCU.",
+    answers: ["The APPR pushbutton will arm the LOC and G/S modes. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
+    correct: 2
+},
+{
+    question: "How is an altitude constraint, that the FMGS predicts will not be met, indicated?",
+    answers: ["An amber altitude on the MCDU F-PLN page", "A message in the MCDU scratchpad", "An amber star on the MCDU F-PLN page, and an amber circle around the affected waypoint on the ND", "A magenta star on the MCDU CLIMB page, and a magenta circle around the affected waypoint on the ND"],
+    correct: 2
+},
+{
+    question: "Which of the following AC busses can be powered by the emergency generator?",
+    answers: ["AC BUS 2", "AC ESS and AC ESS SHED busses", "BAT BUS", "AC BUS 1"],
+    correct: 1
+},
+{
+    question: "What do two dashes across the last two digits of the fuel quantity indication mean?",
+    answers: ["The fuel quantity indicated for every tank is inaccurate", "The fuel quantity indicated for every tank is completely unreliable", "The fuel quantity indicated is inaccurate for one or more tanks. The FUEL SD page can be used to determine which tanks are affected", "The fuel quantity indicated for one or more tanks is completely unreliable. The FUEL SD page can be used to determine which tanks are affected"],
+    correct: 2
+},
+{
+    question: "What is the normal voltage and frequency for the AC and DC systems on the A320?",
+    answers: ["Single phase AC 115v 400Hz, and 12v DC", "3 phase AC 115/200v 400Hz, and 28v DC", "3 phase AC 115/200v 50Hz, and 20v DC", "Single phase AC 230v 50Hz, and 12v DC"],
+    correct: 1
+},
+{
+    question: "What is the normal operating pressure of the hydraulic systems?",
+    answers: ["3000PSI including when powered by the RAT", "3000PSI (2500PSI when powered by the RAT)", "3000PSI (2500PSI when powered by the RAT or PTU)", "2500PSI including when powered by the RAT"],
+    correct: 1
+},
+{
+    question: "Where can the battery voltage be checked?",
+    answers: ["On the ELEC overhead panel and ECAM ELEC page", "On the ECAM ELEC page only", "On the ELEC overhead panel only", "On the ELEC overhead panel and ECAM E/WD"],
+    correct: 0
+},
+{
+    question: "When all 6 fuel pumps are selected ON (MODE SEL auto), which fuel tank(s) will preferentially feed each engine? (assume that all tanks contain useable fuel)",
+    answers: ["Shortly after departure both engines will receive fuel preferentially from the centre tank provided the slats are retracted, and approximately 500kg of fuel has been used in each inner tank", "ENG 1 will receive fuel from the left inner tank, and ENG 2 will receive fuel from the right inner tank. When each inner tank is empty, fuel will feed to each engine from the centre tank", "If the landing gear is retracted, both engines receive fuel continuously from the centre tank until it runs dry. CTR TK FEEDG (green) memo will be displayed on the EWD", "ENG 1 will receive fuel from the left outer tank, and ENG 2 will receive fuel from the right outer tank. When each outer tank reaches approximately 750kg, the transfer valves open allowing fuel to be fed from the inner tanks"],
+    correct: 0
+},
+{
+    question: "What impact does a single hydraulic failure have on the slats and flaps?",
+    answers: ["The corresponding surfaces will lock", "The corresponding surfaces will operate at 2/3 of normal speed", "The corresponding surfaces operate at half speed", "The slats and flaps operate normally"],
+    correct: 2
+},
+{
+    question: "What happens if the EXPED button is pushed when the FCU selected altitude is below the current altitude?",
+    answers: ["THR IDLE (if A/THR active) and OP DES engage. The speed becomes managed with a target of 300kt/ M0.78, altitude constraints are disregarded", "THR IDLE (if A/THR active) and DES engage. The speed becomes managed with a target of green dot, altitude constraints are obeyed", "THR IDLE (if A/THR active) and EXP DES engage. The speed becomes managed with a target of 340kt/ M0.8, altitude constraints are obeyed", "THR IDLE (if A/THR active) and EXP DES engage. The speed becomes managed with a target of 340kt/M0.8, altitude constraints are disregarded"],
+    correct: 3
+},
+{
+    question: "The sidestick is pulled fully aft during a terrain escape manoeuvre. What does this pitch input demand from the flight control computers?",
+    answers: ["Initially pitch rate transitioning to an angle of attack demand. If the sidestick is released to neutral, wings level, the system maintains a pitch rate of zero", "Load factor, as the angle of attack exceeds alpha prot the pitch trim will be frozen. With the sidestick at neutral, wings level, the system maintains 1g in pitch (corrected for pitch attitude)", "Direct stick to elevator deflection demand. The max elevator deflection will be limited to prevent alpha max from being exceeded. If the sidestick is released to neutral the elevator will be centred", "Initially load factor transitioning to an angle of attack demand. If the side stick is later released the F/CTRL computers will maintain an AoA equal to alpha prot, until the sidestick is pushed forward"],
+    correct: 3
+},
+{
+    question: "In normal law, when does flight mode change to the flare mode?",
+    answers: ["At 100 ft RA", "At 30 ft RA", "At 20 ft RA", "At 50 ft RA"],
+    correct: 3
+},
+{
+    question: "The MAINT BUS switch is used to supply only ground services. Where is it located?",
+    answers: ["In the overhead panel", "There is no such switch on the A320", "On the ceiling in the forward galley just outside the flight deck", "Behind the co-pilot's seat"],
+    correct: 2
+},
+{
+    question: "Cost index = 0 (zero) corresponds to:",
+    answers: ["Minimum time", "LRC (Long Range Cruise)", "Best ratio between the flight time cost and the fuel cost", "Minimum fuel consumption (max range)"],
+    correct: 3
+},
+{
+    question: "If the Engine Interface Unit (EIU) fails, what information does the FADEC lose access to?",
+    answers: ["Engine sensors", "Thrust lever angle", "Air data from the ADIRS", "Master switch, and engine mode selector position"],
+    correct: 3
+},
+{
+    question: "Which hydraulic system(s) are used to actuate engine reverser thrust?",
+    answers: ["Each engine uses pressurised fuel to actuate the reverser doors", "YELLOW for ENG 1, and GREEN for ENG 2", "Each engine has its own independent hydraulic system to actuate the reverser doors", "GREEN for ENG 1, and YELLOW for ENG 2"],
+    correct: 3
+},
+{
+    question: "What is the wingspan of the A320?",
+    answers: ["24.8 m", "40.5 m", "34.1 m", "38.1 m"],
+    correct: 2
+},
+{
+    question: "Which busses can be powered from the emergency generator?",
+    answers: ["AC ESS and DC ESS via ESS TR only", "DC ESS, and AC ESS via the AC ESS FEED only", "BAT BUS, AC ESS, AC ESS SHED, DC ESS, DC ESS SHED", "DC ESS, DC ESS SHED, AC ESS and AC ESS SHED"],
+    correct: 3
+},
+{
+    question: "For routine access into the cockpit by the cabin crew, the buzzer sounds:",
+    answers: ["With a triple high-low chime", "Continuously", "For a few sec", "For a few min"],
+    correct: 2
+},
+{
+    question: "If the FWC detects a failure it will trigger an ECAM alert, provided no flight phase inhibition is active. How many flight phases are there?",
+    answers: ["6", "7", "10", "8"],
+    correct: 2
+},
+{
+    question: "Below what altitude does the vacuum generator produce the necessary pressure differential to force waste from the toilet bowls into the waste storage tank?",
+    answers: ["18,000 ft", "14,000 ft", "16,000 ft", "20,000 ft"],
+    correct: 2
+},
+{
+    question: "Select the most complete statement about mechanical backup",
+    answers: ["Mechanical backup allows the flight crew to manage a temporary loss of 5 flight control computers. The THS and rudder are mechanically controlled, and hydraulically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "While in mechanical backup USE MAN PITCH TRIM (RED) is displayed on the PFD, the THS and RUDDER can be actuated mechanically by the pilot", "Mechanical backup allows the flight crew to manage a temporary loss of 7 flight control computers. The THS and rudder are mechanically controlled and mechanically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "If the aircraft finds itself in an abnormal attitude AoB > 125°, AoA >40°, IAS >440kt, the flight law will transition to mechanical backup and stay in this flight law for the remainder of the flight. USE MAN PITCH TRIM (amber) will be displayed on the PFD"],
+    correct: 0
+},
+{
+    question: "What areas of the aircraft are anti-iced with hot air?",
+    answers: ["Engine air intakes, the three outboard leading edge slats of each wing, the THS and rudder leading edge", "Engine air intakes, all leading edge slats on each wing", "Engine air intakes, and the three outboard leading edge slats of each wing", "Engine air intakes, the four outboard leading edge slats of each wing, and the flight deck windows"],
+    correct: 2
+},
+{
+    question: "What supporting evidence would you expect to see following an EIS DMC 1(2)(3) FAULT alert?",
+    answers: ["PLEASE WAIT displayed on the affected DU(s)", "MAP NOT AVAIL displayed on the affected DU(s)", "The affected DU(s) will be blank", "INVALID DATA displayed on the affected DU(s)"],
+    correct: 3
+},
+{
+    question: "Which unit is used as a short-term interface between the flight crew and FMGC?",
+    answers: ["ADIRU control panel", "FCU", "EFIS control panel", "MCDU"],
+    correct: 1
+},
+{
+    question: "Where do the wing anti-ice indications appear on the ECAM screens?",
+    answers: ["When selected WING A.ICE appears on the ECAM status page", "A white triangle appears on the ECAM bleed page", "There are no indications for wing anti-ice on the ECAM screens", "When selected ANTI-ICE appears in white on the ECAM bleed page, and the WING A.ICE ECAM memo appears in green on the EWD"],
+    correct: 3
+},
+{
+    question: "During cruise flight, how are the cockpit panels and avionics compartment cooled?",
+    answers: ["The avionics compartment is unpressurised, allowing the avionics to be ventilated using ambient air. The cockpit panels are cooled using air from the air conditioning system", "The avionics ventilation system extracts air from the cockpit panels and avionics compartment, and then removes heat using a skin air heat exchanger", "The avionics compartment is cooled by the avionics ventilation system, which uses air conditioned air in the closed configuration. The cabin ventilation system extract valve draws ambient cabin air through the cockpit panels, and then overboard via the outflow valve", "Both the avionics compartment and cockpit panels are cooled using air from the air conditioning system"],
+    correct: 1
+},
+{
+    question: "If power to the cockpit door fails:",
+    answers: ["The evacuation panel in the door is released", "The door does not unlock automatically and remains closed", "The door unlocks automatically, but remains closed", "Power from the emergency bus is automatically routed to the door locks to keep them in place"],
+    correct: 2
+},
+{
+    question: "What would happen if the APU master switch was turned off immediately following the use of APU bleed?",
+    answers: ["APU continues to run for a cooling period of 60 to 120 sec", "APU continues to run for a cooling period of 30 to 60 sec", "APU shuts down immediately", "APU continues to run for a cooling period of 45 to 90 sec"],
+    correct: 0
+},
+{
+    question: "What protections are available in alternate law?",
+    answers: ["Load factor limitation, pitch attitude, bank angle, angle of attack, and high speed", "Load factor limitation, pitch attitude, bank angle, low speed, and high speed", "Load factor limitation is the only protection available in alternate law. High speed and low speed stabilities may be available", "There are no protections in alternate law. High speed and low speed stabilities may be available"],
+    correct: 2
+},
+{
+    question: "Select the correct statement about the ADIRS panel.",
+    answers: ["If an IR is turned off by mistake in flight, it can be recovered provided it is switched back on within 5 min", "The ADR and IR parts of an ADIRU cannot not be switched off individually", "When securing the aircraft both the IR mode selectors and ADR pushbutton switches should be set to OFF. This is to prevent the aircraft batteries from being drained", "The ADR or IR part of an ADIRU can be individually switched OFF using the IR or ADR pushbuttons. Setting the IR Mode Selector to OFF will remove power from the whole ADIRU"],
+    correct: 3
+},
+{
+    question: "Which ACP transmission key will illuminate if the cabin attendants are calling the cockpit?",
+    answers: ["CAB", "ALERT", "VHF3", "PA"],
+    correct: 0
+},
+{
+    question: "Both ECAM screens have failed. Can the E/WD be displayed on any of the remaining display units?",
+    answers: ["Yes, on the PFD", "Yes, on the ND", "Yes, on the SD", "No, it cannot be displayed"],
+    correct: 1
+},
+{
+    question: "Where is the flap/slat position displayed?",
+    answers: ["On the SD", "On both PFDs", "On the flap/slat indicator", "On the E/WD"],
+    correct: 3
+},
+{
+    question: "What is the maximum speed (VFE) with CONF 1+F for the A320?",
+    answers: ["215 kt", "230 kt", "185 kt", "177 kt"],
+    correct: 0
+},
+{
+    question: "What are the minimum and maximum cabin differential pressure limits?",
+    answers: ["+9 to -1 PSI", "+8.6 to -1 PSI", "+8.5 to -0.4 PSI", "+8.5 to -1 PSI"],
+    correct: 0
+},
+{
+    question: "What is VMO/MMO for the A320?",
+    answers: ["380/0.8", "350/0.82", "320/0.82", "320/0.77"],
+    correct: 1
+},
+{
+    question: "How long can you remain in TOGA thrust?",
+    answers: ["10 min during single engine operations", "10 min during two engine operations", "Unlimited time", "5 min during single engine operations"],
+    correct: 0
+},
+{
+    question: "What is the maximum speed with the landing gear extended (VLE)?",
+    answers: ["220 kt", "260 kt", "280 kt", "250 kt"],
+    correct: 2
+},
+{
+    question: "Which of the following statements regarding LP ground air limitations is true?",
+    answers: ["LP air and the packs must not be used at the same time", "Before connecting LP air ENG 1+2 bleed must be OFF, and X BLEED set to OPEN", "LP air can be used to supplement the cooling air from the packs", "LP air and APU bleed must not be used at the same time"],
+    correct: 3
+},
+{
+    question: "What is the cabin pressure safety relief valve setting?",
+    answers: ["9PSI", "8.4PSI", "8.5PSI", "8.6PSI"],
+    correct: 3
+},
+{
+    question: "What is the maximum demonstrated crosswind for the A320?",
+    answers: ["38 kt (gusts included)", "36 kt (gusts included)", "36 kt (mean wind)", "38 kt (mean wind)"],
+    correct: 0
+},
+{
+    question: "What is the maximum speed at which the landing gear may be retracted (VLO retraction)?",
+    answers: ["250 kt", "260 kt", "280 kt", "220 kt"],
+    correct: 3
+},
+{
+    question: "Which of the following statements best describes high speed protection?",
+    answers: ["High speed protection is 1 of 5 protections in normal law, and is the only protection available in alternate law", "High speed protection will activate at VMO + 16 kt / MMO + 0.04, a permanent nose-up order is applied to aid recovery back towards normal flight conditions. The airspeed will settle at or below VMO even with full forward sidestick input", "High speed protection will not allow the aircraft to overshoot VMO/MMO unless forward sidestick input is applied. In this case the airspeed will never exceed VMO+16 / MMO + 0.04. When the sidestick is released the bank angle is maintained, the maximum AoB is reduced to 45°", "High speed protection is activated at or above VMO/MMO (depending on the flight conditions), a permanent nose-up order is applied to aid recovery back towards normal flight conditions. With no sidestick input the aircraft will not to wings level, and the maximum bank angle is reduced to 40°"],
+    correct: 3
+},
+{
+    question: "If both autopilots are engaged, which FMGC is master and controls the A/THR?",
+    answers: ["FMGC 1 if FD 1 is ON and FD2 is OFF", "FMGC 2 if FD 2 is ON and FD 1 is OFF", "FMGC 1", "FMGC 2"],
+    correct: 2
+},
+{
+    question: "What colour will the secondary flight plan be when it is displayed on the ND?",
+    answers: ["Green", "White", "Blue", "Amber"],
+    correct: 1
+},
+{
+    question: "What does a green arrow on the bottom of the ECAM status page indicate?",
+    answers: ["It means the ECAM has been completed", "It indicates a system page needs to be reviewed", "It is a reminder to complete the approach preparation procedures", "It is displayed if the data on the status page has overflowed off the screen"],
+    correct: 3
+},
+{
+    question: "Only ______ is functional in the emergency electrical configuration:",
+    answers: ["RMP 1 and 3", "RMP 1 AND 2", "RMP 1", "RMP 3"],
+    correct: 2
+},
+{
+    question: "Which units make up the Flight Management Guidance System (FMGS)?",
+    answers: ["2 x FMGC, 2 x MCDU, and 2 x FCU only", "2 x FMC, 2 x AP, 1 x A/THR, 2 x MCDU, 2 x FCU, and 2 x FAC", "2 x FMGC, 2 x MCDU, 1 x FCU, and 2 x FAC", "2 x FMGC, 2 x MCDU, and 1 x FCU only"],
+    correct: 2
+},
+{
+    question: "How is the outflow valve actuated?",
+    answers: ["Three electric motors, all automatic", "One electric motor, controlled by either CPC 1, CPC 2 or via the MAN VIS CTL switch", "One of three electric motors Two automatic, one manual", "One of two electric motors One automatic, one manual"],
+    correct: 2
+},
+{
+    question: "When will the PTU pushbutton FAULT (amber) light illuminate?",
+    answers: ["When there is a PTU overheat", "To indicate that the PTU is inhibited", "When there is an overheat, low air pressure or low fluid level in either green or yellow reservoirs", "If the pressure difference between the green and yellow hydraulic systems exceeds 750 PSI"],
+    correct: 2
+},
+{
+    question: "Which compartments are unpressurised?",
+    answers: ["Nose gear bay, main gear bay, the tail cone, and bulk cargo compartment", "Nose gear, main gear bay and the battery compartment", "Avionics bay, nose gear bay, air conditioning compartment, main gear bay and the tail cone", "Radome, nose gear bay, main gear bay, air conditioning compartment, and the tail cone"],
+    correct: 3
+},
+{
+    question: "Select the correct starter limitation for the CFM engine:",
+    answers: ["A 15 minute cooling period is required following 4 failed start cycles", "A 20 minute cooling period is required following 3 failed start cycles", "A 60 minute cooling period is required following 3 consecutive start attempts", "A 10 second pause is required between each start cycle"],
+    correct: 0
+},
+{
+    question: "Regarding speed symbols on the PFD, which statement is true?",
+    answers: ["The yellow speed trend arrow indicates the speed the aircraft will reach in 15 sec", "Managed speed is represented by a magenta speed bug", "Selected speed is represented by a magenta speed bug", "Mach No. is not displayed below 0.6"],
+    correct: 1
+},
+{
+    question: "What has happened if the ELEC system page appears automatically on the lower ECAM DU, and there are no accompanying ECAM alerts?",
+    answers: ["A PRIMARY failure has occurred", "An ADVISORY has occurred; the drifting parameter will be amber", "An ADVISORY has occurred; the drifting parameter will be pulsing green", "An INDEPENDENT failure has occurred"],
+    correct: 2
+},
+{
+    question: "What information is always available on the permanent data section of the SD?",
+    answers: ["G LOAD", "Gross weight", "Metric altitude", "TAT (Total Air Temperature)"],
+    correct: 3
+},
+{
+    question: "What impact does a FWS FWC 1+2 FAULT have?",
+    answers: ["All SD pages except for the status page are lost", "Most ECAM cautions and warnings are lost. Rural warnings (i.e., stall and over speed) remain available", "All ECAM warnings are lost, amber ECAM cautions and the status page remains available", "All ECAM cautions and warnings, rural warnings, master caution and master warning lights are lost"],
+    correct: 3
+},
+{
+    question: "What is the function of the landing gear SAFETY VALVE?",
+    answers: ["The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "When the aircraft is flying faster than 260 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valves prevents the landing gear from being hydraulically supplied on the ground The valve opens pressurising the landing gear as soon as the aircraft leaves the ground"],
+    correct: 2
+},
+{
+    question: "Typically when will direct law be active?",
+    answers: ["Significant system failures (i.e., EEC) will typically reconfigure the flight law directly from normal to direct law, regardless of configuration", "Direct law is the flare mode for alternate law. Alternate reconfigures to direct law when the landing gear is extended", "Direct law is the flare mode for normal law. Normal law blends into direct law at 50 ft radio altitude", "Direct law is only available on the ground, and transitions into normal law during the first 5 sec after liftoff"],
+    correct: 1
+},
+{
+    question: "Regarding an autoland approach, with both autopilots engaged, which FMGC is master?",
+    answers: ["Both", "FMGC 2", "Neither", "FMGC 1"],
+    correct: 3
+},
+{
+    question: "When opened in an emergency, the passenger entry doors:",
+    answers: ["Are electrically assisted into the open position", "Will need two cabin crew to push them open", "Will be driven open automatically by a damper actuator when the door control handle is lifted, and the door is armed", "Are assisted to the open position by slide inflation"],
+    correct: 2
+},
+{
+    question: "ALPHA-FLOOR is available from:",
+    answers: ["Liftoff until touchdown", "Liftoff until the aircraft reaches 100 ft RA on approach", "Slat retraction until 100ft RA in approach", "Slat retraction until landing gear extension"],
+    correct: 1
+},
+{
+    question: "How can armed FMA modes be identified on the PFD?",
+    answers: ["Armed FMA modes are displayed in blue (selected) or green (managed)", "Armed FMA modes are displayed in magenta (selected) or blue (managed)", "Armed FMA modes are displayed in blue (selected) or magenta (managed)", "Armed FMA modes are displayed in blue (selected) or white (managed)"],
+    correct: 2
+},
+{
+    question: "Which valves can the flight crew control via the ENG1 (ENG2) MASTER switches?",
+    answers: ["LP fuel shutoff valve only", "Hydraulic fire shutoff, LP and HP fuel shut-off valves", "HP fuel shutoff valve only", "LP and HP fuel shutoff valves"],
+    correct: 3
+},
+{
+    question: "What is cost index (CI)?",
+    answers: ["The ratio of fuel cost (CF) to flight time cost (CT)", "The ratio of engine wear cost (CE) to fuel cost (CF)", "Fuel cost (CF)", "The ratio of flight time cost (CT) to fuel cost (CF)"],
+    correct: 3
+},
+{
+    question: "When will the SEL light illuminate on each RMP?",
+    answers: ["If VHF1 is tuned by RMP2, the SEL light will be illuminated on all RMPs", "If the NAV pushbutton has been selected, the SEL light will be illuminated on all RMPs", "If VHF1 is tuned by RMP2, the SEL light will be illuminated on RMP1 and RMP2 only", "If the NAV pushbutton has been selected, the SEL light will be illuminated on RMP1 and RMP2 only"],
+    correct: 2
+},
+{
+    question: "Select the correct statement about the ADIRS panel.",
+    answers: ["The ADR and IR parts of an ADIRU cannot not be switched off individually", "When securing the aircraft both the IR mode selectors and ADR pushbutton switches should be set to OFF. This is to prevent the aircraft batteries from being drained", "If an IR is turned off by mistake in flight, it can be recovered provided it is switched back on within 5 min", "The ADR or IR part of an ADIRU can be individually switched OFF using the IR or ADR pushbuttons. Setting the IR Mode Selector to OFF will remove power from the whole ADIRU"],
+    correct: 3
+},
+{
+    question: "The FAULT (amber) light is illuminated in the ENG 1 pump pushbutton, when will this light extinguish?",
+    answers: ["When the pushbutton is selected OFF for all cases excluding reservoir low air pressure", "The FAULT light will remain illuminated as long as the fault condition remains (low pressure, low level, etc.), regardless of the pushbutton position", "When the pushbutton is selected OFF for all cases", "When the pushbutton is selected OFF for all cases excluding reservoir overheat. The FAULT light will remain on as long as the overheat lasts"],
+    correct: 3
+},
+{
+    question: "How is a temporary flight plan indicated on the ND?",
+    answers: ["A solid amber line", "A dashed yellow line", "A solid blue line", "A dotted magenta line"],
+    correct: 1
+},
+{
+    question: "Where do the wing anti-ice indications appear on the ECAM screens?",
+    answers: ["When selected ANTI-ICE appears in white on the ECAM bleed page, and the WING A.ICE ECAM memo appears in green on the EWD", "When selected WING A.ICE appears on the ECAM status page", "There are no indications for wing anti-ice on the ECAM screens", "A white triangle appears on the ECAM bleed page"],
+    correct: 0
+},
+{
+    question: "What speed will the FMGS use in an expedite climb?",
+    answers: ["The largest speed is Green Dot, which is maintained with pitch control", "200 kt below 10,000 ft", "ECON climb speed", "250 kt/ M0.76 kt above 10,000 ft"],
+    correct: 0
+},
+{
+    question: "Above what cabin altitude will the cabin oxygen masks be deploy automatically?",
+    answers: ["12,000 ft", "16,000 ft", "9,550 ft", "14,000 ft"],
+    correct: 3
+},
+{
+    question: "Is it possible to parallel AC generators on the same BUS?",
+    answers: ["Only with the RAT deployed", "Only one engine generator may be paralleled with the APU", "Yes", "The electrical system will not allow paralleling of generators"],
+    correct: 3
+},
+{
+    question: "How many flight control computers are there?",
+    answers: ["7: 3 x ELACs, 2 x SECs, 2 x FACs", "5: 2 x ELACs, 3 x SECs", "8: 3 x ELACs, 3 x SECs, 2 x FACs", "7: 2 x ELACs, 3 x SECs, 2 x FACs"],
+    correct: 3
+},
+{
+    question: "Which statement about the FAC is true?",
+    answers: ["When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function performs the alpha protection in normal law", "When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function will automatically select the A-FLOOR A/THR mode, when the conditions for its activation are met", "The FAC is a flight control computer, and does not form part of the FMGS", "When the AP is engaged the master FMGC sends rudder trim orders to the FACs. The FACs sole purpose are to provide yaw damping, rudder trim and rudder travel limitation functions"],
+    correct: 1
+},
+{
+    question: "How do you adjust the brightness of the FCU displays?",
+    answers: ["On the MCDU", "Using the rotary knobs located beneath the FCU", "Using the INTEG LT rotary switch", "Using the FLOOD LT rotary switch"],
+    correct: 1
+},
+{
+    question: "After engine start, which MCDU page should be used to modify ZFW and ZFWCG?",
+    answers: ["Fuel Predictions page (FUEL PRED)", "Progress page (PROG)", "INIT B", "T/O Performance page (PERF)"],
+    correct: 0
+},
+{
+    question: "During cockpit preparation, what is the significance of an amber half box around the oxygen pressure indication on the DOOR/OXY page?",
+    answers: ["The cockpit oxygen pressure has dropped below 800PSI, this is a no dispatch.", "The pressure in the oxygen bottle is less than 1500PSI. Refer to the limitations section of the FCOM to determine whether the remaining quantity is not below the minimum for the number of occupants in the flight deck.", "The pressure in the oxygen bottle is less than 1000PSI, call engineering to have the oxygen bottle replaced before departure.", "The oxygen pressure in the low pressure circuit is low (60PSI)"],
+    correct: 1
+},
+{
+    question: "What are the two main functions of the FMGC?",
+    answers: ["Flight management and flight guidance", "Flight management and flight envelope protection", "Flight guidance and flight envelope protection", "Flight management and yaw axis control"],
+    correct: 0
+},
+{
+    question: "Which of the following statements regarding the FWC, ELAC and FAC is true (select the most complete answer)?",
+    answers: ["The FWC generates the OVERSPEED warnings, the ELAC performs the HIGH SPEED protection, and the FAC computes and displays characteristic speeds on the PFD", "The FWC computes and displays the characteristic speed on the PFD, the ELAC performs the A.FLOOR protection, and the FAC is only active when the AP is engaged", "The FWC generates the OVERSPEED warnings, the ELAC performs the HIGH SPEED protection, and the FAC only performs yaw related functions (rudder trim/limits/damping)", "The FWC generates the OVERSPEED warnings, the ELAC performs the LOW SPEED protection, and the FAC only performs yaw related functions (rudder trim/limits/damping)"],
+    correct: 0
+},
+{
+    question: "How can the flight crew dry crank an engine?",
+    answers: ["Dry cranking (engine ventilation) is always performed automatically by the FADEC when the residual EGT temperature is too high", "Set the MODE selector to CRANK, and the MASTER switch to ON.", "Set the MODE selector to CRANK, and the MAN START push button to ON", "Leave the MODE selector in IGN/START, confirm that the MASTER switch is OFF, and set the MAN START push button to ON"],
+    correct: 2
+},
+{
+    question: "What is the max continuous thrust EGT limit for the CFM engine?",
+    answers: ["950°C", "725°C", "625°C", "915°C"],
+    correct: 3
+},
+{
+    question: "Which flight control computers receive inputs from the sidestick?",
+    answers: ["ELAC, SEC and FAC", "ELAC and SEC", "SEC only", "ELAC only"],
+    correct: 1
+},
+{
+    question: "Select the correct statement about the ADIRS panel.",
+    answers: ["The ADR and IR parts of an ADIRU cannot not be switched off individually", "When securing the aircraft both the IR mode selectors and ADR pushbutton switches should be set to OFF. This is to prevent the aircraft batteries from being drained", "The ADR or IR part of an ADIRU can be individually switched OFF using the IR or ADR pushbutton. Setting the IR Mode Selector to OFF will remove power from the whole ADIRU", "If an IR is turned off by mistake in flight, it can be recovered provided it is switched back on within 5 min"],
+    correct: 3
+},
+{
+    question: "Which of the following statements best describes the operation of the fuel transfer valve(s)?",
+    answers: ["The transfer valve can be used to balance the fuel", "When a low fuel level is sensed in an inner tank (< 750 kg), one transfer valve will open in the associated wing only", "When a low fuel level is sensed in an inner tank (< 750 kg), one transfer valve will open in each wing", "The transfer valves will not open until the total fuel on board reaches 1,500 kg"],
+    correct: 2
+},
+{
+    question: "What happens to the avionics ventilation system if both the BLOWER and EXTRACT push buttons are set to override?",
+    answers: ["The closed configuration is selected, both fans remain running, and air conditioned air is added to the system", "Intermediate configuration is selected manually, and the avionics compartment is isolated from the air conditioning system", "Air conditioned air will enter the system, and the skin air outlet door will fully open, both fans will continue to run", "The smoke configuration will be selected. Air conditioned air will enter the system, and all of the extracted air is dumped overboard (via a small flap on the skin air outlet door). The Blower Fan stops."],
+    correct: 3
+},
+{
+    question: "Which of the following statements best describe a level 3 ECAM alert?",
+    answers: ["A steady red master warning light, a red warning message on the E/WD, automatic call of the relevant system page, and a CRC, specific sound or synthetic voice", "A flashing red master warning light, a red warning message on the E/WD, automatic call of the relevant system page, and a CRC, specific sound or synthetic voice", "A steady amber master caution light, an amber caution message on the E/WD, automatic call of the relevant system page, but no aural sound", "A steady amber master caution light, an amber caution message on the E/WD, automatic call of the relevant system page, and a single chime"],
+    correct: 1
+},
+{
+    question: "What impact does a CAB PR SYS 1+2 FAULT alert have?",
+    answers: ["The pressurisation system will automatically select manual mode. The flight crew can take immediate control of the outflow valve using the MAN V/S CTL switch", "Both cabin pressure controllers have failed. The flight crew will set the MODE SEL push button to MAN and adjust the position of the outflow valve as required.", "Control of the outflow valve has been lost. The flight crew should begin a normal descent to FL100/MEA, but also be prepared to initiate an emergency descent if required.", "Both cabin pressure controllers have failed, the flight crew will need to immediately initiate an emergency descent"],
+    correct: 1
+},
+{
+    question: "During a single engine taxi, engine 1 is running and engine 2 is off. What happens when the ENG MODE selector is moved from NORM to IGN/START?",
+    answers: ["The engine 2 FADEC is powered ready for engine start only.", "The ENG SD page appears, the engine 2 FADEC is powered (amber crosses disappear for engine parameters), and the pack valves close. Continuous ignition for engine 1 has been manually selected.", "There will be no impact to engine 2 because its FADEC is already powered by the aircraft electrical system, and the SD page will already be displayed. Continuous ignition, using one igniter (A or B), will be selected for engine 1.", "Continuous ignition, using both ignitors (A+B), will be selected for both engines"],
+    correct: 1
+},
+{
+    question: "All flight control surfaces are:",
+    answers: ["Hydraulically controlled", "Mechanically actuated", "Mechanically controlled", "Hydraulically actuated"],
+    correct: 3
+},
+{
+    question: "The thrust levers are moved to the TOGA detent during takeoff. Which configuration would you expect the avionics ventilation system to select if the OAT is 40°C?",
+    answers: ["Closed", "Normal", "Intermediate", "Open"],
+    correct: 0
+},
+{
+    question: "If the upper ECAM DU fails, or is switched off, how can a system or status page be displayed for review?",
+    answers: ["Use the EIS DMC rotary selector to put the SD on the Captain’s PFD DU", "Pushing and holding the RCL push button on the ECAM control panel will cycle through each system page", "Pushing and holding the desired system page push button on the ECP will replace the E/WD with the selected system page. Upon releasing the button, the E/WD will return", "A momentary press on the associated system page push button on the ECP will toggle between the E/WD, and the selected system page on the lower ECAM DU"],
+    correct: 2
+},
+{
+    question: "In which configuration will green dot be displayed on the PFD?",
+    answers: ["All answers are correct", "CONF 1+F", "CONF 1", "Clean configuration"],
+    correct: 3
+},
+{
+    question: "Which computer generates amber cautions?",
+    answers: ["DU", "FWC", "DMC", "SDAC"],
+    correct: 1
+},
+{
+    question: "How many channels does a SFCC have?",
+    answers: ["2 channels: 1 SLAT and 1 FLAP", "SFCC 1 contains 2 SLAT channels, SFCC 2 contains 2 FLAP channels", "4 channels: 2 SLAT and 2 FLAP", "2 identical channels for redundancy"],
+    correct: 0
+},
+{
+    question: "When is T.O. INHIBIT displayed on the EWD?",
+    answers: ["1st engine started to 80 kt (phases 2 and 3)", "800 ft to 80 kt (phases 7 and 8)", "First engine to takeoff power to 1,500 ft (phases 3, 4 and 5)", "1st eng to takeoff power to 800 ft (phases 3, 4 and 6)"],
+    correct: 0
+},
+{
+    question: "What impact does a CAB PR SYS 1 FAULT alert have?",
+    answers: ["If CPC 1 was active at the time of the failure, CPC 2 will need to be selected manually by the flight crew", "The outflow valve will operate at half speed", "If CPC 1 was active at the time of the failure, CPC 2 will take over automatically. This alert is for crew awareness only (Level 1 ECAM alert)", "The pressurisation system will be operating in semi-automatic mode. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel."],
+    correct: 0
+},
+{
+    question: "How is the outflow valve actuated?",
+    answers: ["One electric motor, controlled by either CPC 1, CPC 2 or via the MAN V/S CTL switch", "One of two electric motors One automatic, one manual", "One of three electric motors Two automatic, one manual", "Three electric motors, all automatic"],
+    correct: 2
+},
+{
+    question: "When will the approach phase activate?",
+    answers: ["At the FAF altitude when on a precision approach", "Automatically when overflying the DECEL pseudo waypoint with NAV, LOC* or LOC engaged. It can also be manually activated by selecting ACTIVATE APPR PHASE on the PERF page", "Automatically when approx 15 NM from arrival aerodrome in any flight guidance mode", "It can only be manually selected on the MCDU PERF page by either pilot"],
+    correct: 1
+},
+{
+    question: "Can wing anti-ice be used when one engine is inoperative?",
+    answers: ["Yes, provided the x-bleed is selected open, one pack is selected off and the fire push button has not been pushed", "Yes, APU bleed air can be used for wing anti-ice", "No. It is not possible for one engine bleed to supply air to both wings for anti-icing", "Yes, the crossbleed will automatically open after the wing anti-ice has been selected ON"],
+    correct: 0
+},
+{
+    question: "How many independent channels are there in a Flight Augmentation Computer?",
+    answers: ["4 channels: Yaw damper, rudder trim, rudder travel limit, and flight envelope", "3 channels: Yaw damper, rudder trim and rudder travel limit", "2 channels: Yaw damper and rudder trim", "2 identical channels for redundancy"],
+    correct: 0
+},
+{
+    question: "When will the autobrake system activate following a rejected takeoff?",
+    answers: ["Manually extending the speed brake lever immediately after setting the thrust levers to idle will activate the autobrake", "The autobrake will activate as soon as both thrust levers are brought back to the idle detent, and the wheel speed is above 40 kt", "The command for ground spoiler deployment from the SECs (wheel speed > 72 kt) will activate the autobrake", "The autobrake will activate when reverse thrust is selected on a least one thrust lever, and the wheel speed is above 40 kt"],
+    correct: 2
+},
+{
+    question: "When will the FADEC select the modulated idle mode?",
+    answers: ["Whenever the flaps are retracted (FLAPS at zero position)", "When flaps are retracted in flight, or on the ground provided reverse is not selected", "In flight when the flap lever is not at the zero position", "Whenever the thrust lever is in the REV IDLE position"],
+    correct: 1
+},
+{
+    question: "Which DMCs can receive information from ADIRU 3?",
+    answers: ["DMC 1 or 3. Following the failure of ADIRU1, ADIRU3 will automatically connect to the Captain’s PFD", "DMC 1, 2 and 3. However only air data can supplied by ADIRU3 to DMC 1 and 2", "DMC 1, 2; or 3 depending on the configuration of the ATT HDG and AIR DATA rotary selectors on the switching panel", "DMC 3 only The EIS DMC selector on the switching-panel, can be used to display ADIRU 3 data via DMC 3 on either the CAPT or FO PFD"],
+    correct: 2
+},
+{
+    question: "Which computer controls all datalink communications between the aircraft and the ground (Airline and or ATC)?",
+    answers: ["RMP", "FMGC", "MCDU", "ATSU"],
+    correct: 1
+},
+{
+    question: "After an ND failure, which of the following statements is correct?",
+    answers: ["The ND is lost on that side of the aircraft", "The ND can be manually transferred to the PFD", "The ND cannot be manually transferred to the PFD", "The ND will automatically transfer to the PFD"],
+    correct: 1
+},
+{
+    question: "The Air Conditioning System Controller 1 (ACSC 1):",
+    answers: ["Regulates both the cockpit, and the two cabin zones temperature", "Regulates cockpit, cabin and cargo compartment zone temperatures", "Is the primary controller", "Regulates the cockpit temperature"],
+    correct: 3
+},
+{
+    question: "Which VHF antenna is located on the lower fuselage?",
+    answers: ["VHF 3", "VHF 2", "None. All three are located on the upper fuselage", "VHF 1"],
+    correct: 1
+},
+{
+    question: "In Normal Law, what are the limits of the Pitch Attitude protection with flaps Full?",
+    answers: ["35° nose up progressively reduced to 20°", "30° nose up", "25° nose up. It is progressively reduced to 20° at low speed.", "There is no limit"],
+    correct: 2
+},
+{
+    question: "On the ground, which configuration would you expect the avionics ventilation system to select if the OAT is 3°C on an overcast day?",
+    answers: ["Open", "Intermediate", "Closed", "Normal"],
+    correct: 2
+},
+{
+    question: "Regarding ECAM, which of the following statements is true?",
+    answers: ["An amber message on the E/WD is always accompanied by a Master Caution", "A Master Caution is always accompanied by an amber message on the E/WD", "Primary failures are identified by a star (*) next to them", "Independent failures are identified by a star (*) next to them"],
+    correct: 1
+},
+{
+    question: "On the ECAM E/WD, when does the LDG INHIBIT (magenta) memo appear?",
+    answers: ["Below 2,000 ft radio altitude", "With selection of FLAP 2 on the approach", "Below 800 ft radio altitude", "With selection of GEAR DOWN"],
+    correct: 1
+},
+{
+    question: "If a system page push button fails on the ECAM control panel, can the corresponding system page still be viewed?",
+    answers: ["No, the associated system page is no longer available", "Yes, but only if an ECAM alert is triggered for the related system, in this case the system page is automatically displayed. The page cannot be selected manually", "Yes, the associated system page can still be viewed via the use of the RCL pushbutton", "Yes. The ALL button allows the flight crew to select the desired SD page. This provides redundancy in the case of an ECAM control panel failure"],
+    correct: 3
+},
+{
+    question: "Select the correct statement about the wingtip brakes (WTB):",
+    answers: ["The WTBs activate in case of an uncommanded movement of the slats or flaps, such as runaway, asymmetry or overspeed. If the slat WTB is on, the flaps will still operate", "The wing tip brakes will only activate when asymmetry is detected with either the flap or slat system. The flap lever should remain in the position it was in at the time of WTB activation", "The WTBs activate when the flap or slat position disagree with the flap lever selection. If any WTB is on, both slats and flaps are locked in position, and cannot be released in flight", "The WTBs activate in case of an uncommanded movement of the slats or flaps, such as runaway, asymmetry or overspeed. If any WTB is on, both slats and flaps are locked in position, and cannot be released in flight"],
+    correct: 0
+},
+{
+    question: "On the ECAM display, which colour is used to make the crew aware of an abnormal configuration or failure, and no immediate action is required?",
+    answers: ["Red", "Blue", "Amber", "White"],
+    correct: 2
+},
+{
+    question: "When does the PTU operate?",
+    answers: ["At any time that there is more than a 500 PSI pressure difference between the green and yellow systems", "When there is more than a 750 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited when both engines master switches are set to off", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated"],
+    correct: 3
 }
 ];
