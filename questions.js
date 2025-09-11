@@ -152,7 +152,7 @@ const questions = [
     {
         question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 5 mm of water on the runway?",
         answers: ["6-Dry", "2-Medium to Poor", "5-Good", "3-Medium"],
-        correct: 3
+        correct: 1
     },
     {
         question: "On the EFB, how can the GA gradient be modified to ensure compliance?",
@@ -1573,7 +1573,7 @@ const questions = [
 },
 {
     question: "What is the significance of a flashing red light on a cabin door?",
-    answers: ["It indicates low pressure in the slide inflation cylinder", "It flashes red if the door is unlocked when at least one engine is running", "The light flashes red if the door control handle is operated, and the slide is armed", "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.9mbar"],
+    answers: ["It indicates low pressure in the slide inflation cylinder", "It flashes red if the door is unlocked when at least one engine is running", "The light flashes red if the door control handle is operated, and the slide is armed", "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.5hPa"],
     correct: 3
 },
 {
@@ -2265,6 +2265,90 @@ const questions = [
     question: "When does the PTU operate?",
     answers: ["At any time that there is more than a 500 PSI pressure difference between the green and yellow systems", "When there is more than a 750 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited when both engines master switches are set to off", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated"],
     correct: 3
+},
+{
+    question: "On the EFB T.O PERF page, how can MEL items be added to assure performance requirements are met?",
+    answers: ["On the last page of computations", "Must be manually calculated using FCOM", "By tapping on the flex temperature", "Dialog box in bottom left of T.O PERF page"],
+    correct: 3
+},
+{
+    question: "What is maximum value of Approach Correction",
+    answers: ["5 kt", "15 kt", "10 kt"],
+    correct: 1
+},
+{
+    question: "What is the maximum speed (VFE) with CONF FULL for the A320",
+    answers: ["177 kt", "195 kt", "185 kt", "175 kt"],
+    correct: 0
+},
+{
+    question: "What is the maximum tyre speed",
+    answers: ["188 kt", "210 kt", "200 kt", "195 kt"],
+    correct: 3
+},
+{
+    question: "On wich display(s) can the ground speed and TAS be viewed?",
+    answers: ["In the top right hand corner of the ND in only the ARC or NAV modes", "On the PDF or in the top left hand corner of the ND", "In the top left corner of the ND in only NAV and ARC modes", "In the top left corner of the ND in all modes"],
+    correct: 3
+},
+{
+    question: "What is the function of the hydraulic priority valves?",
+    answers: ["They prioritise hydraulic power to the heavy load users", "They will close when the flight crew push the ENG 1(2) FIRE pushbutton", "They prioritise the engine driven pumps over the PTU", "If heavy load users cause a large drop in system pressure, the priority valve will close curring off supply to these loads"],
+    correct: 3
+},
+{
+    question: "Select the statement that best describes the parking brake",
+    answers: ["If the parking brake fails, the parking brake must be selected off before the normal braking system can be applie via the brake pedals", "The parking brake uses a dedicated control valve to apply yellow hydraulic or brake accumulator pressure directly to the wheel brakes. This bypasses the alternate braking servo valve", "The parking brake accumulator can maintain parking pressure for at least 24hrs", "The parking brake uses the alternate braking servo valve to apply yellow hydraulic or brake accumulator pressure to the wheel brakes"],
+    correct: 1
+},
+{
+    question: "After a cockpit oxygen mask has been used, how can the mask microphone be cut-off and boom microphone be re-activated",
+    answers: ["Push the TMR RESET button on the OXYGEN panel", "Close the left hand door of the mask stowage box, and push the RESET/TEST slide. The OXY ON flag will disappear", "Close both doors on the mask stowage box", "Move the MASK-BOOM switch on the ACP back to the BOOM position"],
+    correct: 1
+},
+{
+    question: "What is the primary method of communication for datalink messages controlled via the ATSU?",
+    answers: ["The datalink system primarily uses HF2", "The datalink system primarily uses VHF3", "The datalink system primarily uses SATCOM", "The datalink system uses a dedicated UHF radio"],
+    correct: 1
+},
+{
+    question: "The MIXER unit is connected to:",
+    answers: ["Only the packs and re-circulated cabin air", "Packs, re-circulated cabin air, emergency ram air inler, and HP ground connector", "Zone controllers", "Packs, re-circulated cabin air, emergency ram air inler, and LP ground connector"],
+    correct: 3
+},
+{
+    question: "Select the correct statementa bout the AGENT pushbuttons on the FIRE panel",
+    answers: ["It is not possible to have an amber DISCH light without a white SQUID light on a AGENT pushbutton", "The agent buttons are always active allowing a bottle to be fired at any time, independent of the associated FIRE pushbutton position", "The DISCH light illuminates in amber as soon as the squid is fired for the corresponding bottle", "The DISCH light illuminates in amber when the corresponding fire extinguisher bottle has lost pressure"],
+    correct: 3
+},
+{
+    question: "With the ATT HDG switch set to CAPT 3, and AIR DATA switch set to NORM: which computer(s) will be providing air, attitude and heading data to the Captain's PFD?",
+    answers: ["ADIRU 3 will be providing air data, and ADIRU 1 attitude and heading data", "ADIRU 2 will be providing air data, and ADIRU 1 attitude and heading data", "ADIRU 3 will be providing all air, attitude and heading data", "ADIRU 1 will be providing air data, and ADIRU 3 attitude and heading data"],
+    correct: 0
+},
+{
+    question: "Which of the following communication methods are used for datalink messages?",
+    answers: ["VHF only", "SATCOM only", "VHF or HF only", "VHF, HF or SATCOM (where fitted and available)"],
+    correct: 3
+},
+{
+    question: "Select the correct statement about the AGENT pushbuttons on the FIRE panel",
+    answers: ["After an ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s), this helps identify the agents to be activated", "When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in amber on the corresponding agent pushbutton(s)", "After a ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s). After the bottle has been discharged the SQUIB light is replaced by an amber DISCH light", "When the associated FIRE PB (ENG or APC)) is released SQUIB illuminates in white on the corresponding agent pushbutton(s)"],
+    correct: 3
+},
+{
+    question: "What will trigger the CAB PR LDG ELEV FAULT (amber) alert?",
+    answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel"],
+    correct: 3
+},
+{
+    question: "On the RMP, the ON/OFF switch controls:",
+    answers: ["Only the COM function of the RMP", "The power supply to the RMP", "The power supply to both the RMP and ACP", "Only the STBY NAV function of the RMP"],
+    correct: 1
+},
+{
+    question: "How can the flight crew arm the LOC and GS modes in order to fly an ILS approach?",
+    answers: ["Push the APP pushbutton on the FCCJ. Once LOC and G/S are armed ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels", "Push the APP pushbutton on the FCU. The ILS information (including LOC and G/S scales) will not be displayed on the PFD unless the LS push button is selected on the EFIS panels", "Push the LS button the EFIS panel located on the glareshield", "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels"],
+    correct: 1
 }
 ];
-
