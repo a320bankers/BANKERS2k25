@@ -241,31 +241,34 @@ function shuffleArray(array) {
 
 console.log('Script loaded successfully');
 
-// Fancy slider value bubble + snap to step + button label
-(function(){
+// Bubble positioned exactly above the slider thumb (pixel-accurate)
+(function () {
   const range  = document.getElementById('question-count');
   const bubble = document.getElementById('count-bubble');
   const start  = document.getElementById('start-btn');
   if (!range || !bubble) return;
 
-  function setBubble(){
-    const min  = +range.min || 0;
-    const max  = +range.max || 100;
-    const step = +range.step || 1;
+  const THUMB = 28; // must match the CSS thumb size (28px in your styles)
 
-    // snap to the nearest step (fixes values like 11 when step=5)
-    let val = Math.round(+range.value / step) * step;
-    val = Math.max(min, Math.min(max, val));
-    range.value = val;
+  function positionBubble() {
+    const min = +range.min || 0;
+    const max = +range.max || 100;
+    const val = +range.value;
 
-    const pct = (val - min) / (max - min);
+    // % along track
+    const pct   = (val - min) / (max - min);
+    const width = range.offsetWidth;                  // slider track width in px
+    const x     = pct * (width - THUMB) + THUMB / 2;  // center of the thumb
+
     bubble.textContent = val;
-    bubble.style.left = `calc(${pct * 100}% - 16px)`;
+    bubble.style.left = `${x}px`;                     // centered via CSS transform
 
     if (start) start.textContent = `Start ${val}-Question Quiz`;
   }
 
-  range.addEventListener('input', setBubble);
-  window.addEventListener('load', setBubble);
-  setBubble();
+  range.addEventListener('input', positionBubble);
+  window.addEventListener('resize', positionBubble);
+  window.addEventListener('load', positionBubble);
+  positionBubble();
 })();
+
