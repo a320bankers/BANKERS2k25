@@ -239,3 +239,24 @@ function shuffleArray(array) {
 }
 
 console.log('Script loaded successfully');
+
+// Fancy slider value bubble (keeps your existing IDs)
+(function(){
+  const range  = document.getElementById('question-count');
+  const bubble = document.getElementById('count-bubble');
+  if (!range || !bubble) return;
+
+  function setBubble(){
+    const val = +range.value;
+    const min = +range.min || 0;
+    const max = +range.max || 100;
+    const pct = (val - min) / (max - min);
+    // center the bubble over the thumb (simple nudge)
+    bubble.textContent = val;
+    bubble.style.left = `calc(${pct*100}% - 16px)`;
+  }
+
+  range.addEventListener('input', setBubble);
+  window.addEventListener('load', setBubble);
+  setBubble();
+})();
