@@ -226,38 +226,38 @@ const questions = [
         correct: 0
     },
     {
-        question: "Where is the correct place to find RWY COND EFB entry at landing dispatch?",
-        answers: ["EFB MORE app", "OM-A", "QRH", "OM-B"],
+        question: "Which valves can the flight crew control via the ENG1 (ENG2) MASTER switches?",
+        answers: ["LP and HP fuel shutoff valves", "LP fuel shutoff valve only", "Hydraulic fire shutoff, LP and HP fuel shut-off valves", "HP fuel shutoff valve only"],
         correct: 0
     },
     {
-        question: "Which of these is not an appropriate wind entry for a METAR reading VRB03KT?",
-        answers: ["T03", "TL03", "H03", "0/0"],
+        question: "During a single engine taxi, engine 1 is running and engine 2 is off. What happens when the ENG MODE selector is moved from NORM to IGN/START?",
+        answers: ["The ENG SD page appears, the engine 2 FADEC is powered (amber crosses disappear for engine parameters), and the pack valves close. Continuous ignition for engine 1 has been manually selected", "Continuous ignition, using both igniters (A+B), will be selected for both engines", "The engine 2 FADEC is powered ready for engine start only.", "There will be no impact to engine 2 because its FADEC is already powered by the aircraft electrical system, and the SD page will already be displayed. Continuous ignition, using one igniter (A or B), will be selected for engine 1."],
         correct: 2
     },
     {
-        question: "What is the TREF value for an Airbus A320-214?",
-        answers: ["ISA+29", "ISA+15", "ISA", "ISA+25"],
+        question: "Select the correct starter limitation for the CFM engine:",
+        answers: ["A 15 minute cooling period is required following 4 failed start cycles", "A 60 minute cooling period is required following 3 consecutive start attempts", "A 10 second pause is required between each start cycle", "A 20 minute cooling period is required following 3 failed start cycles"],
         correct: 0
     },
     {
-        question: "A 'contaminated runway' describes a surface where a certain depth of contaminant is covering what percentage of runway area?",
-        answers: ["More than 25%", "More than 50%", "25% or more", "50% or more"],
+        question: "Select the correct statement about the AGENT pushbuttons on the FIRE panel:",
+        answers: ["When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in amber on the corresponding agent pushbutton(s)", "After an ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s), this helps identify the agents to be activated", "When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in white on the corresponding agent pushbutton(s)", "After a ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s). After the bottle has been discharged the SQUIB light is replaced by an amber DISCH light"],
         correct: 0
     },
     {
-        question: "Which is true regarding the EMERGENCY pressure selector?",
-        answers: ["It delivers 100% oxygen to the mask when pushed", "Turning the knob generates a permanent overpressure, only when N/100% selector is set on the N position", "Turning the knob generates a permanent overpressure, only when N/100% selector is set on the 100% position", "Pressing the knob generates a permanent overpressure"],
+        question: "Which hydraulic system is used for landing gear retraction and extension?",
+        answers: ["Green or yellow", "Blue", "Green", "Yellow"],
         correct: 2
     },
     {
-        question: "What is the effect of pressing the RESET control slide, after the oxygen mask has been used?",
-        answers: ["No effect", "It cuts off the oxygen only", "It cuts off the oxygen and the mask microphone", "It only cuts off the mask microphone"],
+        question: "How can armed FMA modes be identified on the PFD?",
+        answers: ["Armed FMA modes are displayed in magenta (selected) or blue (managed)", "Armed FMA modes are displayed in blue (selected) or magenta (managed)", "Armed FMA modes are displayed in blue (selected) or green (managed)", "Armed FMA modes are displayed in blue (selected) or white (managed)"],
         correct: 2
     },
     {
-        question: "Under normal operations, maximum reverse should not be used below what speed?",
-        answers: ["50 kt", "60 kt", "70 kt", "75 kt"],
+        question: "After a takeof in CONFIG 1 +F, what would happen if FLAP 0 is not selected as the aircraft accelerates?",
+        answers: ["At 230 kt the slats and flaps will automatically retract changing the config from 1+F to 0. This prevents slat/flap overspeed", "At 210 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "At 200 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "The flaps will be overstressed as the VFE of 215kt is exceeded"],
         correct: 2
     },
     {
@@ -2372,6 +2372,7 @@ const questions = [
     correct: 1
 }
 ];
+
 
 
 
