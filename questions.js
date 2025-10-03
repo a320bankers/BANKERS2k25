@@ -110,97 +110,97 @@ const questions = [
     correct: 2
     },
     {
-        question: "If departing from an intersection with a longer TORA than planned, what is required?",
-        answers: ["Recalculation of takeoff performance", "TOGA takeoff performed", "No action required", "Derate removed"],
+        question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independant failure? (PTU is operative, and hydraulic pressures are normal)",
+        answers: ["Both primary and secondary", "Independant", "Secondary", "Primary"],
         correct: 2
     },
     {
-        question: "If following an EOSID, what obstacle clearance is guaranteed?",
-        answers: ["None", "Above 1,500 ft, a radius of 30 NM is surveyed for limiting obstacles", "Above 1,000 ft, a radius of 20 NM is surveyed for limiting obstacles", "As per MSA only"],
+        question: "When all 6 fuel pumps are selected ON (MODE SEL auto), which fuel tank(s) will preferentially feed each engine? (assume that all tanks contain useable fuel)",
+        answers: ["ENG 1 will receieve fuel from the left inner tank, and ENG 2 will receive fuel from the right inner tank. When each inner tank is empty, fuel will feed to each engine from the centre tank.", "ENG 1 will receive fuel from the left outer tank, and ENG 2 will receive fuel from the right outer tank. When each other tank reaches approximately 750kg, the transfer valves open allowing fuel to be fed from the inner tanks", "Shortly after departure both engine will receive fuel preferentially from the centre tank provided the slats are retracted, and approximately 500kg of fuel has been used in each inner tank", "If the landing gear is retracted, both engines receive fuel continuously from the centre tank until it runs dry. CTR TK FEED (green) memo will be displayed on the E/WD."],
         correct: 1
     },
     {
-        question: "How can the maximum acceleration altitude be found on the EFB TO PERF page?",
-        answers: ["By tapping on the flex temperature", "Must be manually calculated using FCOM", "Adding 4,000 ft to acceleration altitudes calculated", "MORE <F10>"],
+        question: "During final approach, when is LAND annunciated on the FMA?",
+        answers: ["It engages at MDA, and can be disengaged by setting TOGA thrust", "It engages ,400ft RA until approximately 40RA when it is replaced by FLARE. It can be disengaged by setting TOGA thrust, or by disconnecting both AP and FD", "It engages <400ft RA until approximately 40 RA when it is replaced by FLARE. It can be disengaged by pushing the APPR pushbutton on FCU to cancel the approach", "It engages at 1000ft RA with the aircraft in the Landing Configuration (Flap 3 or Flap FULL)"],
         correct: 3
     },
     {
-        question: "On the EFB, how can MEL items be added to assure performance requirements are met?",
-        answers: ["ACFT STS <FS>", "Must be manually calculated using FCOM", "By tapping on the flex temperature", "MORE <F10>"],
+        question: "If power to the cockpit door fails:",
+        answers: ["Power from the emergency bus is automatically routed to the door locks to keep them in place", "The door does not unlock automatically and remains closed", "The door unlocks automatically, but remains closed", "The evacuation panel in the door is released"],
         correct: 0
     },
     {
-        question: "For an in-flight landing calculation, what is the maximum crosswind with compacted snow at -16°C?",
-        answers: ["15 kts", "10 kts", "38 kts", "29 kts"],
+        question: "If a C/B trips what action should the flight crew take?",
+        answers: ["On the ground, any C/B can be re-engaged without consulting maintenance so long as it doesn't have a red colour. In flight, a C/B can be re-engaged no more than two times", "The C/B can be re-engaged as many times as necessary if required for the safe conduct of the flight", "Consult the C/B tripped procedure in the QRH for guidance. On the ground a C/B can be reengaged on the direction of maintenance. In flight a C/B should not be reengaged under any circumstances", "Consult the C/B tripped procedure in the QRH for guidance. On the ground the first step is to contact maintenance to identify the cause. In flight the C/B should not be reengaged unless the captain deems it necessary for the safe continuation of the flight (only one reengagement is permitted"],
         correct: 3
     },
     {
-        question: "For an in-flight landing calculation, what is the maximum crosswind with 5 mm of water?",
-        answers: ["20 kts", "10 kts", "15 kts", "29 kts"],
+        question: "How do you adjust the brightness of the FCU displays?",
+        answers: ["On the MCDU", "Using the INTEG LT rotary switch", "Using the FLOOD LT rotary switch", "Using the rotary knobs located beneath the FCU"],
         correct: 0
     },
     {
-        question: "For an in-flight landing calculation, what is the maximum crosswind with compacted snow at -13°C?",
-        answers: ["29 kts", "25 kts", "38 kts", "10 kts"],
+        question: "Can you reconnect an IDG in flight?",
+        answers: ["Yes, but only after contacting maintenance control", "Yes, push and hold IDG pb until the GEN fault light is no longer illuminated", "No, it is not possible", "Yes, provided the engine is running or windmilling"],
         correct: 1
     },
     {
-        question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 'Wet' runway?",
-        answers: ["6-Dry", "4-Good to Medium", "5-Good", "3-Medium"],
-        correct: 5
+        question: "What is the started limitation for the APU?",
+        answers: ["A 60 min cooling period is required following three consecutive start attempts", "A 3 min cooling period is required following each start attempt", "A 45 min cooling period is required following 4 consecutive start attempts", "A 30 min cooling period is required following three consecutive start attempts"],
+        correct: 1
     },
     {
-        question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 5 mm of water on the runway?",
-        answers: ["6-Dry", "2-Medium to Poor", "5-Good", "3-Medium"],
+        question: "On the RMP, the ON/OFF switch controls:",
+        answers: ["Only the COM function of the RMP", "Only the STBY NAV function of the RMP", "The power supply to the RMP", "The power supply to both the RMP and ACP"],
         correct: 2
     },
     {
-        question: "On the EFB, how can the GA gradient be modified to ensure compliance?",
-        answers: ["MODIFY RWY", "ACFT STS <FS>", "MORE <F10>", "Adding Vpilot"],
+        question: "Which busses can be powered from the emergency generator?",
+        answers: ["AC ESS and DC ESS via ESS TR only", "DC ESS, and AC ESS via the AC ESS FEED only", "BAT BUS, AC ESS, AC ESS SHED, DC ESS, DC ESS SHED", "DC ESS, DC ESS SHED, AC ESS and AC ESS SHED"],
         correct: 0
     },
     {
-        question: "If using Reverse Idle, what is the correct choice in the EFB LOG PERF?",
-        answers: ["Yes", "No", "Properties"],
+        question: "When do the transfer valves close automatically?",
+        answers: ["At the next refuelling operation", "Following a fuel low level warning", "When inner tanks reach approx 705kg", "When outer tanks are emptied"],
         correct: 1
     },
     {
-        question: "In EFB LOG PERF, how do we correctly adjust for a NOTAMed shortening of a runway?",
-        answers: ["Adding Vpilot", "ACFT STS <FS>", "MORE <F10>", "FUNCTIONS>MODIFY RWY"],
+        question: "What is the max continuous thrust EGT limit for the CFM engine?",
+        answers: ["725°C", "950°C", "915°C", "625°C"],
         correct: 3
     },
     {
-        question: "What are the standard second and final segment gross climb gradients on takeoff?",
-        answers: ["2.4%/4.8%", "2.4%/1.2%", "1%/2.2%"],
+        question: "How can you check that engine anti-ice has been selected on?",
+        answers: ["The ON (WHITE) lights on the ENG anti-ice push buttons are the only indications", "ENG A.ICE will be displaued on the status page", "ON (BLUE) light on one or more ENG anti-ice push buttons, ENG A.ICE memo displayed in GREEN on the E/WD", "ON (WHITE) light on one or more ENG anti-ice push buttons, ENG A.ICE memo displayed in AMBER on the E/WD"],
         correct: 1
     },
     {
-        question: "What is the correct runway condition in EFB PERF for takeoff if the runway is damp?",
-        answers: ["Dry", "Wet", "Neither dry nor wet"],
+        question: "Regarding an autoland approach, with both autopilots engaged, which FMGC is master?",
+        answers: ["Neither", "Both", "FMGC 2", "FMGC 1"],
         correct: 2
     },
     {
-        question: "What takeoff performance limit codes indicate performance limiting takeoff when using TOGA thrust?",
-        answers: ["RWY and OBS", "RWY only", "OBS only", "RWY, OBS, and VMC"],
+        question: "Which of the following communication methods are used for datalink messages?",
+        answers: ["VHF, HF or SATCOM (when fitted and available)", "VHF only", "VHF or HF only", "SATCOM only"],
         correct: 1
     },
     {
-        question: "Required landing distance figures include what factors for a 'dry'/'wet' runway?",
-        answers: ["1.25/1.5", "1.5/2.0", "1.67/1.92"],
+        question: "In which configuration will green dot be displayed on the PFD?",
+        answers: ["CONF 1+F", "All the answers are correct", "Clean configuration", "CONF 1"],
         correct: 2
     },
     {
-        question: "If a runway is wet and NOTAMed 'slippery when wet', what is the correct EFB TO PERF input for RWY COND?",
-        answers: ["WATER 1/2", "ICY", "WET", "DRY"],
+        question: "What happens if the EXPED button is pushed when the FCU selected altitude is above the current altitude?",
+        answers: ["THR CLB (if A/THR active) and EXP CLB engage. The speed becomes managed with a target of green dot, altitude constraints are disregarded", "THR CLB (if A/THR active and EXP CLB engage. The speed becomes managed with a target of best rate of climb, altitude constraints are obeyed", "THR CLB (if A/THR active and OP CLB engage. The speed becomes managed with a target of green dot, altitude constraints are disregarded", "THR CLB (if A/THR active and CLB engage. The speed becomes managed with a target of green fot, altitude constraints are obeyed"],
         correct: 0
     },
     {
-        question: "If below 10°C and 'wet' runway only, is anti-ice legally required for take-off?",
-        answers: ["Yes", "No", "Properties"],
+        question: "What do two dashes across the last two digits of fuel quantity indication mean?",
+        answers: ["The fuel quantity indicated is inaccurate for one or more tanks. The FUEL SD page can be used to determine which tanks are affected", "The fuel quanitity indicated for every tank is completely unreliable", "The fuel quantity indicated for one or more tanks is completely unreliable. The FUEL SD page can be used to determine which tanks are affected.", "The fuel quantity indicated for every tank is inaccurate"],
         correct: 1
     },
     {
-        question: "How many 'negligible' COL items can be carried without applying a performance penalty?",
+        question: "IF a SEC fails, what happens to the spoiler(s) it controls?",
         answers: ["3", "2", "1", "4"],
         correct: 0
     },
@@ -2417,5 +2417,6 @@ const questions = [
     correct: 4
 }
 ];
+
 
 
