@@ -356,91 +356,6 @@ const questions = [
         correct: 3
     },
     {
-        question: "With the AUDIO SWITCHING knob in the CAPT 3 position:",
-        answers: ["The Captain uses his acoustic equipment on ACP 3", "The captain should use the 3rd occupant (observer) headset", "The AUDIO SWITCHING knob must be placed in ALTN position", "The AUDIO SWITCHING knob should be placed in STBY position"],
-        correct: 0
-    },
-    {
-        question: "When does the F/CTL page appear on the flight deck during the flight control check?",
-        answers: ["Automatically as soon as the nose wheel steering handle is moved", "Automatically as soon as the side stick is moved", "The pilot has to press the F/CTL pb on the ECP", "You can't see the page. The system is inoperative on ground"],
-        correct: 1
-    },
-    {
-        question: "In ALTERNATE LAW, how do the indications change at the bottom of the speed scale?",
-        answers: ["Alpha protection is replaced by an extended VLS.", "There are no changes: it is possible to stall the aircraft.", "VLS is replaced by VSTALL WARNING.", "Alpha protection is replaced by VSTALL WARNING: it is possible to stall the aircraft."],
-        correct: 3
-    },
-    {
-        question: "What is the maximum speed for flight with a cockpit window open?",
-        answers: ["200 knots", "230 knots", "Green Dot", "250 knots"],
-        correct: 0
-    },
-    {
-        question: "After take-off the A/THR will not become active until...",
-        answers: ["The autopilot is engaged", "The thrust levers are moved out of the TOGA or FLEX/MCT detents", "The thrust levers are retarded into the CLIMB detent from TOGA or FLEX/MCT and A/THR is displayed white in the FMA", "The A/THR pb is manually selected ON"],
-        correct: 2
-    },
-    {
-        question: "The Emergency Generator will power which busses?",
-        answers: ["AC Bus 1 and AC Bus 2", "AC ESS & DC ESS buses", "AC Bus 1 and DC Bus 1", "AC ESS and TR 1"],
-        correct: 1
-    },
-    {
-        question: "If both pilots simultaneously deflect their side sticks fully back ...",
-        answers: ["No inputs are sent to the flight control computers unless one pilot presses the take over pb on his stick", "The pitch up order is algebraically computed. The total is limited to the signal that would result in the max deflection of a single sidestick", "The pitch up order is 1.5 times higher than with only one stick deflected", "The pitch up order is twice as high as with only one stick deflected"],
-        correct: 1
-    },
-    {
-        question: "Which of the following correctly completes this statement? \"Provided not on batteries only, the APU may be started ...",
-        answers: ["... at or below 35,000 feet only.", "... at or below 25,000 feet only.", "... at or below 300 kts only", "... throughout the normal flight envelope."],
-        correct: 3
-    },
-    {
-        question: "Following a Wing Anti-Ice (WAI) test on the ground, what happens if the WAI switch is left ON?",
-        answers: ["The Anti-Ice Valves will close after 10 seconds (on the S.D., the triangles go amber).", "WAI will automatically activate on selection of TOGA power.", "If WAI is subsequently required in flight, it is necessary to select the Anti-Ice Switch OFF then ON again.", "After a 30 second test sequence, the wing anti-Ice valves close."],
-        correct: 3
-    },
-    {
-        question: "When is the engine fire extinguishing squib armed?",
-        answers: ["When both loops fail within 5 seconds of each other", "When the ENG FIRE pushbutton is pushed and released", "When the ENG FIRE pushbutton is illuminated", "when the agent DISCH light is illuminated"],
-        correct: 1
-    },
-    {
-        question: "Which of the following is true about the FADEC system?",
-        answers: ["It is continuously powered from the moment the aircraft receives AC power.", "It is a dual channel unit that has its own internal power source", "It is not available until the engine MODE SEL is set to IGN/START.", "It is self-powered above 5% N1."],
-        correct: 1
-    },
-    {
-        question: "What is the maximum demonstrated crosswind for landing (including gusts)?",
-        answers: ["29 knots", "33 knots", "35 knots", "38 knots"],
-        correct: 3
-    },
-    {
-        question: "The FIRE light on the pedestal illuminates, what does this indicate?",
-        answers: ["The FIRE Light, when illuminated, identifies the engine to be shut down because of fire.", "The FIRE Light, when illuminated, indicates a faulty loop and maintenance action is required.", "The FIRE Light, when illuminated, indicates empty fire bottles.", "The FIRE Light, when illuminated, indicates to the crew they forgot the fire test prior to departure."],
-        correct: 0
-    },
-    {
-        question: "What is the certified maximum number of passenger seats for an A320?",
-        answers: ["189", "180", "144", "215"],
-        correct: 1
-    },
-    {
-        question: "What happens to the cabin lights in the event of excessive cabin altitude?",
-        answers: ["The NO SMOKING, FASTEN SEAT BELT, RETURN TO SEAT and EXIT signs come on automatically only if the switches are in the AUTO position", "The NO SMOKING, FASTEN SEAT BELT, RETURN TO SEAT and EXIT signs come on automatically only if the EMER EXIT switch is ARMED", "The NO SMOKING, FASTEN SEAT BELT, RETURN TO SEAT and EXIT signs come on automatically only if the landing gear is down", "The NO SMOKING, FASTEN SEAT BELT, RETURN TO SEAT and EXIT signs come on automatically regardless of the position of the switches"],
-        correct: 3
-    },
-    {
-        question: "What are the thrust settings you can take off with?",
-        answers: ["Any manual setting", "FLEX or MCT", "CLIMB or TOGA", "FLEX or TOGA"],
-        correct: 3
-    },
-    {
-        question: "Following an overheat and shut down of a hydraulic pump, how long will the FAULT light on the overhead panel remain illuminated?",
-        answers: ["It will extinguish when the fluid has cooled to normal temperature.", "It will remain illuminated until maintenance action has been taken.", "It will extinguish when the switch is placed to OFF.", "It is inhibited with engines running."],
-        correct: 0
-    },
-    {
         question: "What information is given at the top right of the Nav Display in the ARC mode?",
         answers: ["Raw Data from a tuned VOR.", "Computed data concerning the TO Waypoint.", "Range marks for the inner circle.", "Track and Groundspeed."],
         correct: 1
@@ -1777,10 +1692,3 @@ const questions = [
     correct: 1
 }
 ];
-
-
-
-
-
-
-
