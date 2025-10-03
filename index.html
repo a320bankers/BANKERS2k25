@@ -23,12 +23,36 @@
     </script>
 </head>
 <body>
-    <div id="start-container">
-        <h1>Select Number of Questions</h1>
-        <input type="range" id="question-count" name="question-count" min="1" max="231" value="10" oninput="this.nextElementSibling.value = this.value">
-        <output>10</output>
-        <button id="start-btn" class="btn">Start Quiz</button>
-    </div>
+<div id="start-container" class="setup-card">
+  <h1>Select Number of Questions</h1>
+
+  <div class="range-wrap">
+    <input
+      type="range"
+      id="question-count"
+      name="question-count"
+      min="1"
+      max="231"
+      step="5"
+      value="10"
+      list="ticks"
+    >
+    <output id="count-bubble" for="question-count">10</output>
+    <datalist id="ticks">
+      <option value="1"></option>
+      <option value="25"></option>
+      <option value="50"></option>
+      <option value="100"></option>
+      <option value="150"></option>
+      <option value="200"></option>
+      <option value="231"></option>
+    </datalist>
+  </div>
+
+  <button id="start-btn" class="btn btn-start">Start Quiz</button>
+  <p class="hint">Drag the slider or tap a tick • steps of 5</p>
+</div>
+
     <div id="quiz-container" class="hide">
         <div id="question-container"></div>
         <div id="answer-buttons" class="btn-container"></div>
@@ -52,4 +76,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
