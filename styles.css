@@ -211,12 +211,13 @@ h1, h3 {
 
 /* value bubble */
 #count-bubble{
-  position:absolute; top:-48px; translate:-50% 0;
+  position:absolute; top:-48px;
+  transform: translate(-50%, 0);  /* center bubble over the x we set in JS */
   background:#111827; color:#fff; padding:6px 10px; border-radius:8px;
   border:1px solid rgba(17,24,39,.4); font-weight:700; letter-spacing:.5px;
-  box-shadow: 0 6px 14px rgba(0,0,0,.25);
-  z-index: 2;                              /* ensure it sits above the thumb */
+  box-shadow:0 6px 14px rgba(0,0,0,.25); z-index:2;
 }
+
 #count-bubble::after{
   content:""; position:absolute; left:50%; translate:-50% 0; top:100%;
   border:8px solid transparent; border-top-color:#111827;
@@ -239,5 +240,6 @@ datalist option:hover{ opacity:1; }
 .btn-start:active{ transform: translateY(0); }
 
 .hint{ color:#6b7280; margin-top:10px; font-size:14px; }
+
 
 
