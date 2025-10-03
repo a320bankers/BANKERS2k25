@@ -241,24 +241,31 @@ function shuffleArray(array) {
 
 console.log('Script loaded successfully');
 
-// Fancy slider value bubble (keeps your existing IDs)
+// Fancy slider value bubble + snap to step + button label
 (function(){
   const range  = document.getElementById('question-count');
   const bubble = document.getElementById('count-bubble');
+  const start  = document.getElementById('start-btn');
   if (!range || !bubble) return;
 
   function setBubble(){
-    const val = +range.value;
-    const min = +range.min || 0;
-    const max = +range.max || 100;
+    const min  = +range.min || 0;
+    const max  = +range.max || 100;
+    const step = +range.step || 1;
+
+    // snap to the nearest step (fixes values like 11 when step=5)
+    let val = Math.round(+range.value / step) * step;
+    val = Math.max(min, Math.min(max, val));
+    range.value = val;
+
     const pct = (val - min) / (max - min);
-    // center the bubble over the thumb (simple nudge)
     bubble.textContent = val;
-    bubble.style.left = `calc(${pct*100}% - 16px)`;
+    bubble.style.left = `calc(${pct * 100}% - 16px)`;
+
+    if (start) start.textContent = `Start ${val}-Question Quiz`;
   }
 
   range.addEventListener('input', setBubble);
   window.addEventListener('load', setBubble);
   setBubble();
 })();
-
