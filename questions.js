@@ -75,39 +75,39 @@ const questions = [
         correct: 2
     },
     {
-        question: "Where is the correct place to find RWY COND EFB entry in flight for landing?",
-        answers: ["OM-A", "QRH", "EFB MORE app", "OM-B"],
-        correct: 1
-    },
-    {
-        question: "Under which conditions must engine anti-ice be used?",
-        answers: ["With rain falling", "OAT 0°C or below and visible moisture", "OAT 5°C or below and visible moisture", "OAT 10°C or below and visible moisture"],
-        correct: 3
-    },
-    {
-        question: "What is considered to be a 'forward' CG at takeoff?",
-        answers: ["less than 27%", "less than or equal to 27%", "less than 30%", "less than or equal to 30%"],
-        correct: 0
-    },
-    {
-        question: "What is considered to be a 'standard' CG at takeoff?",
-        answers: ["More than 27%", "More than or equal to 27%", "More than 30%", "More than or equal to 30%"],
-        correct: 1
-    },
-    {
-        question: "Which of these statements is NOT true regarding a CONF 1 +F takeoff instead of other configurations?",
-        answers: ["Takeoff run is longer", "It produces the best climb gradient", "Climb gradient is reduced"],
+        question: "What is the function of the landing gear SAFETY VALVE?",
+        answers: ["The safety valves prevents the landing gear from being hydraulically supplied on the ground. The valve opens pressurising the landing gear as soon as the aircraft leaves the ground.", "When the aircraft is flying faster than 260kts the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kts, the safety valve automatically cuts off hydraulic cupply to the landing gear system"],
         correct: 2
     },
     {
-        question: "OPT CONF selection for takeoff ensures what?",
-        answers: ["Always produces CONF 3 takeoff", "The best MTOW is calculated", "That the highest V1 is always used"],
+        question: "Regarding ALPHA FLOOR, which of the following statements is true?",
+        answers: ["It is available at all times in flight", "It is only available if the aircraft is in the clean configuration", "It will engage even if the A/THR is switched off", "After activation, A.FLOOR will disengage as soon as the thrust levers are moved by the flight crew"],
+        correct: 3
+    },
+    {
+        question: "Can wing anti-ice be used when on engine is inoperative?",
+        answers: ["Yes, APU bleed air van be used for wing anti-ice", "Yes, provided the x-bleed is selected open, one pack is selected off and the fire push button has not been pushed", "No, it is not possible for one engine bleed to supply air to both wings for anti-icing", "Yes, the crossbleed will automatically open after the wing anti-ice has been selected ON"],
         correct: 1
     },
     {
-        question: "When is a rolling takeoff not permitted due to performance?",
-        answers: ["A TOGA takeoff", "A TOGA takeoff with a RWY or OBS limit code", "When RWY or OBS is the performance limit code", "Flex falls below TREF"],
+        question: "What is the function of the hydraulic priority valves?",
+        answers: ["They prioritise hydraulic power to the heavy load users", "If the heavy load users cause a large drop in system pressure, the priority valve will close cutting off supply to the loads", "They will close when the flight crew push the ENG 1(2) FIRE pushbutton", "They prioritise the engine driven pumps over the PTU"],
+        correct: 2
+    },
+    {
+        question: "During an automatic start sequence on the ground, when does the ignition start and stop?",
+        answers: ["Ignition starts at 22% N2, and stops when N2 is more than 56%", "Ignition starts as soon as the engine MASTER is set ON, and stops when N2 is more than 50%", "Ignition starts at an N2 of 16%, and stops when N2 is more than 50%", "Ignition starts when the MODE selector is set to IGN/START, and stop when N2 is greater than 43%"],
+        correct: 3
+    },
+    {
+        question: "What is the take-off and go around EGT limit for the CFM engine?",
+        answers: ["915°C", "625°C", "725°C", "950°C"],
         correct: 1
+    },
+    {
+        question: "What happens when the landing gear is selected down on approach",
+    answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
+    correct: 2
     },
     {
         question: "If departing from an intersection with a longer TORA than planned, what is required?",
@@ -2414,7 +2414,8 @@ const questions = [
 {
     question: "When is pack flow automatically increased to HIGH, regardless of the position of the PACK FLOW control knob?",
     answers: ["When using APU bleed or during single pack operation", "Only when using APU bleed", "The pack flow never exceeds the selection on the AIR COND panel", "When temperature demand cannot be satisfied"],
-    correct: 0
+    correct: 4
 }
 ];
+
 
