@@ -2370,53 +2370,9 @@ const questions = [
     question: "During gravity gear extension, in which direction should the GRAVITY GEAR EXTENSION handle be rotated, and what happens during each turn?",
     answers: ["Clockwise, 2 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors and allows the gear to drop into the extended position", "Clockwise, 3 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors, the third releases the uplocks and allows the gear to drop into the extended position", "Anti-clockwise, one complete rotation will isolate the landing gear from the hydraulic system, and simultaneously release the up-locks. The gear will push the doors open as it extends", "Anti-clockwise, 3 turns. The first turn isolates the gear from the yellow hydraulic system, the second unlocks the doors, the third releases the up-locks and allows the gear to drop into the extended position"],
     correct: 1
-},
-{
-    question: "How many igniters are used during an automatic engine start?",
-    answers: ["Both igniters are used for all engines starts, unless a circuit breaker for an individual igniter has been pulled", "Igniter A is used by default for all start attempts on the ground, if A fails then B is automatically selected In flight both igniters are used", "Only one igniter (A or B) is used for all automatic start attempts", "One igniter (A or B) is used on the first automatic start attempt on the ground. In flight both igniters are used for all start attempts"],
-    correct: 3
-},
-{
-    question: "In which areas of the engine are the fire detection loops located?",
-    answers: ["In the engine core and in the engine fan section", "In the fan and turbine sections", "In the engine core and the N2 gearbox", "In the pylon nacelle, in the engine core, and in the engine fan section"],
-    correct: 3
-},
-{
-    question: "What is the significance of a NW STRG DISC memo?",
-    answers: ["The memo appears when the nose wheel steering selector is in the towing position. It is always GREEN", "The memo appears when the nose wheel steering selector is in the towing position. It will be GREEN when the engines are not running, and AMBER when at least one engine is running", "It indicates that the BSCU has been switched off", "The PF has pushed the rudder PEDALS DISC push button on the hand wheel, to disconnect the rudder pedals from the nose wheel during the flight control check"],
-    correct: 1
-},
-{
-    question: "If a SEC fails, what happens to the spoiler(s) it controls?",
-    answers: ["The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical deployment of the spoilers", "The effected spoiler retains the deflection it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmetrical spoiler deployment", "The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited"],
-    correct: 3
-},
-{
-    question: "Which of the following statements about the use of APU bleed air is correct?",
-    answers: ["The use of APU bleed air for wing anti-ice is permitted, provided one pack is turned off", "The use of APU bleed air for dual pack operation in flight is prohibited", "APU bleed air is available for air conditioning throughout the flight envelope", "The use of APU bleed air for wing anti-ice is not permitted"],
-    correct: 3
-},
-{
-    question: "Select the correct statement about an engine relight in flight:",
-    answers: ["APU bleed can be used to assist with an engine start throughout the entire flight envelope", "During an automatic start in flight, the FADEC may not need to engage the starter motor if the engine is wind milling at a sufficient N2", "In flight the FADEC always commands a starter-assisted air start", "Automatic start is unavailable in flight"],
-    correct: 1
-},
-{
-    question: "What happens if you take off without V2 being entered on the PERF page?",
-    answers: ["You cannot take off. V2 entry is mandatory", "You will not be able to climb after VR", "If V2 is not inserted, the Indicated Air Speed will not engage for go-around", "If V2 is not inserted, the speed reference system SRS will not engage for takeoff"],
-    correct: 3
-},
-{
-    question: "What is the meaning of a AMBER light in a flight deck pushbutton?",
-    answers: ["Normal system operation", "A failure that the flight crew should be aware of, but does not call for immediate action", "An abnormal pushbutton position", "A failure requiring immediate action"],
-    correct: 1
-},
-{
-    question: "When is pack flow automatically increased to HIGH, regardless of the position of the PACK FLOW control knob?",
-    answers: ["When using APU bleed or during single pack operation", "Only when using APU bleed", "The pack flow never exceeds the selection on the AIR COND panel", "When temperature demand cannot be satisfied"],
-    correct: 4
 }
 ];
+
 
 
 
