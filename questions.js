@@ -201,28 +201,28 @@ const questions = [
     },
     {
         question: "IF a SEC fails, what happens to the spoiler(s) it controls?",
-        answers: ["3", "2", "1", "4"],
+        answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflectionm it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical depolyment of the spoilers"],
         correct: 0
     },
     {
-        question: "What is Vpilot?",
-        answers: ["Added margin for manual landing", "Pilot added adjustment to APPR COR", "Properties"],
+        question: "All communications radios can be controlled",
+        answers: ["By the F/O", "From RMP 1 and RMP 2 only", "From anyone of the three radio management panels (RMPs)", "From the audio control panels (ACPs)"],
         correct: 1
     },
     {
-        question: "At landing, what is included in EFB calculations but NOT in QRH calculations?",
-        answers: ["A 1.67 factor on landing distance", "A 1.15 factor on landing distance", "A 1.3 factor on landing distance"],
+        question: "On the ECAM E/WD, when does the LDG INHIBIT (magenta) memo appear?",
+        answers: ["Below 2000ft radio altitude", "With selection of FLAP 2 on the approach", "With selection of GEAR DOWN", "Below 800ft radio altitude"],
         correct: 1
     },
 
     {
-        question: "What is the standard operating procedure for the EOSID stop altitude?",
-        answers: ["MSA", "MHA", "No procedure specified", "SID stop altitude"],
+        question: "What will trigger the CAB PR LDG ELEV FAULT (amber) alert?",
+        answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The active CPC is no longer receiving the landing fiel elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing"],
         correct: 2
     },
     {
-        question: "What is an indicator that 'stop margin' figures have additional factors added?",
-        answers: ["A high flex figure", "TOGA takeoff", "If all V speeds are the same"],
+        question: "What is the significance of the green coloured circuit breakers?",
+        answers: ["Green collared circuit breakers are AC powered", "Green collared circuit breakers are pulled when flying on battery power only", "Green collared circuit breakers are not to be reset", "Green collared circuit breakers are monitoreed by the ECAM"],
         correct: 0
     },
     {
@@ -2417,6 +2417,7 @@ const questions = [
     correct: 4
 }
 ];
+
 
 
 
