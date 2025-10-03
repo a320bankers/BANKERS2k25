@@ -12,7 +12,7 @@ const submitCommentButton = document.getElementById('submit-comment');
 const questionsLeftElement = document.getElementById('questions-left');
 const timerElement = document.getElementById('timer');
 const questionCountSlider = document.getElementById('question-count');
-const questionCountValue = document.querySelector('output');
+const questionCountValue = document.getElementById('count-bubble');
 const resultContainer = document.getElementById('result-container');
 const resultMessage = document.getElementById('result-message');
 const scorePercentage = document.getElementById('score-percentage');
@@ -47,6 +47,7 @@ function setSliderMax() {
 function startGame() {
     console.log('Start button clicked');
     startButton.classList.add('hide');
+    document.getElementById('start-container').classList.add('hide');
     selectedQuestionCount = parseInt(questionCountSlider.value);
     shuffledQuestions = shuffleArray(questions).slice(0, selectedQuestionCount);
     currentQuestionIndex = 0;
@@ -87,7 +88,7 @@ function showQuestion(question) {
 }
 
 function resetState() {
-    nextButton.classList.remove('hide');
+    nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
@@ -260,3 +261,4 @@ console.log('Script loaded successfully');
   window.addEventListener('load', setBubble);
   setBubble();
 })();
+
