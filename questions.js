@@ -1,78 +1,78 @@
 const questions = [
     {
-        question: "If engine anti-ice is planned to be used during takeoff, until reaching which altitude should it be considered to be ON?",
-        answers: ["MSA", "ACC", "EOACC", "THRRED"],
+        question: "Where is the flat/slat position displayed",
+        answers: ["On both PFDs", "On the E/WD", "On the flap/slat indicator", "On the SD"],
         correct: 2
     },
     {
-        question: "A 'contaminated runway' describes a surface where a certain percentage of the runway is covered by what depth of contaminant?",
-        answers: ["More than 1 mm", "More than 3 mm", "More than 7 mm", "More than 5 mm"],
-        correct: 1
-    },
-    {
-        question: "After a landing performance calculation. Flysmart generates amber figures in the computations area. What does this mean?",
-        answers: ["Single engine performance is not available", "Autoland not available", "Factored landing distance exceeds available landing distance", "Calculated stop point within 300 m of runway end"],
+        question: "The cross feed valve (X FEED) is:",
+        answers: ["Open for takeoff", "Opened automatically when the MODE SEL pushbutton is set to AUTO, and the fuel imbalance reaches 1500kg", "Controlled by a single motor", "Normally closed"],
         correct: 2
     },
     {
-        question: "Which of the following is NOT an SOP while taking off on a contaminated runway?",
-        answers: ["TOGA thrust to be used", "CM1 to be PF", "Normal takeoff technique to be used", "CONF 1 +F must be used for takeoff"],
+        question: "Below what altitude does the vacuum generator produce the necessary pressure differential to force waste from the toilet bowls into the waste storage tank?",
+        answers: ["20,000 ft", "16.000 ft", "18,000 ft", "14,000 ft"],
+        correct: 4
+    },
+    {
+        question: "How is the engine and IDG oil cooled?",
+        answers: ["Via radiator located in the engine pylon, that are cooled by a mixture of ram air or fan air depending on the conditions", "Via FUEL/OIL heat exchangers. All of the fuel supplied to the engine is burnt in the combustion chamber, there is no need to return any excess fuel to the tanks", "Via FUEL/OIL heater exchangers. Excess fuel that has been used for this purpose and not used by the engine, is returned to the outer fuel tanks", "Via radiator that are cooled using only air from the fan"],
         correct: 3
     },
     {
-        question: "On an EFB PERF page, where can the ISA value be located (to calculate TREF for example)?",
-        answers: ["Must be calculated manually", "Next to OAT", "Next to computed flex temperature", "MORE <F10>"],
-        correct: 1
+        question: "What is output power of each of the AC Generators?",
+        answers: ["IDG 90KVA, APU 90KVA, emergency generator 23KVA, Static Inverter 5KVA", "IDG 115KVA, APU 115KVA, emergency generator 15KVA, Static Inverter 1KVA", "IDG 90KVA, APU 90KVA, emergency generator 5KVA, Static Inverter 1KVA", "IDG 100KVA, APU 100KVA, emergency generator 5KVA, Static Inverter 1KVA"],
+        correct: 4
     },
     {
-        question: "What is the screen height for a wet runway?",
-        answers: ["10 ft", "30 ft", "15 ft", "25 ft"],
-        correct: 2
-    },
-    {
-        question: "What is the screen height for a dry runway?",
-        answers: ["10 ft", "30 ft", "15 ft", "35 ft"],
+        question: "How is an armed slide indicated on the DOOR/OXY page?",
+        answers: ["The word SLIDE appears in GREEN next to the associated door", "No label is seen next to the associated door (If the door was disarmed SLIDE DISARMED would be displayed in AMBER", "The word SLIDE appears in WHITE next to associated door", "The message SLIDES ARMED appears in WHITE under the DOOR/OXY title"],
         correct: 3
     },
     {
-        question: "In the event of an LMC of 200 kg, what is the appropriate response?",
-        answers: ["Subtract one degree from flex", "No correction available. Recalculate speeds and flex.", "Initial calculations cover this change. No action required.", "Perform a rolling takeoff"],
-        correct: 0
-    },
-    {
-        question: "In the event of a last-minute decision to use engine anti-ice, what correction must be applied?",
-        answers: ["No correction available. Recalculate speeds and flex.", "Subtract five degrees from flex", "Initial calculations cover this change. No action required.", "Increase thrust reduction altitude by 500 ft"],
-        correct: 1
-    },
-    {
-        question: "In the event of a QNH reduction by 1 hPa on taxi-out, what correction must be applied?",
-        answers: ["Increase thrust reduction altitude by 500 ft", "Initial calculations cover this change. No action required.", "Subtract one degree from flex", "No correction available. Recalculate speeds and flex."],
-        correct: 2
-    },
-    {
-        question: "In the event of a QNH reduction by 2 hPa on taxi-out, what correction must be applied?",
-        answers: ["No correction available. Recalculate speeds and flex.", "Initial calculations cover this change. No action required.", "Subtract one degree from flex", "Subtract two degrees from flex"],
+        question: "After engine start, which MCDU page should be used to modify ZFW and ZFWCG?",
+        answers: ["Progress Page (PAGE)", "INIT B", "Fuel Prediction Page (FUEL PRED)", "T/O Performance page (PERF)"],
         correct: 3
+    },
+    {
+        question: "Which ACP transmission key will illuminate if the cabin attendants are calling the cockpit?",
+        answers: ["VHF3", "PA", "CAB", "ALERT"],
+        correct: 3
+    },
+    {
+        question: "What is the meaning of an AMBER light in a flight deck pushbutton?",
+        answers: ["Normal system operation", "A failure requiring immediate action", "A failure that the flihgt crew should be aware of, but does not call for immediate action", "An abnormal pushbutton position"],
+        correct: 3
+    },
+    {
+        question: "Cost Index = 0 (zero) corresponds to:",
+        answers: ["LRC (Long Range Cruise)", "Minimum time", "Best ratio between the flight time cost and the fuel cost", "Minimum fuel consumption (max range)"],
+        correct: 4
+    },
+    {
+        question: "Which of the following AC busses can be powered by the emergency generator?",
+        answers: ["BAT BUS", "AC ESS and AC ESS SHED busses", "AC BUS 2", "AC BUS 1"],
+        correct: 2
     },
  {
-        question: "In the event of a QNH reduction by 2 hPa on taxi-out what correction must be applied?",
-        answers: ["No correction available. Recalculate speeds and flex.", "Initial calculations cover this change. No action required.", "Subtract one degree from flex", "Subtract two degrees from flex"],
-        correct: 2
-    },
-    {
-        question: "In the event of a QNH reduction by 3 hPa on taxi-out, what correction must be applied?",
-        answers: ["Subtract two degrees from flex", "Initial calculations cover this change. No action required.", "No correction available. Recalculate speeds and flex.", "Subtract one degree from flex"],
-        correct: 0
-    },
-    {
-        question: "In the event of a last minute decision to use engine bleed to supply packs, what correction must be applied?",
-        answers: ["Subtract two degrees from flex", "No correction available. Recalculate speeds and flex.", "Initial calculations cover this change. No action required.", "Subtract one degree from flex"],
-        correct: 1
-    },
-    {
-        question: "Where is the correct place to find RWY COND EFB entry for takeoff?",
-        answers: ["QRH", "OM-B", "OM-A", "EFB MORE app"],
+        question: "What impact does a single hydraulic failure have on the slats and flaps?",
+        answers: ["The corresponding surfaces will lock", "The slats and flaps operate normally", "The corresponding surfaces operate at half speed", "The corresponding surfaces will operate at 2/3 of normal speed"],
         correct: 3
+    },
+    {
+        question: "How can the secondary flight plan be activated in flight?",
+        answers: ["When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page on the MCDU. This prompt will not be avaulable in NAV unless the active leg in the primary and secondary are the same", "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times.", "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan", "The secondary flight plan can only be activated while the NAV mode is engaged. When this condition is met, the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU"],
+        correct: 4
+    },
+    {
+        question: "What happens to the wing and engine anti-ice valves when electrical power fails?",
+        answers: ["Wing anti-ice valves close, engine anti-ice valves close", "Wing anti-ice valves open, engine anti-ice valves close", "Wing anti-ice valves close, engine anti-ice valves open", "Wing anti-ice valves open, engine anti-ice valves open"],
+        correct: 3
+    },
+    {
+        question: "WHat can the flight crew do if the Captain loses audio in their headset (audio channel failure)?",
+        answers: ["The AUDIO SWITCHING selector should be set to CAPT/3, this connects the Captain's headset to ACP3 on the overhead panel", "The Captain should plug their headset into the third occupants headset jack, and then use ACP 3 on the overhead panel", "Change the batteries in the headset", "Audio cannot be recovered on the Captain's side, the FO will make all radio calls for the remainder of the flight"],
+        correct: 2
     },
     {
         question: "Where is the correct place to find RWY COND EFB entry in flight for landing?",
@@ -147,12 +147,12 @@ const questions = [
     {
         question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 'Wet' runway?",
         answers: ["6-Dry", "4-Good to Medium", "5-Good", "3-Medium"],
-        correct: 2
+        correct: 5
     },
     {
         question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 5 mm of water on the runway?",
         answers: ["6-Dry", "2-Medium to Poor", "5-Good", "3-Medium"],
-        correct: 1
+        correct: 2
     },
     {
         question: "On the EFB, how can the GA gradient be modified to ensure compliance?",
@@ -2417,3 +2417,4 @@ const questions = [
     correct: 0
 }
 ];
+
