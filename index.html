@@ -1,110 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A320 Quiz MXP, not for the weak</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    <script>
-        // Your Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyByiPxHqzo_mtULQrKiLzvzRUJ5m3bhPXM",
-            authDomain: "bankv2-71e7d.firebaseapp.com",
-            databaseURL: "https://bankv2-71e7d-default-rtdb.firebaseio.com",
-            projectId: "bankv2-71e7d",
-            storageBucket: "bankv2-71e7d.appspot.com",
-            messagingSenderId: "724662638213",
-            appId: "1:724662638213:web:6b5ff904f0258c9edf3bec"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A320 Quiz MXP</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Firebase v8 (DB for comments) -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js" defer></script>
+  <script defer>
+    // Initialize Firebase (use your own config)
+    window.addEventListener('DOMContentLoaded', function(){
+      var firebaseConfig = {
+        apiKey: "AIzaSyByiPxHqzo_mtULQrKiLzvzRUJ5m3bhPXM",
+        authDomain: "bankv2-71e7d.firebaseapp.com",
+        databaseURL: "https://bankv2-71e7d-default-rtdb.firebaseio.com",
+        projectId: "bankv2-71e7d",
+        storageBucket: "bankv2-71e7d.appspot.com",
+        messagingSenderId: "724662638213",
+        appId: "1:724662638213:web:6b5ff904f0258c9edf3bec"
+      };
+      if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    });
+  </script>
 </head>
 <body>
-<header class="hero" style="--hero-img: url('assets/images/download.jpg')">
-  <div class="hero-dim"></div>
-  <div class="hero-content">
-    <h1>AirBus</h1>
-    <p>You've got this :D</p>
-  </div>
-</header>
 
-<div id="start-container" class="setup-card">
-  <h1>Select Number of Questions</h1>
-<section class="image-gallery">
-  <h2>A320 Gallery</h2>
-  <div class="grid">
-    <!-- Top image is the aircraft exterior -->
-    <figure class="card">
-      <img src="assets/images/download.jpg" alt="Airbus A320 exterior" loading="lazy">
-      <figcaption>A320 Exterior</figcaption>
-    </figure>
+  <!-- Setup / Start -->
+  <div id="start-container" class="setup-card">
+    <h1>Select Number of Questions</h1>
 
-    <!-- Bottom image is the cockpit -->
-    <figure class="card">
-      <img src="assets/images/images.jpg" alt="Airbus A320 cockpit" loading="lazy">
-      <figcaption>A320 Cockpit</figcaption>
-    </figure>
-  </div>
-</section>
-
-  <div class="range-wrap">
-    <input
-      type="range"
-      id="question-count"
-      name="question-count"
-      min="1"
-      max="231"
-      step="1"
-      value="10"
-      list="ticks"
-    >
-    <output id="count-bubble" for="question-count">10</output>
-    <datalist id="ticks">
-      <option value="1"></option>
-      <option value="25"></option>
-      <option value="50"></option>
-      <option value="100"></option>
-      <option value="150"></option>
-      <option value="200"></option>
-      <option value="231"></option>
-    </datalist>
-  </div>
-
-  <button id="start-btn" class="btn btn-start">Start Quiz</button>
-  <p class="hint">Drag the slider or tap a tick • choose any number</p>
-</div>
-
-    <div id="quiz-container" class="hide">
-        <div id="question-container"></div>
-        <div id="answer-buttons" class="btn-container"></div>
-        <button id="next-btn" class="btn next-btn">Next</button>
-        <div id="timer">Time: 0:00</div>
-        <div id="remaining-questions">Questions Remaining: <span id="questions-left"></span></div>
-        <div id="comments-section">
-            <h3>Comment section (go crazy)</h3>
-            <div id="comments"></div>
-            <input type="text" id="name" placeholder="Your name">
-            <input type="text" id="comment" placeholder="Your comment">
-            <button id="submit-comment" class="btn">Submit</button>
-        </div>
+    <div class="range-wrap">
+      <input
+        type="range"
+        id="question-count"
+        name="question-count"
+        min="1"
+        max="231"
+        step="1"
+        value="10"
+        list="ticks"
+      />
+      <output id="count-bubble" for="question-count">10</output>
+      <datalist id="ticks">
+        <option value="1"></option>
+        <option value="25"></option>
+        <option value="50"></option>
+        <option value="100"></option>
+        <option value="150"></option>
+        <option value="200"></option>
+        <option value="231"></option>
+      </datalist>
     </div>
-    <div id="result-container" class="hide">
-        <h2 id="result-message"></h2>
-        <p id="score-percentage"></p>
-        <button id="repeat-btn" class="btn hide">Repeat the questions you got wrong, you've got this :D</button>
+
+    <button id="start-btn" class="btn btn-start">Start 10-Question Quiz</button>
+    <p class="hint">Drag the slider or tap a tick</p>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz-container" class="hide">
+    <div id="question-container"></div>
+    <div id="answer-buttons" class="btn-container"></div>
+    <button id="next-btn" class="btn next-btn hide">Next</button>
+
+    <div id="timer">Time: 0:00</div>
+    <div id="remaining-questions">Questions Remaining: <span id="questions-left">0</span></div>
+
+    <div id="comments-section" class="hide">
+      <h3>Comments</h3>
+      <div id="comments"></div>
+      <input type="text" id="name" placeholder="Your name" />
+      <input type="text" id="comment" placeholder="Your comment" />
+      <button id="submit-comment" class="btn">Submit</button>
     </div>
-    <script defer src="questions.js?v=6"></script>
-    <script defer src="script.js?v=6"></script>
+  </div>
+
+  <!-- Results -->
+  <div id="result-container" class="hide">
+    <h2 id="result-message"></h2>
+    <p id="score-percentage"></p>
+    <button id="repeat-btn" class="btn hide">Repeat the questions you got wrong</button>
+  </div>
+
+  <!-- Load questions BEFORE script.js (cache-busted) -->
+  <script defer src="questions.js?v=9"></script>
+  <script defer src="script.js?v=9"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
