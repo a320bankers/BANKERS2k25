@@ -839,7 +839,7 @@ const questions = [
     correct: 4
 },
 {
-    question: "On wich display(s) can the ground speed and TAS be viewed?",
+    question: "On which display(s) can the ground speed and TAS be viewed?",
     answers: ["In the top right hand corner of the ND in only the ARC or NAV modes", "On the PDF or in the top left hand corner of the ND", "In the top left corner of the ND in only NAV and ARC modes", "In the top left corner of the ND in all modes"],
     correct: 4
 },
@@ -902,6 +902,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
