@@ -22,9 +22,7 @@ let startTime, timerInterval;
 let selectedQuestionCount;
 let currentQuestionText;
 
-if (!Array.isArray(window.questions) || !questions.length) {
-  alert('Questions failed to load. Check questions.js syntax and that it loads before script.js.');
-}
+
 // Normalize "correct" answers from 1–4 to 0–3 (only if they look 1-based)
 function normalizeCorrectIndexes() {
   if (!Array.isArray(window.questions)) return;
@@ -293,6 +291,7 @@ console.log('Script loaded successfully');
   window.addEventListener('load', positionBubble);
   positionBubble();
 })();
+
 
 
 
