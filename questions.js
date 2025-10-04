@@ -7,12 +7,12 @@ const questions = [
     {
         question: "The cross feed valve (X FEED) is:",
         answers: ["Open for takeoff", "Opened automatically when the MODE SEL pushbutton is set to AUTO, and the fuel imbalance reaches 1500kg", "Controlled by a single motor", "Normally closed"],
-        correct: 2
+        correct: 4
     },
     {
         question: "Below what altitude does the vacuum generator produce the necessary pressure differential to force waste from the toilet bowls into the waste storage tank?",
         answers: ["20,000 ft", "16.000 ft", "18,000 ft", "14,000 ft"],
-        correct: 4
+        correct: 2
     },
     {
         question: "How is the engine and IDG oil cooled?",
@@ -22,7 +22,7 @@ const questions = [
     {
         question: "What is output power of each of the AC Generators?",
         answers: ["IDG 90KVA, APU 90KVA, emergency generator 23KVA, Static Inverter 5KVA", "IDG 115KVA, APU 115KVA, emergency generator 15KVA, Static Inverter 1KVA", "IDG 90KVA, APU 90KVA, emergency generator 5KVA, Static Inverter 1KVA", "IDG 100KVA, APU 100KVA, emergency generator 5KVA, Static Inverter 1KVA"],
-        correct: 4
+        correct: 3
     },
     {
         question: "How is an armed slide indicated on the DOOR/OXY page?",
@@ -72,12 +72,12 @@ const questions = [
     {
         question: "WHat can the flight crew do if the Captain loses audio in their headset (audio channel failure)?",
         answers: ["The AUDIO SWITCHING selector should be set to CAPT/3, this connects the Captain's headset to ACP3 on the overhead panel", "The Captain should plug their headset into the third occupants headset jack, and then use ACP 3 on the overhead panel", "Change the batteries in the headset", "Audio cannot be recovered on the Captain's side, the FO will make all radio calls for the remainder of the flight"],
-        correct: 2
+        correct: 1
     },
     {
         question: "What is the function of the landing gear SAFETY VALVE?",
         answers: ["The safety valves prevents the landing gear from being hydraulically supplied on the ground. The valve opens pressurising the landing gear as soon as the aircraft leaves the ground.", "When the aircraft is flying faster than 260kts the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kts, the safety valve automatically cuts off hydraulic cupply to the landing gear system"],
-        correct: 2
+        correct: 1
     },
     {
         question: "Regarding ALPHA FLOOR, which of the following statements is true?",
@@ -87,7 +87,7 @@ const questions = [
     {
         question: "Can wing anti-ice be used when on engine is inoperative?",
         answers: ["Yes, APU bleed air van be used for wing anti-ice", "Yes, provided the x-bleed is selected open, one pack is selected off and the fire push button has not been pushed", "No, it is not possible for one engine bleed to supply air to both wings for anti-icing", "Yes, the crossbleed will automatically open after the wing anti-ice has been selected ON"],
-        correct: 1
+        correct: 2
     },
     {
         question: "What is the function of the hydraulic priority valves?",
@@ -102,22 +102,22 @@ const questions = [
     {
         question: "What is the take-off and go around EGT limit for the CFM engine?",
         answers: ["915°C", "625°C", "725°C", "950°C"],
-        correct: 1
+        correct: 4
     },
     {
         question: "What happens when the landing gear is selected down on approach",
     answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
-    correct: 2
+    correct: 3
     },
     {
         question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independant failure? (PTU is operative, and hydraulic pressures are normal)",
         answers: ["Both primary and secondary", "Independant", "Secondary", "Primary"],
-        correct: 2
+        correct: 4
     },
     {
         question: "When all 6 fuel pumps are selected ON (MODE SEL auto), which fuel tank(s) will preferentially feed each engine? (assume that all tanks contain useable fuel)",
         answers: ["ENG 1 will receieve fuel from the left inner tank, and ENG 2 will receive fuel from the right inner tank. When each inner tank is empty, fuel will feed to each engine from the centre tank.", "ENG 1 will receive fuel from the left outer tank, and ENG 2 will receive fuel from the right outer tank. When each other tank reaches approximately 750kg, the transfer valves open allowing fuel to be fed from the inner tanks", "Shortly after departure both engine will receive fuel preferentially from the centre tank provided the slats are retracted, and approximately 500kg of fuel has been used in each inner tank", "If the landing gear is retracted, both engines receive fuel continuously from the centre tank until it runs dry. CTR TK FEED (green) memo will be displayed on the E/WD."],
-        correct: 1
+        correct: 3
     },
     {
         question: "During final approach, when is LAND annunciated on the FMA?",
@@ -127,22 +127,22 @@ const questions = [
     {
         question: "If power to the cockpit door fails:",
         answers: ["Power from the emergency bus is automatically routed to the door locks to keep them in place", "The door does not unlock automatically and remains closed", "The door unlocks automatically, but remains closed", "The evacuation panel in the door is released"],
-        correct: 0
+        correct: 3
     },
     {
         question: "If a C/B trips what action should the flight crew take?",
         answers: ["On the ground, any C/B can be re-engaged without consulting maintenance so long as it doesn't have a red colour. In flight, a C/B can be re-engaged no more than two times", "The C/B can be re-engaged as many times as necessary if required for the safe conduct of the flight", "Consult the C/B tripped procedure in the QRH for guidance. On the ground a C/B can be reengaged on the direction of maintenance. In flight a C/B should not be reengaged under any circumstances", "Consult the C/B tripped procedure in the QRH for guidance. On the ground the first step is to contact maintenance to identify the cause. In flight the C/B should not be reengaged unless the captain deems it necessary for the safe continuation of the flight (only one reengagement is permitted"],
-        correct: 3
+        correct: 4
     },
     {
         question: "How do you adjust the brightness of the FCU displays?",
         answers: ["On the MCDU", "Using the INTEG LT rotary switch", "Using the FLOOD LT rotary switch", "Using the rotary knobs located beneath the FCU"],
-        correct: 0
+        correct: 4
     },
     {
         question: "Can you reconnect an IDG in flight?",
         answers: ["Yes, but only after contacting maintenance control", "Yes, push and hold IDG pb until the GEN fault light is no longer illuminated", "No, it is not possible", "Yes, provided the engine is running or windmilling"],
-        correct: 1
+        correct: 3
     },
     {
         question: "What is the started limitation for the APU?",
@@ -152,17 +152,17 @@ const questions = [
     {
         question: "On the RMP, the ON/OFF switch controls:",
         answers: ["Only the COM function of the RMP", "Only the STBY NAV function of the RMP", "The power supply to the RMP", "The power supply to both the RMP and ACP"],
-        correct: 2
+        correct: 3
     },
     {
         question: "Which busses can be powered from the emergency generator?",
         answers: ["AC ESS and DC ESS via ESS TR only", "DC ESS, and AC ESS via the AC ESS FEED only", "BAT BUS, AC ESS, AC ESS SHED, DC ESS, DC ESS SHED", "DC ESS, DC ESS SHED, AC ESS and AC ESS SHED"],
-        correct: 0
+        correct: 4
     },
     {
         question: "When do the transfer valves close automatically?",
         answers: ["At the next refuelling operation", "Following a fuel low level warning", "When inner tanks reach approx 705kg", "When outer tanks are emptied"],
-        correct: 1
+        correct: 4
     },
     {
         question: "What is the max continuous thrust EGT limit for the CFM engine?",
@@ -172,12 +172,12 @@ const questions = [
     {
         question: "How can you check that engine anti-ice has been selected on?",
         answers: ["The ON (WHITE) lights on the ENG anti-ice push buttons are the only indications", "ENG A.ICE will be displaued on the status page", "ON (BLUE) light on one or more ENG anti-ice push buttons, ENG A.ICE memo displayed in GREEN on the E/WD", "ON (WHITE) light on one or more ENG anti-ice push buttons, ENG A.ICE memo displayed in AMBER on the E/WD"],
-        correct: 1
+        correct: 3
     },
     {
         question: "Regarding an autoland approach, with both autopilots engaged, which FMGC is master?",
         answers: ["Neither", "Both", "FMGC 2", "FMGC 1"],
-        correct: 2
+        correct: 4
     },
     {
         question: "Which of the following communication methods are used for datalink messages?",
@@ -187,12 +187,12 @@ const questions = [
     {
         question: "In which configuration will green dot be displayed on the PFD?",
         answers: ["CONF 1+F", "All the answers are correct", "Clean configuration", "CONF 1"],
-        correct: 2
+        correct: 3
     },
     {
         question: "What happens if the EXPED button is pushed when the FCU selected altitude is above the current altitude?",
         answers: ["THR CLB (if A/THR active) and EXP CLB engage. The speed becomes managed with a target of green dot, altitude constraints are disregarded", "THR CLB (if A/THR active and EXP CLB engage. The speed becomes managed with a target of best rate of climb, altitude constraints are obeyed", "THR CLB (if A/THR active and OP CLB engage. The speed becomes managed with a target of green dot, altitude constraints are disregarded", "THR CLB (if A/THR active and CLB engage. The speed becomes managed with a target of green fot, altitude constraints are obeyed"],
-        correct: 0
+        correct: 1
     },
     {
         question: "What do two dashes across the last two digits of fuel quantity indication mean?",
@@ -202,53 +202,53 @@ const questions = [
     {
         question: "IF a SEC fails, what happens to the spoiler(s) it controls?",
         answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflectionm it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical depolyment of the spoilers"],
-        correct: 0
+        correct: 1
     },
     {
         question: "All communications radios can be controlled",
         answers: ["By the F/O", "From RMP 1 and RMP 2 only", "From anyone of the three radio management panels (RMPs)", "From the audio control panels (ACPs)"],
-        correct: 1
+        correct: 3
     },
     {
         question: "On the ECAM E/WD, when does the LDG INHIBIT (magenta) memo appear?",
         answers: ["Below 2000ft radio altitude", "With selection of FLAP 2 on the approach", "With selection of GEAR DOWN", "Below 800ft radio altitude"],
-        correct: 1
+        correct: 4
     },
 
     {
         question: "What will trigger the CAB PR LDG ELEV FAULT (amber) alert?",
         answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The active CPC is no longer receiving the landing fiel elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing"],
-        correct: 2
+        correct: 3
     },
     {
         question: "What is the significance of the green coloured circuit breakers?",
         answers: ["Green collared circuit breakers are AC powered", "Green collared circuit breakers are pulled when flying on battery power only", "Green collared circuit breakers are not to be reset", "Green collared circuit breakers are monitoreed by the ECAM"],
-        correct: 0
+        correct: 4
     },
     {
         question: "Which valves can the flight crew control via the ENG1 (ENG2) MASTER switches?",
         answers: ["LP and HP fuel shutoff valves", "LP fuel shutoff valve only", "Hydraulic fire shutoff, LP and HP fuel shut-off valves", "HP fuel shutoff valve only"],
-        correct: 0
+        correct: 4
     },
     {
         question: "During a single engine taxi, engine 1 is running and engine 2 is off. What happens when the ENG MODE selector is moved from NORM to IGN/START?",
         answers: ["The ENG SD page appears, the engine 2 FADEC is powered (amber crosses disappear for engine parameters), and the pack valves close. Continuous ignition for engine 1 has been manually selected", "Continuous ignition, using both igniters (A+B), will be selected for both engines", "The engine 2 FADEC is powered ready for engine start only.", "There will be no impact to engine 2 because its FADEC is already powered by the aircraft electrical system, and the SD page will already be displayed. Continuous ignition, using one igniter (A or B), will be selected for engine 1."],
-        correct: 2
+        correct: 1
     },
     {
         question: "Select the correct starter limitation for the CFM engine:",
         answers: ["A 15 minute cooling period is required following 4 failed start cycles", "A 60 minute cooling period is required following 3 consecutive start attempts", "A 10 second pause is required between each start cycle", "A 20 minute cooling period is required following 3 failed start cycles"],
-        correct: 0
+        correct: 1
     },
     {
         question: "Select the correct statement about the AGENT pushbuttons on the FIRE panel:",
         answers: ["When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in amber on the corresponding agent pushbutton(s)", "After an ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s), this helps identify the agents to be activated", "When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in white on the corresponding agent pushbutton(s)", "After a ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s). After the bottle has been discharged the SQUIB light is replaced by an amber DISCH light"],
-        correct: 0
+        correct: 3
     },
     {
         question: "Which hydraulic system is used for landing gear retraction and extension?",
         answers: ["Green or yellow", "Blue", "Green", "Yellow"],
-        correct: 2
+        correct: 3
     },
     {
         question: "How can armed FMA modes be identified on the PFD?",
@@ -256,7 +256,7 @@ const questions = [
         correct: 2
     },
     {
-        question: "After a takeof in CONFIG 1 +F, what would happen if FLAP 0 is not selected as the aircraft accelerates?",
+        question: "After a takeoff in CONFIG 1 +F, what would happen if FLAP 0 is not selected as the aircraft accelerates?",
         answers: ["At 230 kt the slats and flaps will automatically retract changing the config from 1+F to 0. This prevents slat/flap overspeed", "At 210 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "At 200 kt the flaps will automatically retract changing the config from 1+F to 1. This raises the VFE from 215 to 230 kt", "The flaps will be overstressed as the VFE of 215kt is exceeded"],
         correct: 2
     },
@@ -1692,3 +1692,4 @@ const questions = [
     correct: 1
 }
 ];
+
