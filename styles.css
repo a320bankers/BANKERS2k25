@@ -229,6 +229,7 @@ h1, h3 {
   border:1px solid rgba(17,24,39,.4); font-weight:700; letter-spacing:.5px;
   box-shadow:0 6px 14px rgba(0,0,0,.25); z-index:2;
 }
+#count-bubble { pointer-events: none; }
 
 #count-bubble::after{
   content:""; position:absolute; left:50%; translate:-50% 0; top:100%;
@@ -285,5 +286,6 @@ datalist option:hover{ opacity:1; }
 .hint{ color: var(--muted); }     /* the tiny helper text under the button */
 #comments{ color:#111; }          /* keep comments readable inside white card */
 h1, h3{ color:#fff; }             /* headings pop on dark bg */
+
 
 
