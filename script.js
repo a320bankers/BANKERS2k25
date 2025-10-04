@@ -22,6 +22,9 @@ let startTime, timerInterval;
 let selectedQuestionCount;
 let currentQuestionText;
 
+if (!Array.isArray(window.questions) || !questions.length) {
+  alert('Questions failed to load. Check questions.js syntax and that it loads before script.js.');
+}
 document.addEventListener("DOMContentLoaded", function() {
     startButton.addEventListener('click', startGame);
     nextButton.addEventListener('click', () => {
@@ -273,5 +276,6 @@ console.log('Script loaded successfully');
   window.addEventListener('load', positionBubble);
   positionBubble();
 })();
+
 
 
