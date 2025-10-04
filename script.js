@@ -1,122 +1,147 @@
-// Elements
+// --- Element refs ---
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const repeatButton = document.getElementById('repeat-btn');
 
-const quizEl = document.getElementById('quiz-container');
-const questionEl = document.getElementById('question-container');
-const answersEl = document.getElementById('answer-buttons');
+const startContainer = document.getElementById('start-container');
+const quizContainer  = document.getElementById('quiz-container');
+const questionElement = document.getElementById('question-container');
+const answerButtonsElement = document.getElementById('answer-buttons');
 
 const commentsSection = document.getElementById('comments-section');
-const commentsEl = document.getElementById('comments');
-const nameInput = document.getElementById('name');
-const commentInput = document.getElementById('comment');
+const commentsElement = document.getElementById('comments');
+const commentNameElement = document.getElementById('name');
+const commentTextElement = document.getElementById('comment');
 const submitCommentButton = document.getElementById('submit-comment');
 
-const questionsLeftEl = document.getElementById('questions-left');
-const timerEl = document.getElementById('timer');
+const questionsLeftElement = document.getElementById('questions-left');
+const timerElement = document.getElementById('timer');
 
-const range = document.getElementById('question-count');
-const bubble = document.getElementById('count-bubble');
+const questionCountSlider = document.getElementById('question-count');
+const questionCountValue  = document.getElementById('count-bubble');
 
-const resultEl = document.getElementById('result-container');
+const resultContainer = document.getElementById('result-container');
 const resultMessage = document.getElementById('result-message');
 const scorePercentage = document.getElementById('score-percentage');
 
+// --- State ---
 let shuffledQuestions = [];
 let currentQuestionIndex = 0;
 let wrongQuestions = [];
 let correctAnswers = 0;
 let startTime = 0;
 let timerInterval = null;
+let selectedQuestionCount = 0;
 let currentQuestionText = "";
 
-// -------- Helpers --------
-function getQuestionsArray() {
-  // Safely access questions whether defined as `const questions = [...]`
-  // or `window.questions = [...]`
-  if (typeof questions !== 'undefined' && Array.isArray(questions)) return questions;
-  if (Array.isArray(window.questions)) return window.questions;
-  return [];
-}
-
-function getCorrectIndex(q) {
-  if (!q || !Array.isArray(q.answers)) return -1;
-  const n = q.answers.length;
-  const asNum = Number(q.correct);
-
-  // Case 1: 0-based already and valid
-  if (Number.isInteger(asNum) && asNum >= 0 && asNum < n) return asNum;
-  // Case 2: 1-based and valid
-  if (Number.isInteger(asNum) && asNum - 1 >= 0 && asNum - 1 < n) return asNum - 1;
-  // Case 3: correct stored as exact string (rare)
-  if (typeof q.correct === 'string') {
-    const idx = q.answers.findIndex(a => a === q.correct);
-    if (idx !== -1) return idx;
-  }
-  // Fallback
-  return 0;
-}
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
+// --- Utils ---
+function fisherYatesShuffle(arr) {
+  // Unbiased shuffle
+  for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  return array;
+  return arr;
 }
 
+function shuffleArray(arr) {
+  // wrapper in case other code calls this name
+  return fisherYatesShuffle(arr);
+}
+
+// Normalize "correct" to be 0-based (only if it looks 1-based)
+function normalizeCorrectIndexes() {
+  if (!Array.isArray(window.questions)) return;
+  window.questions.forEach((q) => {
+    if (!q || !Array.isArray(q.answers)) return;
+    if (Number.isInteger(q.correct)) {
+      // If "correct" is 1..answers.length, convert to 0-based
+      if (q.correct >= 1 && q.correct <= q.answers.length) q.correct -= 1;
+      // Clamp for safety
+      q.correct = Math.max(0, Math.min(q.answers.length - 1, q.correct));
+    } else {
+      // Fallback if missing -> assume first is correct
+      q.correct = 0;
+    }
+  });
+}
+
+// --- App init ---
+document.addEventListener('DOMContentLoaded', () => {
+  // Don’t block with alerts on mobile; just warn if missing
+  if (!Array.isArray(window.questions) || !window.questions.length) {
+    console.error('questions.js did not load or contains no questions.');
+  } else {
+    normalizeCorrectIndexes();
+  }
+
+  // Slider bubble live update
+  if (questionCountSlider && questionCountValue) {
+    const THUMB = 28; // must match CSS thumb size
+    const positionBubble = () => {
+      const min = +questionCountSlider.min || 0;
+      const max = +questionCountSlider.max || 100;
+      const val = +questionCountSlider.value || min;
+      const pct = (val - min) / (max - min || 1);
+      const width = questionCountSlider.offsetWidth;
+      const x = pct * (width - THUMB) + THUMB / 2;
+      questionCountValue.textContent = val;
+      questionCountValue.style.left = `${x}px`;
+    };
+
+    questionCountSlider.addEventListener('input', positionBubble, { passive: true });
+    window.addEventListener('resize', positionBubble);
+    window.addEventListener('load', positionBubble);
+    // initialize max/value
+    setSliderMax();
+    positionBubble();
+  }
+
+  // Buttons
+  startButton?.addEventListener('click', startGame);
+  nextButton?.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+  });
+  repeatButton?.addEventListener('click', repeatWrongQuestions);
+  submitCommentButton?.addEventListener('click', submitComment);
+
+  console.log('Event listeners added');
+});
+
+// --- Slider max binds to available questions ---
 function setSliderMax() {
-  const qArr = getQuestionsArray();
-  const fallbackMax = parseInt(range.getAttribute('max'), 10) || 231;
-  const maxQuestions = qArr.length > 0 ? qArr.length : fallbackMax;
-
-  range.max = maxQuestions;
-
-  const min = parseInt(range.min, 10) || 1;
-  const cur = parseInt(range.value, 10) || min;
-  range.value = Math.max(min, Math.min(cur, maxQuestions));
-
-  bubble.textContent = range.value;
-  positionBubble();
+  const maxQuestions = Array.isArray(window.questions) ? window.questions.length : 1;
+  questionCountSlider.max = String(maxQuestions);
+  const val = parseInt(questionCountSlider.value, 10) || 1;
+  questionCountSlider.value = Math.min(Math.max(1, val), maxQuestions);
+  questionCountValue.textContent = questionCountSlider.value;
 }
 
-function positionBubble() {
-  // Pixel-accurate bubble centering above thumb
-  const THUMB = 28; // keep in sync with CSS
-  const min = +range.min || 0;
-  const max = +range.max || 100;
-  const val = +range.value;
-
-  const pct   = (val - min) / Math.max(1, (max - min));
-  const width = range.offsetWidth;
-  const x     = pct * (width - THUMB) + THUMB / 2;
-
-  bubble.textContent = val;
-  bubble.style.left = `${x}px`;
-
-  if (startButton) startButton.textContent = `Start ${val}-Question Quiz`;
-}
-
-// -------- Quiz flow --------
+// --- Game flow ---
 function startGame() {
-  document.getElementById('start-container').classList.add('hide');
+  if (!Array.isArray(window.questions) || !window.questions.length) {
+    console.error('Cannot start: no questions.');
+    return;
+  }
 
-  const qArr = getQuestionsArray();
-  const selectedCount = parseInt(range.value, 10) || 10;
+  startButton.classList.add('hide');
+  startContainer?.classList.add('hide');
 
-  shuffledQuestions = shuffleArray(qArr).slice(0, selectedCount);
+  selectedQuestionCount = parseInt(questionCountSlider.value, 10) || 1;
+
+  // Shuffle the whole pool, then take the slice
+  shuffledQuestions = shuffleArray([...window.questions]).slice(0, selectedQuestionCount);
+
   currentQuestionIndex = 0;
   wrongQuestions = [];
   correctAnswers = 0;
 
-  quizEl.classList.remove('hide');
+  quizContainer.classList.remove('hide');
   commentsSection.classList.remove('hide');
 
   startTime = Date.now();
-  clearInterval(timerInterval);
   timerInterval = setInterval(updateTimer, 1000);
-
   setNextQuestion();
 }
 
@@ -124,7 +149,7 @@ function setNextQuestion() {
   resetState();
   if (currentQuestionIndex < shuffledQuestions.length) {
     const q = shuffledQuestions[currentQuestionIndex];
-    currentQuestionText = q.question;
+    currentQuestionText = q?.question || '';
     showQuestion(q);
     loadComments(currentQuestionText);
     updateQuestionsLeft();
@@ -133,46 +158,55 @@ function setNextQuestion() {
   }
 }
 
+// Renders the question with RANDOMIZED answer order,
+// but keeps the correct mapping by comparing original index.
 function showQuestion(q) {
-  // stem
+  if (!q || !Array.isArray(q.answers) || typeof q.correct !== 'number') {
+    console.error('Invalid question object:', q);
+    return;
+  }
+
   questionElement.textContent = q.question;
 
-  // build an array of answer indexes [0,1,2,3,...], then shuffle the indexes
+  // build shuffled index array [0..n-1]
   const idxs = q.answers.map((_, i) => i);
-  shuffleArray(idxs); // uses the function below
+  shuffleArray(idxs);
 
-  // clear old UI
-  answerButtonsElement.innerHTML = '';
-  nextButton.classList.add('hide');
-
-  // render in shuffled order, but tag correct via the ORIGINAL index
+  // render buttons in shuffled index order
   idxs.forEach((idx) => {
     const btn = document.createElement('button');
     btn.className = 'btn';
     btn.textContent = q.answers[idx];
-    if (idx === Number(q.correct)) btn.dataset.correct = 'true'; // q.correct is 0-based after normalize
+    if (idx === q.correct) btn.dataset.correct = 'true';
     btn.addEventListener('click', selectAnswer);
     answerButtonsElement.appendChild(btn);
   });
 }
 
-
 function resetState() {
   nextButton.classList.add('hide');
-  while (answersEl.firstChild) answersEl.removeChild(answersEl.firstChild);
+  answerButtonsElement.innerHTML = '';
 }
 
 function selectAnswer(e) {
   const selectedButton = e.target;
-  const isCorrect = !!selectedButton.dataset.correct;
+  const correct = !!selectedButton.dataset.correct;
 
-  setStatusClass(selectedButton, isCorrect);
-  Array.from(answersEl.children).forEach(b => {
-    setStatusClass(b, !!b.dataset.correct);
+  // Visual feedback
+  Array.from(answerButtonsElement.children).forEach((btn) => {
+    if (btn.dataset.correct) {
+      btn.classList.add('correct');
+    } else {
+      btn.classList.add('wrong');
+    }
+    btn.disabled = true;
   });
 
-  if (isCorrect) correctAnswers++;
-  else wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
+  if (correct) {
+    correctAnswers++;
+  } else {
+    wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
+  }
 
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide');
@@ -181,88 +215,85 @@ function selectAnswer(e) {
   }
 }
 
-function setStatusClass(el, correct) {
-  el.classList.remove('correct', 'wrong');
-  el.classList.add(correct ? 'correct' : 'wrong');
-}
-
 function updateQuestionsLeft() {
-  questionsLeftEl.innerText = `${shuffledQuestions.length - currentQuestionIndex - 1}`;
+  questionsLeftElement.textContent = `${shuffledQuestions.length - currentQuestionIndex - 1}`;
 }
 
 function updateTimer() {
   const elapsed = Date.now() - startTime;
   const m = Math.floor(elapsed / 60000);
   const s = Math.floor((elapsed % 60000) / 1000);
-  timerEl.innerText = `Time: ${m}:${s.toString().padStart(2,'0')}`;
+  timerElement.textContent = `Time: ${m}:${String(s).padStart(2, '0')}`;
 }
 
 function showResult() {
   clearInterval(timerInterval);
-  quizEl.classList.add('hide');
+  quizContainer.classList.add('hide');
   commentsSection.classList.add('hide');
-  resultEl.classList.remove('hide');
+  resultContainer.classList.remove('hide');
 
   const score = (correctAnswers / shuffledQuestions.length) * 100;
-  scorePercentage.innerText = `Your score: ${score.toFixed(2)}%`;
+  scorePercentage.textContent = `Your score: ${score.toFixed(2)}%`;
 
   if (score < 75) {
-    resultMessage.innerText = "You failed and need to try harder.";
+    resultMessage.textContent = 'You failed and need to try harder.';
   } else if (score <= 90) {
-    resultMessage.innerText = "Well done, you did alright.";
+    resultMessage.textContent = 'Well done, you did alright.';
   } else {
-    resultMessage.innerText = "Exceptional result, you MAMO GOD!";
+    resultMessage.textContent = 'Exceptional result, you MAMO GOD!';
   }
+
   if (score < 100) repeatButton.classList.remove('hide');
 }
 
 function repeatWrongQuestions() {
-  shuffledQuestions = shuffleArray(wrongQuestions);
+  shuffledQuestions = shuffleArray([...wrongQuestions]);
   currentQuestionIndex = 0;
   wrongQuestions = [];
   correctAnswers = 0;
 
   repeatButton.classList.add('hide');
-  resultEl.classList.add('hide');
-  quizEl.classList.remove('hide');
+  resultContainer.classList.add('hide');
+  quizContainer.classList.remove('hide');
   commentsSection.classList.remove('hide');
 
   startTime = Date.now();
-  clearInterval(timerInterval);
   timerInterval = setInterval(updateTimer, 1000);
-
   setNextQuestion();
 }
 
-// -------- Comments (Firebase Realtime DB) --------
+// --- Comments (Firebase Realtime DB) ---
 function submitComment() {
-  const name = nameInput.value.trim();
-  const text = commentInput.value.trim();
+  const name = commentNameElement.value.trim();
+  const text = commentTextElement.value.trim();
   if (!name || !text) return;
 
   const comment = {
-    name, text, timestamp: Date.now(), thumbsUp: 0, thumbsDown: 0
+    name,
+    text,
+    timestamp: Date.now(),
+    thumbsUp: 0,
+    thumbsDown: 0
   };
-  const qid = btoa(currentQuestionText);
-
+  const questionId = btoa(currentQuestionText || ''); // base64 key
   try {
-    firebase.database().ref(`comments/${qid}`).push(comment);
-    nameInput.value = '';
-    commentInput.value = '';
+    firebase.database().ref(`comments/${questionId}`).push(comment);
+    commentNameElement.value = '';
+    commentTextElement.value = '';
   } catch (e) {
-    console.warn('Firebase push failed:', e);
+    console.error('Firebase push failed:', e);
   }
 }
 
 function loadComments(questionText) {
-  const qid = btoa(questionText);
+  const questionId = btoa(questionText || '');
   try {
-    firebase.database().ref(`comments/${qid}`).off(); // prevent duplicate listeners
-    firebase.database().ref(`comments/${qid}`).on('value', (snapshot) => {
-      commentsEl.innerHTML = '';
+    firebase.database().ref(`comments/${questionId}`).off(); // clear old listeners
+    firebase.database().ref(`comments/${questionId}`).on('value', (snapshot) => {
+      commentsElement.innerHTML = '';
       snapshot.forEach((child) => {
         const c = child.val();
-        if (!c || !c.name || !c.text) return;
+        if (!c?.name || !c?.text) return;
         const div = document.createElement('div');
         div.classList.add('comment');
         div.innerHTML = `
@@ -270,56 +301,34 @@ function loadComments(questionText) {
           <button class="thumbs-up-btn" data-id="${child.key}">👍 ${c.thumbsUp || 0}</button>
           <button class="thumbs-down-btn" data-id="${child.key}">👎 ${c.thumbsDown || 0}</button>
         `;
-        commentsEl.appendChild(div);
+        commentsElement.appendChild(div);
       });
-      commentsEl.querySelectorAll('.thumbs-up-btn').forEach(btn => {
-        btn.addEventListener('click', () => updateThumbs(qid, btn.dataset.id, 'thumbsUp'));
+
+      document.querySelectorAll('.thumbs-up-btn').forEach((btn) => {
+        btn.addEventListener('click', () => updateThumbs(questionId, btn.dataset.id, 'thumbsUp'));
       });
-      commentsEl.querySelectorAll('.thumbs-down-btn').forEach(btn => {
-        btn.addEventListener('click', () => updateThumbs(qid, btn.dataset.id, 'thumbsDown'));
+      document.querySelectorAll('.thumbs-down-btn').forEach((btn) => {
+        btn.addEventListener('click', () => updateThumbs(questionId, btn.dataset.id, 'thumbsDown'));
       });
     });
   } catch (e) {
-    console.warn('Firebase read failed:', e);
+    console.error('Firebase read failed:', e);
   }
 }
 
-function updateThumbs(qid, cid, type) {
-  try {
-    const ref = firebase.database().ref(`comments/${qid}`).child(cid);
-    const voted = JSON.parse(localStorage.getItem('votedComments')) || {};
-    if (voted[cid]) { alert('You have already voted on this comment.'); return; }
-    ref.once('value', snap => {
-      const c = snap.val(); if (!c) return;
-      c[type] = (c[type] || 0) + 1;
-      ref.update(c);
-      voted[cid] = true;
-      localStorage.setItem('votedComments', JSON.stringify(voted));
-    });
-  } catch (e) {
-    console.warn('Firebase thumbs failed:', e);
+function updateThumbs(questionId, commentId, type) {
+  const commentRef = firebase.database().ref(`comments/${questionId}`).child(commentId);
+  const voted = JSON.parse(localStorage.getItem('votedComments')) || {};
+  if (voted[commentId]) {
+    alert('You have already voted on this comment.');
+    return;
   }
+  commentRef.once('value', (snap) => {
+    const c = snap.val();
+    if (!c) return;
+    c[type] = (c[type] || 0) + 1;
+    commentRef.update(c);
+    voted[commentId] = true;
+    localStorage.setItem('votedComments', JSON.stringify(voted));
+  });
 }
-
-// -------- Events --------
-document.addEventListener('DOMContentLoaded', function () {
-  // Buttons
-  startButton.addEventListener('click', startGame);
-  nextButton.addEventListener('click', () => { currentQuestionIndex++; setNextQuestion(); });
-  repeatButton.addEventListener('click', repeatWrongQuestions);
-  submitCommentButton.addEventListener('click', submitComment);
-
-  // Slider bubble + limits
-  range.addEventListener('input', positionBubble);
-  window.addEventListener('resize', positionBubble);
-
-  setSliderMax();
-  positionBubble();
-});
-
-// Ensure max updates once everything is loaded (esp. on mobile caches)
-window.addEventListener('load', setSliderMax);
-
-console.log('Script loaded successfully');
-
-
