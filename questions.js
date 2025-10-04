@@ -987,5 +987,8 @@ const questions = [
     question: "During gravity gear extension, in which direction should the GRAVITY GEAR EXTENSION handle be rotated, and what happens during each turn?",
     answers: ["Clockwise, 2 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors and allows the gear to drop into the extended position", "Clockwise, 3 turns. The first turn isolates the gear from the green hydraulic system, the second unlocks the doors, the third releases the uplocks and allows the gear to drop into the extended position", "Anti-clockwise, one complete rotation will isolate the landing gear from the hydraulic system, and simultaneously release the up-locks. The gear will push the doors open as it extends", "Anti-clockwise, 3 turns. The first turn isolates the gear from the yellow hydraulic system, the second unlocks the doors, the third releases the up-locks and allows the gear to drop into the extended position"],
     correct: 2
-};
+},
+
+];
+
 
