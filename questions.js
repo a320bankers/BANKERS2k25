@@ -589,19 +589,9 @@ const questions = [
     correct: 4
 },
 {
-    question: "What is the function of the landing gear SAFETY VALVE?",
-    answers: ["The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "When the aircraft is flying faster than 260 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valves prevents the landing gear from being hydraulically supplied on the ground The valve opens pressurising the landing gear as soon as the aircraft leaves the ground"],
-    correct: 3
-},
-{
     question: "Typically when will direct law be active?",
     answers: ["Significant system failures (i.e., EEC) will typically reconfigure the flight law directly from normal to direct law, regardless of configuration", "Direct law is the flare mode for alternate law. Alternate reconfigures to direct law when the landing gear is extended", "Direct law is the flare mode for normal law. Normal law blends into direct law at 50 ft radio altitude", "Direct law is only available on the ground, and transitions into normal law during the first 5 sec after liftoff"],
     correct: 2
-},
-{
-    question: "Regarding an autoland approach, with both autopilots engaged, which FMGC is master?",
-    answers: ["Both", "FMGC 2", "Neither", "FMGC 1"],
-    correct: 4
 },
 {
     question: "When opened in an emergency, the passenger entry doors:",
@@ -612,16 +602,6 @@ const questions = [
     question: "ALPHA-FLOOR is available from:",
     answers: ["Liftoff until touchdown", "Liftoff until the aircraft reaches 100 ft RA on approach", "Slat retraction until 100ft RA in approach", "Slat retraction until landing gear extension"],
     correct: 2
-},
-{
-    question: "How can armed FMA modes be identified on the PFD?",
-    answers: ["Armed FMA modes are displayed in blue (selected) or green (managed)", "Armed FMA modes are displayed in magenta (selected) or blue (managed)", "Armed FMA modes are displayed in blue (selected) or magenta (managed)", "Armed FMA modes are displayed in blue (selected) or white (managed)"],
-    correct: 3
-},
-{
-    question: "Which valves can the flight crew control via the ENG1 (ENG2) MASTER switches?",
-    answers: ["LP fuel shutoff valve only", "Hydraulic fire shutoff, LP and HP fuel shut-off valves", "HP fuel shutoff valve only", "LP and HP fuel shutoff valves"],
-    correct: 4
 },
 {
     question: "What is cost index (CI)?",
@@ -642,11 +622,6 @@ const questions = [
     question: "The FAULT (amber) light is illuminated in the ENG 1 pump pushbutton, when will this light extinguish?",
     answers: ["When the pushbutton is selected OFF for all cases excluding reservoir low air pressure", "The FAULT light will remain illuminated as long as the fault condition remains (low pressure, low level, etc.), regardless of the pushbutton position", "When the pushbutton is selected OFF for all cases", "When the pushbutton is selected OFF for all cases excluding reservoir overheat. The FAULT light will remain on as long as the overheat lasts"],
     correct: 4
-},
-{
-    question: "How is a temporary flight plan indicated on the ND?",
-    answers: ["A solid amber line", "A dashed yellow line", "A solid blue line", "A dotted magenta line"],
-    correct: 2
 },
 {
     question: "Where do the wing anti-ice indications appear on the ECAM screens?",
@@ -679,16 +654,6 @@ const questions = [
     correct: 3
 },
 {
-    question: "How do you adjust the brightness of the FCU displays?",
-    answers: ["On the MCDU", "Using the rotary knobs located beneath the FCU", "Using the INTEG LT rotary switch", "Using the FLOOD LT rotary switch"],
-    correct: 2
-},
-{
-    question: "After engine start, which MCDU page should be used to modify ZFW and ZFWCG?",
-    answers: ["Fuel Predictions page (FUEL PRED)", "Progress page (PROG)", "INIT B", "T/O Performance page (PERF)"],
-    correct: 3
-},
-{
     question: "During cockpit preparation, what is the significance of an amber half box around the oxygen pressure indication on the DOOR/OXY page?",
     answers: ["The cockpit oxygen pressure has dropped below 800PSI, this is a no dispatch.", "The pressure in the oxygen bottle is less than 1500PSI. Refer to the limitations section of the FCOM to determine whether the remaining quantity is not below the minimum for the number of occupants in the flight deck.", "The pressure in the oxygen bottle is less than 1000PSI, call engineering to have the oxygen bottle replaced before departure.", "The oxygen pressure in the low pressure circuit is low (60PSI)"],
     correct: 2
@@ -707,11 +672,6 @@ const questions = [
     question: "How can the flight crew dry crank an engine?",
     answers: ["Dry cranking (engine ventilation) is always performed automatically by the FADEC when the residual EGT temperature is too high", "Set the MODE selector to CRANK, and the MASTER switch to ON.", "Set the MODE selector to CRANK, and the MAN START push button to ON", "Leave the MODE selector in IGN/START, confirm that the MASTER switch is OFF, and set the MAN START push button to ON"],
     correct: 3
-},
-{
-    question: "What is the max continuous thrust EGT limit for the CFM engine?",
-    answers: ["950°C", "725°C", "625°C", "915°C"],
-    correct: 4
 },
 {
     question: "Which flight control computers receive inputs from the sidestick?",
@@ -762,11 +722,6 @@ const questions = [
     question: "If the upper ECAM DU fails, or is switched off, how can a system or status page be displayed for review?",
     answers: ["Use the EIS DMC rotary selector to put the SD on the Captain’s PFD DU", "Pushing and holding the RCL push button on the ECAM control panel will cycle through each system page", "Pushing and holding the desired system page push button on the ECP will replace the E/WD with the selected system page. Upon releasing the button, the E/WD will return", "A momentary press on the associated system page push button on the ECP will toggle between the E/WD, and the selected system page on the lower ECAM DU"],
     correct: 3
-},
-{
-    question: "In which configuration will green dot be displayed on the PFD?",
-    answers: ["All answers are correct", "CONF 1+F", "CONF 1", "Clean configuration"],
-    correct: 4
 },
 {
     question: "Which computer generates amber cautions?",
@@ -829,24 +784,9 @@ const questions = [
     correct: 4
 },
 {
-    question: "After an ND failure, which of the following statements is correct?",
-    answers: ["The ND is lost on that side of the aircraft", "The ND can be manually transferred to the PFD", "The ND cannot be manually transferred to the PFD", "The ND will automatically transfer to the PFD"],
-    correct: 2
-},
-{
-    question: "The Air Conditioning System Controller 1 (ACSC 1):",
-    answers: ["Regulates both the cockpit, and the two cabin zones temperature", "Regulates cockpit, cabin and cargo compartment zone temperatures", "Is the primary controller", "Regulates the cockpit temperature"],
-    correct: 4
-},
-{
     question: "Which VHF antenna is located on the lower fuselage?",
     answers: ["VHF 3", "VHF 2", "None. All three are located on the upper fuselage", "VHF 1"],
     correct: 2
-},
-{
-    question: "In Normal Law, what are the limits of the Pitch Attitude protection with flaps Full?",
-    answers: ["35° nose up progressively reduced to 20°", "30° nose up", "25° nose up. It is progressively reduced to 20° at low speed.", "There is no limit"],
-    correct: 3
 },
 {
     question: "On the ground, which configuration would you expect the avionics ventilation system to select if the OAT is 3°C on an overcast day?",
@@ -879,11 +819,6 @@ const questions = [
     correct: 3
 },
 {
-    question: "When does the PTU operate?",
-    answers: ["At any time that there is more than a 500 PSI pressure difference between the green and yellow systems", "When there is more than a 750 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited when both engines master switches are set to off", "When there is more than a 500 PSI pressure difference between the green and yellow systems. The PTU is inhibited during the first engine start, and when the cargo doors are operated"],
-    correct: 4
-},
-{
     question: "On the EFB T.O PERF page, how can MEL items be added to assure performance requirements are met?",
     answers: ["On the last page of computations", "Must be manually calculated using FCOM", "By tapping on the flex temperature", "Dialog box in bottom left of T.O PERF page"],
     correct: 4
@@ -907,21 +842,6 @@ const questions = [
     question: "On wich display(s) can the ground speed and TAS be viewed?",
     answers: ["In the top right hand corner of the ND in only the ARC or NAV modes", "On the PDF or in the top left hand corner of the ND", "In the top left corner of the ND in only NAV and ARC modes", "In the top left corner of the ND in all modes"],
     correct: 4
-},
-{
-    question: "What is the function of the hydraulic priority valves?",
-    answers: ["They prioritise hydraulic power to the heavy load users", "They will close when the flight crew push the ENG 1(2) FIRE pushbutton", "They prioritise the engine driven pumps over the PTU", "If heavy load users cause a large drop in system pressure, the priority valve will close curring off supply to these loads"],
-    correct: 4
-},
-{
-    question: "Select the statement that best describes the parking brake",
-    answers: ["If the parking brake fails, the parking brake must be selected off before the normal braking system can be applie via the brake pedals", "The parking brake uses a dedicated control valve to apply yellow hydraulic or brake accumulator pressure directly to the wheel brakes. This bypasses the alternate braking servo valve", "The parking brake accumulator can maintain parking pressure for at least 24hrs", "The parking brake uses the alternate braking servo valve to apply yellow hydraulic or brake accumulator pressure to the wheel brakes"],
-    correct: 2
-},
-{
-    question: "After a cockpit oxygen mask has been used, how can the mask microphone be cut-off and boom microphone be re-activated",
-    answers: ["Push the TMR RESET button on the OXYGEN panel", "Close the left hand door of the mask stowage box, and push the RESET/TEST slide. The OXY ON flag will disappear", "Close both doors on the mask stowage box", "Move the MASK-BOOM switch on the ACP back to the BOOM position"],
-    correct: 2
 },
 {
     question: "What is the primary method of communication for datalink messages controlled via the ATSU?",
@@ -954,16 +874,6 @@ const questions = [
     correct: 3
 },
 {
-    question: "What will trigger the CAB PR LDG ELEV FAULT (amber) alert?",
-    answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel"],
-    correct: 4
-},
-{
-    question: "On the RMP, the ON/OFF switch controls:",
-    answers: ["Only the COM function of the RMP", "The power supply to the RMP", "The power supply to both the RMP and ACP", "Only the STBY NAV function of the RMP"],
-    correct: 2
-},
-{
     question: "How can the flight crew arm the LOC and GS modes in order to fly an ILS approach?",
     answers: ["Push the APP pushbutton on the FCCJ. Once LOC and G/S are armed ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels", "Push the APP pushbutton on the FCU. The ILS information (including LOC and G/S scales) will not be displayed on the PFD unless the LS push button is selected on the EFIS panels", "Push the LS button the EFIS panel located on the glareshield", "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels"],
     correct: 1
@@ -992,5 +902,6 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
