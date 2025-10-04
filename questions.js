@@ -834,11 +834,6 @@ const questions = [
     correct: 1
 },
 {
-    question: "What is the maximum tyre speed",
-    answers: ["188 kt", "210 kt", "200 kt", "195 kt"],
-    correct: 4
-},
-{
     question: "On which display(s) can the ground speed and TAS be viewed?",
     answers: ["In the top right hand corner of the ND in only the ARC or NAV modes", "On the PDF or in the top left hand corner of the ND", "In the top left corner of the ND in only NAV and ARC modes", "In the top left corner of the ND in all modes"],
     correct: 4
@@ -902,6 +897,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
