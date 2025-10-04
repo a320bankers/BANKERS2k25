@@ -1,8 +1,20 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+/* --- Theme palette --- */
+:root{
+  --bg1:#0b1220;      /* deep navy */
+  --bg2:#111827;      /* slate */
+  --text:#e5e7eb;     /* light text */
+  --muted:#9aa4b2;    /* secondary text */
+}
+
+/* Page base */
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #1f2937 0, transparent 60%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 60%, var(--bg1) 100%);
 }
 
 .container {
@@ -268,3 +280,10 @@ datalist option:hover{ opacity:1; }
 }
 .image-gallery img{ display:block; width:100%; height:180px; object-fit:cover; object-position:center; }
 .image-gallery figcaption{ padding:10px 12px; color:#6b7280; font-size:14px; }
+
+/* Contrast tweaks on dark background (override earlier colors) */
+.hint{ color: var(--muted); }     /* the tiny helper text under the button */
+#comments{ color:#111; }          /* keep comments readable inside white card */
+h1, h3{ color:#fff; }             /* headings pop on dark bg */
+
+
