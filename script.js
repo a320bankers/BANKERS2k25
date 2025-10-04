@@ -133,20 +133,32 @@ function setNextQuestion() {
 }
 
 function showQuestion(q) {
-  questionEl.innerText = q.question;
-  const correctIdx = getCorrectIndex(q);
-  const correctText = q.answers[correctIdx];
+  // show stem
+  questionElement.textContent = q.question;
 
-  const shuffledAnswers = shuffleArray([...q.answers]);
-  shuffledAnswers.forEach(ans => {
+  // build an array that knows which answer is correct BEFORE we shuffle
+  const zeroBasedCorrect =
+    Number.isInteger(q.correct) ? q.correct : 0; // after normalization it's 0-based
+  const answers = q.answers.map((text, idx) => ({
+    text,
+    correct: idx === zeroBasedCorrect
+  }));
+
+  // clear old buttons
+  answerButtonsElement.innerHTML = '';
+  nextButton.classList.add('hide');
+
+  // shuffle the answer objects (not just strings)
+  shuffleArray(answers).forEach(ans => {
     const btn = document.createElement('button');
-    btn.innerText = ans;
-    btn.classList.add('btn');
-    if (ans === correctText) btn.dataset.correct = 'true';
+    btn.className = 'btn';
+    btn.textContent = ans.text;
+    if (ans.correct) btn.dataset.correct = 'true'; // used by selectAnswer()
     btn.addEventListener('click', selectAnswer);
-    answersEl.appendChild(btn);
+    answerButtonsElement.appendChild(btn);
   });
 }
+
 
 function resetState() {
   nextButton.classList.add('hide');
@@ -312,3 +324,4 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', setSliderMax);
 
 console.log('Script loaded successfully');
+
