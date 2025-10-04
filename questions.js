@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "Where is the flat/slat position displayed",
+        question: "Where is the flap/slat position displayed",
         answers: ["On both PFDs", "On the E/WD", "On the flap/slat indicator", "On the SD"],
         correct: 2
     },
@@ -61,8 +61,8 @@ const questions = [
     },
     {
         question: "How can the secondary flight plan be activated in flight?",
-        answers: ["When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page on the MCDU. This prompt will not be avaulable in NAV unless the active leg in the primary and secondary are the same", "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times.", "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan", "The secondary flight plan can only be activated while the NAV mode is engaged. When this condition is met, the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU"],
-        correct: 4
+        answers: ["When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page on the MCDU. This prompt will not be available in NAV unless the active leg in the primary and secondary are the same", "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times.", "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan", "The secondary flight plan can only be activated while the NAV mode is engaged. When this condition is met, the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU"],
+        correct: 1
     },
     {
         question: "What happens to the wing and engine anti-ice valves when electrical power fails?",
@@ -70,14 +70,14 @@ const questions = [
         correct: 3
     },
     {
-        question: "WHat can the flight crew do if the Captain loses audio in their headset (audio channel failure)?",
+        question: "What can the flight crew do if the Captain loses audio in their headset (audio channel failure)?",
         answers: ["The AUDIO SWITCHING selector should be set to CAPT/3, this connects the Captain's headset to ACP3 on the overhead panel", "The Captain should plug their headset into the third occupants headset jack, and then use ACP 3 on the overhead panel", "Change the batteries in the headset", "Audio cannot be recovered on the Captain's side, the FO will make all radio calls for the remainder of the flight"],
         correct: 1
     },
     {
         question: "What is the function of the landing gear SAFETY VALVE?",
         answers: ["The safety valves prevents the landing gear from being hydraulically supplied on the ground. The valve opens pressurising the landing gear as soon as the aircraft leaves the ground.", "When the aircraft is flying faster than 260kts the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kts, the safety valve automatically cuts off hydraulic cupply to the landing gear system"],
-        correct: 1
+        correct: 2
     },
     {
         question: "Regarding ALPHA FLOOR, which of the following statements is true?",
@@ -107,12 +107,12 @@ const questions = [
     {
         question: "What happens when the landing gear is selected down on approach",
     answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
-    correct: 3
+    correct: 4
     },
     {
         question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independant failure? (PTU is operative, and hydraulic pressures are normal)",
         answers: ["Both primary and secondary", "Independant", "Secondary", "Primary"],
-        correct: 4
+        correct: 2
     },
     {
         question: "When all 6 fuel pumps are selected ON (MODE SEL auto), which fuel tank(s) will preferentially feed each engine? (assume that all tanks contain useable fuel)",
@@ -122,7 +122,7 @@ const questions = [
     {
         question: "During final approach, when is LAND annunciated on the FMA?",
         answers: ["It engages at MDA, and can be disengaged by setting TOGA thrust", "It engages ,400ft RA until approximately 40RA when it is replaced by FLARE. It can be disengaged by setting TOGA thrust, or by disconnecting both AP and FD", "It engages <400ft RA until approximately 40 RA when it is replaced by FLARE. It can be disengaged by pushing the APPR pushbutton on FCU to cancel the approach", "It engages at 1000ft RA with the aircraft in the Landing Configuration (Flap 3 or Flap FULL)"],
-        correct: 3
+        correct: 2
     },
     {
         question: "If power to the cockpit door fails:",
@@ -228,7 +228,7 @@ const questions = [
     {
         question: "Which valves can the flight crew control via the ENG1 (ENG2) MASTER switches?",
         answers: ["LP and HP fuel shutoff valves", "LP fuel shutoff valve only", "Hydraulic fire shutoff, LP and HP fuel shut-off valves", "HP fuel shutoff valve only"],
-        correct: 4
+        correct: 1
     },
     {
         question: "During a single engine taxi, engine 1 is running and engine 2 is off. What happens when the ENG MODE selector is moved from NORM to IGN/START?",
@@ -307,7 +307,7 @@ const questions = [
                   "They illuminate in red if the gear is not locked in the selected position",
                   "They illuminate in amber if the landing gear is not locked down",
                   "They illuminate in red if the landing gear is not locked down"],
-        correct: 1
+        correct: 2
     },
     {
         question: "Select the statement that best describes the parking brake",
@@ -357,7 +357,7 @@ const questions = [
     {
         question: "Where can you view the potable and waste water tank quantities?",
         answers: ["On the Aft Attendant Panel (AAP)", "On the Forward Attendant Panel (FAP) or Aft Attendant Panel (AAP)", "On the Forward Attendant Panel (FAP)", "In the forward lavatory"],
-        correct: 2
+        correct: 3
     },
     {
         question: "Where is the LP ground air supply connector located?",
@@ -389,7 +389,7 @@ const questions = [
                   "Primary failures are identified by a star (*) next to them",
                   "A Master Caution is always accompanied by an amber message on the E/WD",
                   "Independent failures are identified by a star (*) next to them"],
-        correct: 2
+        correct: 3
     },
     {
         question: "What is the normal order of priority for supplying power to AC BUS 1?",
@@ -526,7 +526,7 @@ const questions = [
     {
         question: "What is the minimum fuel quantity for takeoff?",
         answers: ["1,500 kg", "1,400 kg", "2,400 kg", "There is no limitation"],
-        correct: 4
+        correct: 1
     },
     {
         question: "What is the runway slope limitation for the A320?",
@@ -990,6 +990,7 @@ const questions = [
 }
 
 ];
+
 
 
 
