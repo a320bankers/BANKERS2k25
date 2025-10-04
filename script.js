@@ -58,11 +58,12 @@ function getCorrectIndex(q) {
   return 0;
 }
 
-function shuffleArray(arr) {
-  return arr
-    .map(v => [Math.random(), v])
-    .sort((a,b)=>a[0]-b[0])
-    .map(x=>x[1]);
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function setSliderMax() {
@@ -133,27 +134,23 @@ function setNextQuestion() {
 }
 
 function showQuestion(q) {
-  // show stem
+  // stem
   questionElement.textContent = q.question;
 
-  // build an array that knows which answer is correct BEFORE we shuffle
-  const zeroBasedCorrect =
-    Number.isInteger(q.correct) ? q.correct : 0; // after normalization it's 0-based
-  const answers = q.answers.map((text, idx) => ({
-    text,
-    correct: idx === zeroBasedCorrect
-  }));
+  // build an array of answer indexes [0,1,2,3,...], then shuffle the indexes
+  const idxs = q.answers.map((_, i) => i);
+  shuffleArray(idxs); // uses the function below
 
-  // clear old buttons
+  // clear old UI
   answerButtonsElement.innerHTML = '';
   nextButton.classList.add('hide');
 
-  // shuffle the answer objects (not just strings)
-  shuffleArray(answers).forEach(ans => {
+  // render in shuffled order, but tag correct via the ORIGINAL index
+  idxs.forEach((idx) => {
     const btn = document.createElement('button');
     btn.className = 'btn';
-    btn.textContent = ans.text;
-    if (ans.correct) btn.dataset.correct = 'true'; // used by selectAnswer()
+    btn.textContent = q.answers[idx];
+    if (idx === Number(q.correct)) btn.dataset.correct = 'true'; // q.correct is 0-based after normalize
     btn.addEventListener('click', selectAnswer);
     answerButtonsElement.appendChild(btn);
   });
@@ -324,4 +321,5 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', setSliderMax);
 
 console.log('Script loaded successfully');
+
 
