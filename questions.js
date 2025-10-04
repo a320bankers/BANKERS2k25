@@ -162,7 +162,7 @@ const questions = [
     {
         question: "When do the transfer valves close automatically?",
         answers: ["At the next refuelling operation", "Following a fuel low level warning", "When inner tanks reach approx 705kg", "When outer tanks are emptied"],
-        correct: 4
+        correct: 1
     },
     {
         question: "What is the max continuous thrust EGT limit for the CFM engine?",
@@ -591,7 +591,7 @@ const questions = [
 {
     question: "What is the function of the landing gear SAFETY VALVE?",
     answers: ["The safety valve prevents the landing gear from extending too quickly causing damage to the down locks", "When the aircraft is flying faster than 250 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "When the aircraft is flying faster than 260 kt the safety valve automatically cuts off hydraulic supply to the landing gear system", "The safety valves prevents the landing gear from being hydraulically supplied on the ground The valve opens pressurising the landing gear as soon as the aircraft leaves the ground"],
-    correct: 4
+    correct: 3
 },
 {
     question: "Typically when will direct law be active?",
@@ -990,6 +990,7 @@ const questions = [
 }
 
 ];
+
 
 
 
