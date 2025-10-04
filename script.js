@@ -25,7 +25,22 @@ let currentQuestionText;
 if (!Array.isArray(window.questions) || !questions.length) {
   alert('Questions failed to load. Check questions.js syntax and that it loads before script.js.');
 }
+// Normalize "correct" answers from 1–4 to 0–3 (only if they look 1-based)
+function normalizeCorrectIndexes() {
+  if (!Array.isArray(window.questions)) return;
+  questions.forEach(q => {
+    if (!q || !Array.isArray(q.answers)) return;
+    if (Number.isInteger(q.correct)) {
+      if (q.correct >= 1 && q.correct <= q.answers.length) {
+        q.correct -= 1; // make 0-based
+      }
+      // clamp to a safe index just in case
+      q.correct = Math.max(0, Math.min(q.answers.length - 1, q.correct));
+    }
+  });
+}
 document.addEventListener("DOMContentLoaded", function() {
+  normalizeCorrectIndexes();
     startButton.addEventListener('click', startGame);
     nextButton.addEventListener('click', () => {
         currentQuestionIndex++;
@@ -41,9 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function setSliderMax() {
-    const maxQuestions = questions.length;
-    questionCountSlider.max = maxQuestions;
-    questionCountSlider.value = Math.min(questionCountSlider.value, maxQuestions);
+    const maxQuestions = Array.isArray(window.questions) ? questions.length : 0;
+    questionCountSlider.max = maxQuestions || 1;
+    // keep current value within bounds
+    const val = parseInt(questionCountSlider.value, 10) || 1;
+    questionCountSlider.value = Math.min(val, Math.max(1, maxQuestions));
     questionCountValue.textContent = questionCountSlider.value;
 }
 
@@ -276,6 +293,7 @@ console.log('Script loaded successfully');
   window.addEventListener('load', positionBubble);
   positionBubble();
 })();
+
 
 
 
