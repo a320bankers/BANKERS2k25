@@ -448,7 +448,7 @@ const questions = [
     {
         question: "What is maximum operating altitude with slats and/or flaps extended?",
         answers: ["No restrictions apply.", "10,000 ft.", "15,000 ft.", "20,000 ft."],
-        correct: 3
+        correct: 4
     },
     {
         question: "What does the left (captain's) ND show when selected to ROSE ILS?",
@@ -1692,4 +1692,5 @@ const questions = [
     correct: 1
 }
 ];
+
 
