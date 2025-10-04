@@ -97,10 +97,11 @@ function showQuestion(question) {
         const button = document.createElement('button');
         button.innerText = answer;
         button.classList.add('btn');
-        const correctIdx = Math.max(0, Number(question.correct) - 1);
-        if (answer === question.answers[correctIdx]) {
-        button.dataset.correct = true;
+// FIXED (use the normalized 0-based index directly)
+if (answer === question.answers[Number(question.correct)]) {
+  button.dataset.correct = 'true';
 }
+
 
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
@@ -291,6 +292,7 @@ console.log('Script loaded successfully');
   window.addEventListener('load', positionBubble);
   positionBubble();
 })();
+
 
 
 
