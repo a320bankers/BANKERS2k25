@@ -1,300 +1,314 @@
+// Elements
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const repeatButton = document.getElementById('repeat-btn');
-const questionContainerElement = document.getElementById('quiz-container');
-const questionElement = document.getElementById('question-container');
-const answerButtonsElement = document.getElementById('answer-buttons');
+
+const quizEl = document.getElementById('quiz-container');
+const questionEl = document.getElementById('question-container');
+const answersEl = document.getElementById('answer-buttons');
+
 const commentsSection = document.getElementById('comments-section');
-const commentsElement = document.getElementById('comments');
-const commentNameElement = document.getElementById('name');
-const commentTextElement = document.getElementById('comment');
+const commentsEl = document.getElementById('comments');
+const nameInput = document.getElementById('name');
+const commentInput = document.getElementById('comment');
 const submitCommentButton = document.getElementById('submit-comment');
-const questionsLeftElement = document.getElementById('questions-left');
-const timerElement = document.getElementById('timer');
-const questionCountSlider = document.getElementById('question-count');
-const questionCountValue = document.getElementById('count-bubble');
-const resultContainer = document.getElementById('result-container');
+
+const questionsLeftEl = document.getElementById('questions-left');
+const timerEl = document.getElementById('timer');
+
+const range = document.getElementById('question-count');
+const bubble = document.getElementById('count-bubble');
+
+const resultEl = document.getElementById('result-container');
 const resultMessage = document.getElementById('result-message');
 const scorePercentage = document.getElementById('score-percentage');
 
-let shuffledQuestions, currentQuestionIndex, wrongQuestions, correctAnswers;
-let startTime, timerInterval;
-let selectedQuestionCount;
-let currentQuestionText;
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let wrongQuestions = [];
+let correctAnswers = 0;
+let startTime = 0;
+let timerInterval = null;
+let currentQuestionText = "";
 
-
-// Normalize "correct" answers from 1–4 to 0–3 (only if they look 1-based)
-function normalizeCorrectIndexes() {
-  if (!Array.isArray(window.questions)) return;
-  questions.forEach(q => {
-    if (!q || !Array.isArray(q.answers)) return;
-    if (Number.isInteger(q.correct)) {
-      if (q.correct >= 1 && q.correct <= q.answers.length) {
-        q.correct -= 1; // make 0-based
-      }
-      // clamp to a safe index just in case
-      q.correct = Math.max(0, Math.min(q.answers.length - 1, q.correct));
-    }
-  });
+// -------- Helpers --------
+function getQuestionsArray() {
+  // Safely access questions whether defined as `const questions = [...]`
+  // or `window.questions = [...]`
+  if (typeof questions !== 'undefined' && Array.isArray(questions)) return questions;
+  if (Array.isArray(window.questions)) return window.questions;
+  return [];
 }
-document.addEventListener("DOMContentLoaded", function() {
-  normalizeCorrectIndexes();
-    startButton.addEventListener('click', startGame);
-    nextButton.addEventListener('click', () => {
-        currentQuestionIndex++;
-        setNextQuestion();
-    });
-    repeatButton.addEventListener('click', repeatWrongQuestions);
-    submitCommentButton.addEventListener('click', submitComment);
-    questionCountSlider.addEventListener('input', () => {
-        questionCountValue.textContent = questionCountSlider.value;
-    });
-    setSliderMax();
-    console.log('Event listeners added');
-});
+
+function getCorrectIndex(q) {
+  if (!q || !Array.isArray(q.answers)) return -1;
+  const n = q.answers.length;
+  const asNum = Number(q.correct);
+
+  // Case 1: 0-based already and valid
+  if (Number.isInteger(asNum) && asNum >= 0 && asNum < n) return asNum;
+  // Case 2: 1-based and valid
+  if (Number.isInteger(asNum) && asNum - 1 >= 0 && asNum - 1 < n) return asNum - 1;
+  // Case 3: correct stored as exact string (rare)
+  if (typeof q.correct === 'string') {
+    const idx = q.answers.findIndex(a => a === q.correct);
+    if (idx !== -1) return idx;
+  }
+  // Fallback
+  return 0;
+}
+
+function shuffleArray(arr) {
+  return arr
+    .map(v => [Math.random(), v])
+    .sort((a,b)=>a[0]-b[0])
+    .map(x=>x[1]);
+}
 
 function setSliderMax() {
-    const maxQuestions = Array.isArray(window.questions) ? questions.length : 0;
-    questionCountSlider.max = maxQuestions || 1;
-    // keep current value within bounds
-    const val = parseInt(questionCountSlider.value, 10) || 1;
-    questionCountSlider.value = Math.min(val, Math.max(1, maxQuestions));
-    questionCountValue.textContent = questionCountSlider.value;
+  const qArr = getQuestionsArray();
+  const fallbackMax = parseInt(range.getAttribute('max'), 10) || 231;
+  const maxQuestions = qArr.length > 0 ? qArr.length : fallbackMax;
+
+  range.max = maxQuestions;
+
+  const min = parseInt(range.min, 10) || 1;
+  const cur = parseInt(range.value, 10) || min;
+  range.value = Math.max(min, Math.min(cur, maxQuestions));
+
+  bubble.textContent = range.value;
+  positionBubble();
 }
 
+function positionBubble() {
+  // Pixel-accurate bubble centering above thumb
+  const THUMB = 28; // keep in sync with CSS
+  const min = +range.min || 0;
+  const max = +range.max || 100;
+  const val = +range.value;
+
+  const pct   = (val - min) / Math.max(1, (max - min));
+  const width = range.offsetWidth;
+  const x     = pct * (width - THUMB) + THUMB / 2;
+
+  bubble.textContent = val;
+  bubble.style.left = `${x}px`;
+
+  if (startButton) startButton.textContent = `Start ${val}-Question Quiz`;
+}
+
+// -------- Quiz flow --------
 function startGame() {
-    console.log('Start button clicked');
-    startButton.classList.add('hide');
-    document.getElementById('start-container').classList.add('hide');
-    selectedQuestionCount = parseInt(questionCountSlider.value);
-    shuffledQuestions = shuffleArray(questions).slice(0, selectedQuestionCount);
-    currentQuestionIndex = 0;
-    wrongQuestions = [];
-    correctAnswers = 0;
-    questionContainerElement.classList.remove('hide');
-    commentsSection.classList.remove('hide');
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 1000);
-    setNextQuestion();
+  document.getElementById('start-container').classList.add('hide');
+
+  const qArr = getQuestionsArray();
+  const selectedCount = parseInt(range.value, 10) || 10;
+
+  shuffledQuestions = shuffleArray(qArr).slice(0, selectedCount);
+  currentQuestionIndex = 0;
+  wrongQuestions = [];
+  correctAnswers = 0;
+
+  quizEl.classList.remove('hide');
+  commentsSection.classList.remove('hide');
+
+  startTime = Date.now();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(updateTimer, 1000);
+
+  setNextQuestion();
 }
 
 function setNextQuestion() {
-    resetState();
-    if (currentQuestionIndex < shuffledQuestions.length) {
-        currentQuestionText = shuffledQuestions[currentQuestionIndex].question;
-        showQuestion(shuffledQuestions[currentQuestionIndex]);
-        loadComments(currentQuestionText);
-        updateQuestionsLeft();
-    } else {
-        showResult();
-    }
+  resetState();
+  if (currentQuestionIndex < shuffledQuestions.length) {
+    const q = shuffledQuestions[currentQuestionIndex];
+    currentQuestionText = q.question;
+    showQuestion(q);
+    loadComments(currentQuestionText);
+    updateQuestionsLeft();
+  } else {
+    showResult();
+  }
 }
 
-function showQuestion(question) {
-    questionElement.innerText = question.question;
-    const shuffledAnswers = shuffleArray([...question.answers]);
-    shuffledAnswers.forEach((answer, index) => {
-        const button = document.createElement('button');
-        button.innerText = answer;
-        button.classList.add('btn');
-// FIXED (use the normalized 0-based index directly)
-if (answer === question.answers[Number(question.correct)]) {
-  button.dataset.correct = 'true';
-}
+function showQuestion(q) {
+  questionEl.innerText = q.question;
+  const correctIdx = getCorrectIndex(q);
+  const correctText = q.answers[correctIdx];
 
-
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-    });
+  const shuffledAnswers = shuffleArray([...q.answers]);
+  shuffledAnswers.forEach(ans => {
+    const btn = document.createElement('button');
+    btn.innerText = ans;
+    btn.classList.add('btn');
+    if (ans === correctText) btn.dataset.correct = 'true';
+    btn.addEventListener('click', selectAnswer);
+    answersEl.appendChild(btn);
+  });
 }
 
 function resetState() {
-    nextButton.classList.add('hide');
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
+  nextButton.classList.add('hide');
+  while (answersEl.firstChild) answersEl.removeChild(answersEl.firstChild);
 }
 
 function selectAnswer(e) {
-    const selectedButton = e.target;
-    const correct = selectedButton.dataset.correct;
-    setStatusClass(selectedButton, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    });
-    if (correct) {
-        correctAnswers++;
-    } else {
-        wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
-    }
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    } else {
-        showResult();
-    }
+  const selectedButton = e.target;
+  const isCorrect = !!selectedButton.dataset.correct;
+
+  setStatusClass(selectedButton, isCorrect);
+  Array.from(answersEl.children).forEach(b => {
+    setStatusClass(b, !!b.dataset.correct);
+  });
+
+  if (isCorrect) correctAnswers++;
+  else wrongQuestions.push(shuffledQuestions[currentQuestionIndex]);
+
+  if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide');
+  } else {
+    showResult();
+  }
 }
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
+function setStatusClass(el, correct) {
+  el.classList.remove('correct', 'wrong');
+  el.classList.add(correct ? 'correct' : 'wrong');
 }
 
 function updateQuestionsLeft() {
-    questionsLeftElement.innerText = `${shuffledQuestions.length - currentQuestionIndex - 1}`;
+  questionsLeftEl.innerText = `${shuffledQuestions.length - currentQuestionIndex - 1}`;
 }
 
 function updateTimer() {
-    const elapsedTime = Date.now() - startTime;
-    const minutes = Math.floor(elapsedTime / 60000);
-    const seconds = Math.floor((elapsedTime % 60000) / 1000);
-    timerElement.innerText = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+  const elapsed = Date.now() - startTime;
+  const m = Math.floor(elapsed / 60000);
+  const s = Math.floor((elapsed % 60000) / 1000);
+  timerEl.innerText = `Time: ${m}:${s.toString().padStart(2,'0')}`;
 }
 
 function showResult() {
-    clearInterval(timerInterval);
-    questionContainerElement.classList.add('hide');
-    commentsSection.classList.add('hide');
-    resultContainer.classList.remove('hide');
-    const score = (correctAnswers / shuffledQuestions.length) * 100;
-    scorePercentage.innerText = `Your score: ${score.toFixed(2)}%`;
-    if (score < 75) {
-        resultMessage.innerText = "You failed and need to try harder.";
-    } else if (score <= 90) {
-        resultMessage.innerText = "Well done, you did alright.";
-    } else {
-        resultMessage.innerText = "Exceptional result, you MAMO GOD!";
-    }
-    if (score < 100) {
-        repeatButton.classList.remove('hide');
-    }
+  clearInterval(timerInterval);
+  quizEl.classList.add('hide');
+  commentsSection.classList.add('hide');
+  resultEl.classList.remove('hide');
+
+  const score = (correctAnswers / shuffledQuestions.length) * 100;
+  scorePercentage.innerText = `Your score: ${score.toFixed(2)}%`;
+
+  if (score < 75) {
+    resultMessage.innerText = "You failed and need to try harder.";
+  } else if (score <= 90) {
+    resultMessage.innerText = "Well done, you did alright.";
+  } else {
+    resultMessage.innerText = "Exceptional result, you MAMO GOD!";
+  }
+  if (score < 100) repeatButton.classList.remove('hide');
 }
 
 function repeatWrongQuestions() {
-    shuffledQuestions = shuffleArray(wrongQuestions);
-    currentQuestionIndex = 0;
-    wrongQuestions = [];
-    correctAnswers = 0;
-    repeatButton.classList.add('hide');
-    resultContainer.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
-    commentsSection.classList.remove('hide');
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 1000);
-    setNextQuestion();
+  shuffledQuestions = shuffleArray(wrongQuestions);
+  currentQuestionIndex = 0;
+  wrongQuestions = [];
+  correctAnswers = 0;
+
+  repeatButton.classList.add('hide');
+  resultEl.classList.add('hide');
+  quizEl.classList.remove('hide');
+  commentsSection.classList.remove('hide');
+
+  startTime = Date.now();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(updateTimer, 1000);
+
+  setNextQuestion();
 }
 
+// -------- Comments (Firebase Realtime DB) --------
 function submitComment() {
-    const name = commentNameElement.value.trim();
-    const text = commentTextElement.value.trim();
-    if (name && text) {
-        const comment = {
-            name,
-            text,
-            timestamp: Date.now(),
-            thumbsUp: 0,
-            thumbsDown: 0
-        };
-        const questionId = btoa(currentQuestionText); // Use base64 encoding for simplicity
-        firebase.database().ref(`comments/${questionId}`).push(comment);
-        commentNameElement.value = '';
-        commentTextElement.value = '';
-    }
+  const name = nameInput.value.trim();
+  const text = commentInput.value.trim();
+  if (!name || !text) return;
+
+  const comment = {
+    name, text, timestamp: Date.now(), thumbsUp: 0, thumbsDown: 0
+  };
+  const qid = btoa(currentQuestionText);
+
+  try {
+    firebase.database().ref(`comments/${qid}`).push(comment);
+    nameInput.value = '';
+    commentInput.value = '';
+  } catch (e) {
+    console.warn('Firebase push failed:', e);
+  }
 }
 
 function loadComments(questionText) {
-    const questionId = btoa(questionText); // Use base64 encoding for simplicity
-    firebase.database().ref(`comments/${questionId}`).on('value', (snapshot) => {
-        commentsElement.innerHTML = '';
-        snapshot.forEach((childSnapshot) => {
-            const comment = childSnapshot.val();
-            if (comment.name && comment.text) {
-                const commentElement = document.createElement('div');
-                commentElement.classList.add('comment');
-                commentElement.innerHTML = `
-                    <p><strong>${comment.name}</strong>: ${comment.text}</p>
-                    <button class="thumbs-up-btn" data-id="${childSnapshot.key}">👍 ${comment.thumbsUp}</button>
-                    <button class="thumbs-down-btn" data-id="${childSnapshot.key}">👎 ${comment.thumbsDown}</button>
-                `;
-                commentsElement.appendChild(commentElement);
-            }
-        });
-        document.querySelectorAll('.thumbs-up-btn').forEach(button => {
-            button.addEventListener('click', () => updateThumbs(questionId, button.dataset.id, 'thumbsUp'));
-        });
-        document.querySelectorAll('.thumbs-down-btn').forEach(button => {
-            button.addEventListener('click', () => updateThumbs(questionId, button.dataset.id, 'thumbsDown'));
-        });
+  const qid = btoa(questionText);
+  try {
+    firebase.database().ref(`comments/${qid}`).off(); // prevent duplicate listeners
+    firebase.database().ref(`comments/${qid}`).on('value', (snapshot) => {
+      commentsEl.innerHTML = '';
+      snapshot.forEach((child) => {
+        const c = child.val();
+        if (!c || !c.name || !c.text) return;
+        const div = document.createElement('div');
+        div.classList.add('comment');
+        div.innerHTML = `
+          <p><strong>${c.name}</strong>: ${c.text}</p>
+          <button class="thumbs-up-btn" data-id="${child.key}">👍 ${c.thumbsUp || 0}</button>
+          <button class="thumbs-down-btn" data-id="${child.key}">👎 ${c.thumbsDown || 0}</button>
+        `;
+        commentsEl.appendChild(div);
+      });
+      commentsEl.querySelectorAll('.thumbs-up-btn').forEach(btn => {
+        btn.addEventListener('click', () => updateThumbs(qid, btn.dataset.id, 'thumbsUp'));
+      });
+      commentsEl.querySelectorAll('.thumbs-down-btn').forEach(btn => {
+        btn.addEventListener('click', () => updateThumbs(qid, btn.dataset.id, 'thumbsDown'));
+      });
     });
-}
-
-function updateThumbs(questionId, commentId, type) {
-    const commentRef = firebase.database().ref(`comments/${questionId}`).child(commentId);
-    const votedComments = JSON.parse(localStorage.getItem('votedComments')) || {};
-    
-    if (votedComments[commentId]) {
-        alert('You have already voted on this comment.');
-        return;
-    }
-    
-    commentRef.once('value', (snapshot) => {
-        const comment = snapshot.val();
-        if (comment) {
-            comment[type]++;
-            commentRef.update(comment);
-            votedComments[commentId] = true;
-            localStorage.setItem('votedComments', JSON.stringify(votedComments));
-        }
-    });
-}
-
-function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
-}
-
-console.log('Script loaded successfully');
-
-// Bubble positioned exactly above the slider thumb (pixel-accurate)
-(function () {
-  const range  = document.getElementById('question-count');
-  const bubble = document.getElementById('count-bubble');
-  const start  = document.getElementById('start-btn');
-  if (!range || !bubble) return;
-
-  const THUMB = 28; // must match the CSS thumb size (28px in your styles)
-
-  function positionBubble() {
-    const min = +range.min || 0;
-    const max = +range.max || 100;
-    const val = +range.value;
-
-    // % along track
-    const pct   = (val - min) / (max - min);
-    const width = range.offsetWidth;                  // slider track width in px
-    const x     = pct * (width - THUMB) + THUMB / 2;  // center of the thumb
-
-    bubble.textContent = val;
-    bubble.style.left = `${x}px`;                     // centered via CSS transform
-
-    if (start) start.textContent = `Start ${val}-Question Quiz`;
+  } catch (e) {
+    console.warn('Firebase read failed:', e);
   }
+}
 
+function updateThumbs(qid, cid, type) {
+  try {
+    const ref = firebase.database().ref(`comments/${qid}`).child(cid);
+    const voted = JSON.parse(localStorage.getItem('votedComments')) || {};
+    if (voted[cid]) { alert('You have already voted on this comment.'); return; }
+    ref.once('value', snap => {
+      const c = snap.val(); if (!c) return;
+      c[type] = (c[type] || 0) + 1;
+      ref.update(c);
+      voted[cid] = true;
+      localStorage.setItem('votedComments', JSON.stringify(voted));
+    });
+  } catch (e) {
+    console.warn('Firebase thumbs failed:', e);
+  }
+}
+
+// -------- Events --------
+document.addEventListener('DOMContentLoaded', function () {
+  // Buttons
+  startButton.addEventListener('click', startGame);
+  nextButton.addEventListener('click', () => { currentQuestionIndex++; setNextQuestion(); });
+  repeatButton.addEventListener('click', repeatWrongQuestions);
+  submitCommentButton.addEventListener('click', submitComment);
+
+  // Slider bubble + limits
   range.addEventListener('input', positionBubble);
   window.addEventListener('resize', positionBubble);
-  window.addEventListener('load', positionBubble);
+
+  setSliderMax();
   positionBubble();
-})();
+});
 
+// Ensure max updates once everything is loaded (esp. on mobile caches)
+window.addEventListener('load', setSliderMax);
 
-
-
-
-
+console.log('Script loaded successfully');
