@@ -776,7 +776,7 @@ const questions = [
 {
     question: "Select the correct statement about the wingtip brakes (WTB):",
     answers: ["The WTBs activate in case of an uncommanded movement of the slats or flaps, such as runaway, asymmetry or overspeed. If the slat WTB is on, the flaps will still operate", "The wing tip brakes will only activate when asymmetry is detected with either the flap or slat system. The flap lever should remain in the position it was in at the time of WTB activation", "The WTBs activate when the flap or slat position disagree with the flap lever selection. If any WTB is on, both slats and flaps are locked in position, and cannot be released in flight", "The WTBs activate in case of an uncommanded movement of the slats or flaps, such as runaway, asymmetry or overspeed. If any WTB is on, both slats and flaps are locked in position, and cannot be released in flight"],
-    correct: 4
+    correct: 1
 },
 {
     question: "On the ECAM display, which colour is used to make the crew aware of an abnormal configuration or failure, and no immediate action is required?",
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
