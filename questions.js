@@ -85,7 +85,7 @@ const questions = [
         correct: 3
     },
     {
-        question: "Can wing anti-ice be used when on engine is inoperative?",
+        question: "Can wing anti-ice be used when one engine is inoperative?",
         answers: ["Yes, APU bleed air van be used for wing anti-ice", "Yes, provided the x-bleed is selected open, one pack is selected off and the fire push button has not been pushed", "No, it is not possible for one engine bleed to supply air to both wings for anti-icing", "Yes, the crossbleed will automatically open after the wing anti-ice has been selected ON"],
         correct: 2
     },
@@ -566,6 +566,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
