@@ -564,11 +564,6 @@ const questions = [
         correct: 3
     },
 {
-    question: "Select the correct starter limitation for the CFM engine:",
-    answers: ["A 15 minute cooling period is required following 4 failed start cycles", "A 20 minute cooling period is required following 3 failed start cycles", "A 60 minute cooling period is required following 3 consecutive start attempts", "A 10 second pause is required between each start cycle"],
-    correct: 1
-},
-{
     question: "Regarding speed symbols on the PFD, which statement is true?",
     answers: ["The yellow speed trend arrow indicates the speed the aircraft will reach in 15 sec", "Managed speed is represented by a magenta speed bug", "Selected speed is represented by a magenta speed bug", "Mach No. is not displayed below 0.6"],
     correct: 2
@@ -659,11 +654,6 @@ const questions = [
     correct: 2
 },
 {
-    question: "What are the two main functions of the FMGC?",
-    answers: ["Flight management and flight guidance", "Flight management and flight envelope protection", "Flight guidance and flight envelope protection", "Flight management and yaw axis control"],
-    correct: 1
-},
-{
     question: "Which of the following statements regarding the FWC, ELAC and FAC is true (select the most complete answer)?",
     answers: ["The FWC generates the OVERSPEED warnings, the ELAC performs the HIGH SPEED protection, and the FAC computes and displays characteristic speeds on the PFD", "The FWC computes and displays the characteristic speed on the PFD, the ELAC performs the A.FLOOR protection, and the FAC is only active when the AP is engaged", "The FWC generates the OVERSPEED warnings, the ELAC performs the HIGH SPEED protection, and the FAC only performs yaw related functions (rudder trim/limits/damping)", "The FWC generates the OVERSPEED warnings, the ELAC performs the LOW SPEED protection, and the FAC only performs yaw related functions (rudder trim/limits/damping)"],
     correct: 1
@@ -679,19 +669,9 @@ const questions = [
     correct: 2
 },
 {
-    question: "Select the correct statement about the ADIRS panel.",
-    answers: ["The ADR and IR parts of an ADIRU cannot not be switched off individually", "When securing the aircraft both the IR mode selectors and ADR pushbutton switches should be set to OFF. This is to prevent the aircraft batteries from being drained", "The ADR or IR part of an ADIRU can be individually switched OFF using the IR or ADR pushbutton. Setting the IR Mode Selector to OFF will remove power from the whole ADIRU", "If an IR is turned off by mistake in flight, it can be recovered provided it is switched back on within 5 min"],
-    correct: 3
-},
-{
     question: "Which of the following statements best describes the operation of the fuel transfer valve(s)?",
     answers: ["The transfer valve can be used to balance the fuel", "When a low fuel level is sensed in an inner tank (< 750 kg), one transfer valve will open in the associated wing only", "When a low fuel level is sensed in an inner tank (< 750 kg), one transfer valve will open in each wing", "The transfer valves will not open until the total fuel on board reaches 1,500 kg"],
     correct: 2
-},
-{
-    question: "What happens to the avionics ventilation system if both the BLOWER and EXTRACT push buttons are set to override?",
-    answers: ["The closed configuration is selected, both fans remain running, and air conditioned air is added to the system", "Intermediate configuration is selected manually, and the avionics compartment is isolated from the air conditioning system", "Air conditioned air will enter the system, and the skin air outlet door will fully open, both fans will continue to run", "The smoke configuration will be selected. Air conditioned air will enter the system, and all of the extracted air is dumped overboard (via a small flap on the skin air outlet door). The Blower Fan stops."],
-    correct: 4
 },
 {
     question: "Which of the following statements best describe a level 3 ECAM alert?",
@@ -701,11 +681,6 @@ const questions = [
 {
     question: "What impact does a CAB PR SYS 1+2 FAULT alert have?",
     answers: ["The pressurisation system will automatically select manual mode. The flight crew can take immediate control of the outflow valve using the MAN V/S CTL switch", "Both cabin pressure controllers have failed. The flight crew will set the MODE SEL push button to MAN and adjust the position of the outflow valve as required.", "Control of the outflow valve has been lost. The flight crew should begin a normal descent to FL100/MEA, but also be prepared to initiate an emergency descent if required.", "Both cabin pressure controllers have failed, the flight crew will need to immediately initiate an emergency descent"],
-    correct: 2
-},
-{
-    question: "During a single engine taxi, engine 1 is running and engine 2 is off. What happens when the ENG MODE selector is moved from NORM to IGN/START?",
-    answers: ["The engine 2 FADEC is powered ready for engine start only.", "The ENG SD page appears, the engine 2 FADEC is powered (amber crosses disappear for engine parameters), and the pack valves close. Continuous ignition for engine 1 has been manually selected.", "There will be no impact to engine 2 because its FADEC is already powered by the aircraft electrical system, and the SD page will already be displayed. Continuous ignition, using one igniter (A or B), will be selected for engine 1.", "Continuous ignition, using both ignitors (A+B), will be selected for both engines"],
     correct: 2
 },
 {
@@ -794,11 +769,6 @@ const questions = [
     correct: 3
 },
 {
-    question: "On the ECAM E/WD, when does the LDG INHIBIT (magenta) memo appear?",
-    answers: ["Below 2,000 ft radio altitude", "With selection of FLAP 2 on the approach", "Below 800 ft radio altitude", "With selection of GEAR DOWN"],
-    correct: 3
-},
-{
     question: "If a system page push button fails on the ECAM control panel, can the corresponding system page still be viewed?",
     answers: ["No, the associated system page is no longer available", "Yes, but only if an ECAM alert is triggered for the related system, in this case the system page is automatically displayed. The page cannot be selected manually", "Yes, the associated system page can still be viewed via the use of the RCL pushbutton", "Yes. The ALL button allows the flight crew to select the desired SD page. This provides redundancy in the case of an ECAM control panel failure"],
     correct: 4
@@ -839,11 +809,6 @@ const questions = [
     correct: 2
 },
 {
-    question: "The MIXER unit is connected to:",
-    answers: ["Only the packs and re-circulated cabin air", "Packs, re-circulated cabin air, emergency ram air inler, and HP ground connector", "Zone controllers", "Packs, re-circulated cabin air, emergency ram air inler, and LP ground connector"],
-    correct: 4
-},
-{
     question: "Select the correct statementa bout the AGENT pushbuttons on the FIRE panel",
     answers: ["It is not possible to have an amber DISCH light without a white SQUID light on a AGENT pushbutton", "The agent buttons are always active allowing a bottle to be fired at any time, independent of the associated FIRE pushbutton position", "The DISCH light illuminates in amber as soon as the squid is fired for the corresponding bottle", "The DISCH light illuminates in amber when the corresponding fire extinguisher bottle has lost pressure"],
     correct: 4
@@ -852,21 +817,6 @@ const questions = [
     question: "With the ATT HDG switch set to CAPT 3, and AIR DATA switch set to NORM: which computer(s) will be providing air, attitude and heading data to the Captain's PFD?",
     answers: ["ADIRU 3 will be providing air data, and ADIRU 1 attitude and heading data", "ADIRU 2 will be providing air data, and ADIRU 1 attitude and heading data", "ADIRU 3 will be providing all air, attitude and heading data", "ADIRU 1 will be providing air data, and ADIRU 3 attitude and heading data"],
     correct: 4
-},
-{
-    question: "Which of the following communication methods are used for datalink messages?",
-    answers: ["VHF only", "SATCOM only", "VHF or HF only", "VHF, HF or SATCOM (where fitted and available)"],
-    correct: 4
-},
-{
-    question: "Select the correct statement about the AGENT pushbuttons on the FIRE panel",
-    answers: ["After an ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s), this helps identify the agents to be activated", "When the associated FIRE PB (ENG or APU) is released SQUIB illuminates in amber on the corresponding agent pushbutton(s)", "After a ENG or APU fire has been detected SQUIB illuminates in white on the corresponding agent pushbutton(s). After the bottle has been discharged the SQUIB light is replaced by an amber DISCH light", "When the associated FIRE PB (ENG or APC)) is released SQUIB illuminates in white on the corresponding agent pushbutton(s)"],
-    correct: 3
-},
-{
-    question: "How can the flight crew arm the LOC and GS modes in order to fly an ILS approach?",
-    answers: ["Push the APP pushbutton on the FCCJ. Once LOC and G/S are armed ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels", "Push the APP pushbutton on the FCU. The ILS information (including LOC and G/S scales) will not be displayed on the PFD unless the LS push button is selected on the EFIS panels", "Push the LS button the EFIS panel located on the glareshield", "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels"],
-    correct: 1
 },
 {
     question: "Both engines and the APU are running, what must the flight crew do before selecting APU bleed? (X-BLEED set to AUTO)",
@@ -892,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
