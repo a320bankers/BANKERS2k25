@@ -809,7 +809,7 @@ const questions = [
     correct: 2
 },
 {
-    question: "Select the correct statementa bout the AGENT pushbuttons on the FIRE panel",
+    question: "Select the correct statement about the AGENT pushbuttons on the FIRE panel",
     answers: ["It is not possible to have an amber DISCH light without a white SQUID light on a AGENT pushbutton", "The agent buttons are always active allowing a bottle to be fired at any time, independent of the associated FIRE pushbutton position", "The DISCH light illuminates in amber as soon as the squid is fired for the corresponding bottle", "The DISCH light illuminates in amber when the corresponding fire extinguisher bottle has lost pressure"],
     correct: 4
 },
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
