@@ -646,7 +646,7 @@ const questions = [
 {
     question: "Which statement about the FAC is true?",
     answers: ["When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function performs the alpha protection in normal law", "When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function will automatically select the A-FLOOR A/THR mode, when the conditions for its activation are met", "The FAC is a flight control computer, and does not form part of the FMGS", "When the AP is engaged the master FMGC sends rudder trim orders to the FACs. The FACs sole purpose are to provide yaw damping, rudder trim and rudder travel limitation functions"],
-    correct: 3
+    correct: 2
 },
 {
     question: "During cockpit preparation, what is the significance of an amber half box around the oxygen pressure indication on the DOOR/OXY page?",
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
