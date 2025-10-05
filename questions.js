@@ -736,7 +736,7 @@ const questions = [
 {
     question: "How many independent channels are there in a Flight Augmentation Computer?",
     answers: ["4 channels: Yaw damper, rudder trim, rudder travel limit, and flight envelope", "3 channels: Yaw damper, rudder trim and rudder travel limit", "2 channels: Yaw damper and rudder trim", "2 identical channels for redundancy"],
-    correct: 4
+    correct: 1
 },
 {
     question: "When will the autobrake system activate following a rejected takeoff?",
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
