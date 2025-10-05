@@ -107,7 +107,7 @@ const questions = [
     {
         question: "What happens when the landing gear is selected down on approach",
     answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
-    correct: 4
+    correct: 3
     },
     {
         question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independant failure? (PTU is operative, and hydraulic pressures are normal)",
@@ -566,6 +566,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
