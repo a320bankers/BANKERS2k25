@@ -794,11 +794,6 @@ const questions = [
     correct: 3
 },
 {
-    question: "Regarding ECAM, which of the following statements is true?",
-    answers: ["An amber message on the E/WD is always accompanied by a Master Caution", "A Master Caution is always accompanied by an amber message on the E/WD", "Primary failures are identified by a star (*) next to them", "Independent failures are identified by a star (*) next to them"],
-    correct: 3
-},
-{
     question: "On the ECAM E/WD, when does the LDG INHIBIT (magenta) memo appear?",
     answers: ["Below 2,000 ft radio altitude", "With selection of FLAP 2 on the approach", "Below 800 ft radio altitude", "With selection of GEAR DOWN"],
     correct: 3
@@ -897,6 +892,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
