@@ -7,7 +7,7 @@ const questions = [
     {
         question: "The cross feed valve (X FEED) is:",
         answers: ["Open for takeoff", "Opened automatically when the MODE SEL pushbutton is set to AUTO, and the fuel imbalance reaches 1500kg", "Controlled by a single motor", "Normally closed"],
-        correct: 4
+        correct: 2
     },
     {
         question: "Below what altitude does the vacuum generator produce the necessary pressure differential to force waste from the toilet bowls into the waste storage tank?",
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
