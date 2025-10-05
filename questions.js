@@ -463,7 +463,7 @@ const questions = [
                   "There is no impact on the maximum thrust of the engines",
                   "The N1 or EPR limit is automatically reduced, and the idle N1 or EPR is automatically increased",
                   "Engine anti-ice reduces the N1 or EPR limit, wing anti-ice has a negligible effect on the maximum thrust output of the engines"],
-        correct: 3
+        correct: 2
     },
     {
         question: "When the fuel tanks are completely filled, an allowance of up to ___ total capacity is provided within the system to allow for expansion due to temperature rise",
@@ -842,6 +842,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
