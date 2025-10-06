@@ -491,7 +491,7 @@ const questions = [
     {
         question: "Which system/computer provides the reactive windshear detection function?",
         answers: ["ADIRU 1", "SDAC", "FAC", "The weather radar"],
-        correct: 
+        correct: 3
     },
     {
         question: "What is the maximum speed with the landing gear extended (VLE)?",
@@ -915,6 +915,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
