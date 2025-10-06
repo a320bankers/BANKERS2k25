@@ -901,10 +901,41 @@ const questions = [
       "If it is not empty, the STATUS page appears on the LOWER ECAM DU"
     ],
     correct: 1
-  }
+  },
+	{
+    question: "What happens to the avionics ventilation system if only the EXTRACT push button is set to override?",
+    answers: [
+        "The system enters closed circuit configuration, and air is added from the air conditioning system. This is a useful configuration to consider during heavy rain on the ground",
+        "The system enters the intermediate configuration, and air is added from the air conditioning system. This configuration may be selected to help exhaust smoke or fumes overboard",
+        "The extract fan will stop and the skin heat exchanger is bypassed. The open configuration will be selected on the ground, and intermediate in flight",
+        "Open configuration is selected, both fan remain running. This improves ventilation following a duct overheat"
+	],
+    correct: 2
+	},
+{
+    question: "When is auto-start abort and automatic dry cranking available?",
+    answers: [
+        "During an automatic engine start in any phase of flight",
+        "Auto start abort is available during any automatic start cycle. However the flight crew must consider applying the engine ventilation (dry cranking) procedure following a start abort",
+        "During an automatic start on the ground only",
+        "During any engine start (manual or automatic) on the ground. However when in flight auto start abort is only available during automatic starts"
+    ],
+    correct: 2
+},
+{
+    question: "Which of the following statements best describes bank angle protection?",
+    answers: [
+        "Full sidestick deflection will give a roll rate of 30°/s and the bank angle will not exceed 67°",
+        "Above 33° an input on the sidestick will be required to hold the bank attitude. Full deflection will give a roll rate of 15°/s and the bank angle will not exceed 67°",
+        "The bank angle limit in flight mode is 67°, this reduces to 33° while HIGH SPEED protection is active, and 40° when HIGH AoA protection is active",
+        "An input is required on the sidestick to hold any bank attitude. When the sidestick is released the aircraft will automatically roll wings level. Full deflection will give a roll rate of 15°/s and the bank angle will not exceed 67°"
+    ],
+    correct: 2
+}
 ];
 
 window.questions = questions;
+
 
 
 
