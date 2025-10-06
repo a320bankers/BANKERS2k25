@@ -121,12 +121,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Slider max binds to available questions ---
 function setSliderMax() {
-  const maxQuestions = Array.isArray(window.questions) ? window.questions.length : 1;
+  const total = Array.isArray(window.questions) ? window.questions.filter(q => q && !q._invalid).length : 1;
+  const maxQuestions = Math.max(1, total);
+
   questionCountSlider.max = String(maxQuestions);
-  const val = parseInt(questionCountSlider.value, 10) || 1;
-  questionCountSlider.value = Math.min(Math.max(1, val), maxQuestions);
+
+  const currentVal = parseInt(questionCountSlider.value, 10) || 1;
+  questionCountSlider.value = String(Math.min(Math.max(1, currentVal), maxQuestions));
+
   questionCountValue.textContent = questionCountSlider.value;
 }
+
 
 // --- Game flow ---
 function startGame() {
@@ -342,4 +347,5 @@ function updateThumbs(questionId, commentId, type) {
     localStorage.setItem('votedComments', JSON.stringify(voted));
   });
 }
+
 
