@@ -201,7 +201,7 @@ const questions = [
     },
     {
         question: "IF a SEC fails, what happens to the spoiler(s) it controls?",
-        answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflectionm it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical depolyment of the spoilers"],
+        answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflectionm it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical deployment of the spoilers"],
         correct: 1
     },
     {
@@ -222,7 +222,7 @@ const questions = [
     },
     {
         question: "What is the significance of the green coloured circuit breakers?",
-        answers: ["Green collared circuit breakers are AC powered", "Green collared circuit breakers are pulled when flying on battery power only", "Green collared circuit breakers are not to be reset", "Green collared circuit breakers are monitoreed by the ECAM"],
+        answers: ["Green collared circuit breakers are AC powered", "Green collared circuit breakers are pulled when flying on battery power only", "Green collared circuit breakers are not to be reset", "Green collared circuit breakers are monitored by the ECAM"],
         correct: 4
     },
     {
@@ -672,16 +672,6 @@ const questions = [
 				  "The light flashes red if the door control handle is operated, and the slide is armed"],
 		correct: 2
 	},
-	{
-    question: "What is the significance of a flashing red light on a cabin door?",
-    answers: [
-      "It flashes red if the door is unlocked when at least one engine is running",
-      "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.5hPa",
-      "It indicates low pressure in the slide inflation cylinder",
-      "The light flashes red if the door control handle is operated, and the slide is armed"
-    ],
-    correct: 2
-  },
   {
     question: "In which MCDU page does the flight crew enter the ZFW and ZFWCG values during cockpit preparation?",
     answers: [
@@ -915,6 +905,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
