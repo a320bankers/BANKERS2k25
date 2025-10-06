@@ -563,9 +563,112 @@ const questions = [
         answers: ["15,000 ft", "22,500 ft", "20,000 ft", "25,000 ft"],
         correct: 3
     },
+    {
+        question: "Which hydraulic systems have fire shutoff valves",
+        answers: ["green and yellow", "green, blue and yellow", "green and blue", "blue and yellow"],
+        correct: 1
+    },
+    {
+        question: "If the upper ECAM DU fails, or is switched off, how can a system or status page be displayed for review?",
+        answers: ["Pushing and holding the RCL push button on the ECAM control panel will cycle through each system page",
+                  "A momentary press on the associated system page push button on the ECP will toggle between E/WD, and the selected system page on the lower ECAM DU",
+                  "Use the EIS DMC rotary selector to put the SD on the Captain's PFD DU",
+                  "Pressing and holding the desired system page push button on the ECP will replace the E/WD with the selected system page. Upon releasing the button, the E/WD will return"],
+        correct: 4
+    },
+    {
+        question: "What is the function of the GEN 1 LINE push button?",
+        answers: ["GEN 1 LINE contactor opens. GEN 1 remains running and powers all fuel pumps",
+                  "GEN 1 LINE contactor opens. GEN 1 remains running and supplies one fuel pump in each wing tank",
+                  "When selected OFF the avionics compartment isolation valves close",
+                  "When selected OFF the GEN 1 powers all AC busses"],
+        correct: 2
+    },
+    {
+        question: "What information is required to confirm that the landing gear is down-locked?",
+        answers: ["On the WHEEL SD page, at least one green triangle for each landing gear strut is sufficient to confirm that the landing gear is down-locked. Even if a red UNLK light is illuminated on the landing gear indicator panel",
+                  "Two green triangles for each landing gear strut on the WHEEL page, plus a green triangle on the landing gear indicator panel is required to confirm that the gear is down-locked",
+                  "The landing gear cannot be confirmed as down-locked if any UNLK lights remain illuminated on the landing gear indicator panel",
+                  "On the WHEEL SD page, at least two green triangles is required to confirm that the landing gear is down-locked"],
+        correct: 1
+    },
+    {
+	question: "The cargo doors are powered by:",
+    answers: ["The blue hydraulic system before engine start, and the green hydraulic system after engine start",
+              "The blue electric pump",
+              "The yellow hydraulic system before engine start, and the green hydraulic system after engine start",
+              "The yellow hydraulic system"],
+    correct: 4
+    },
+    {
+        question: "ALPHA-FLOOR is available from:",
+        answers: ["Slat retraction until landing gear extension",
+                  "Slat retraction until 100ft RA in approach",
+                  "Liftoff until touchdown",
+                  "Liftoff until the aircraft reaches 100 ft RA on approach"],
+        correct: 4
+    },
+    {
+        question: "During a successful manual engine start when does the start valve close, and ignition cut off?",
+        answers: ["The FADEC automatically closes the start valve and cuts off ignition when N2 reaches 50%",
+                  "The start valve closes and igniters cut off when the MAN START push button is set to OFF",
+                  "The start valve closes when the MAN START push button is set to OFF. The ignition remains energised until the start sequence has completed, as indicated by a green AVAIL message on the E/WD",
+                  "The start valve closes when the flight crew set the MAN START push button to OFF, and the igniters cut-off when the MODE selector is returned to normal"],
+        correct: 1
+    },
+    {
+    question: "Select the most complete statement about the APPR pushbutton on the FCU.",
+    answers: ["The APPR pushbutton will arm the LOC and G/S modes. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
+    correct: 3
+    },
+    {
+    question: "Select the most complete statement about mechanical backup",
+    answers: ["Mechanical backup allows the flight crew to manage a temporary loss of 5 flight control computers. The THS and rudder are mechanically controlled, and hydraulically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "While in mechanical backup USE MAN PITCH TRIM (RED) is displayed on the PFD, the THS and RUDDER can be actuated mechanically by the pilot", "Mechanical backup allows the flight crew to manage a temporary loss of 7 flight control computers. The THS and rudder are mechanically controlled and mechanically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "If the aircraft finds itself in an abnormal attitude AoB > 125°, AoA >40°, IAS >440kt, the flight law will transition to mechanical backup and stay in this flight law for the remainder of the flight. USE MAN PITCH TRIM (amber) will be displayed on the PFD"],
+    correct: 1
+    },
+    {
+    question: "During cockpit preparation, what is the significance of an amber half box around the oxygen pressure indication on the DOOR/OXY page?",
+    answers: ["The cockpit oxygen pressure has dropped below 800PSI, this is a no dispatch.", "The pressure in the oxygen bottle is less than 1500PSI. Refer to the limitations section of the FCOM to determine whether the remaining quantity is not below the minimum for the number of occupants in the flight deck.", "The pressure in the oxygen bottle is less than 1000PSI, call engineering to have the oxygen bottle replaced before departure.", "The oxygen pressure in the low pressure circuit is low (60PSI)"],
+    correct: 2
+    },
+    {
+    question: "When is T.O. INHIBIT displayed on the EWD?",
+    answers: ["1st engine started to 80 kt (phases 2 and 3)", "800 ft to 80 kt (phases 7 and 8)", "First engine to takeoff power to 1,500 ft (phases 3, 4 and 5)", "1st eng to takeoff power to 800 ft (phases 3, 4 and 6)"],
+    correct: 3
+    },
+    {
+    question: "Roll control is provided by:",
+    answers: ["Ailerons and spoilers 2, 3 and 4", "Ailerons and spoilers 3, 4, and 5", "Ailerons and spoilers 2, 3, 4 and 5", "Ailerons and spoilers 4 and 5"],
+    correct: 3
+    },
+    {
+    question: "What supporting evidence would you expect to see following an EIS DMC 1(2)(3) FAULT alert?",
+    answers: ["PLEASE WAIT displayed on the affected DU(s)", "MAP NOT AVAIL displayed on the affected DU(s)", "The affected DU(s) will be blank", "INVALID DATA displayed on the affected DU(s)"],
+    correct: 4
+    },
+    {
+    question: "If the Engine Interface Unit (EIU) fails, what information does the FADEC lose access to?",
+    answers: ["Engine sensors", "Thrust lever angle", "Air data from the ADIRS", "Master switch, and engine mode selector position"],
+    correct: 4
+    },
+    {
+    question: "What has happened if the ELEC system page appears automatically on the lower ECAM DU, and there are no accompanying ECAM alerts?",
+    answers: ["A PRIMARY failure has occurred", "An ADVISORY has occurred; the drifting parameter will be amber", "An ADVISORY has occurred; the drifting parameter will be pulsing green", "An INDEPENDENT failure has occurred"],
+    correct: 3
+    },
+    {
+    question: "Select the most complete statement about the APPR pushbutton on the FCU.",
+    answers: ["The APPR pushbutton will arm the LOC and G/S modes. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD.", 
+              "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
+              "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
+              "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
+    correct: 4
+},
+
 ];
 
 window.questions = questions;
+
 
 
 
