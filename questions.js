@@ -7,7 +7,7 @@ const questions = [
     {
         question: "The cross feed valve (X FEED) is:",
         answers: ["Open for takeoff", "Opened automatically when the MODE SEL pushbutton is set to AUTO, and the fuel imbalance reaches 1500kg", "Controlled by a single motor", "Normally closed"],
-        correct: 2
+        correct: 4
     },
     {
         question: "Below what altitude does the vacuum generator produce the necessary pressure differential to force waste from the toilet bowls into the waste storage tank?",
@@ -405,7 +405,7 @@ const questions = [
                   "Push the LS button the EFIS panel located on the glare shield.",
                   "Push the APP pushbutton on the FCU. Once LOC and G/S are armed, ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels.",
                   "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels."],
-        correct: 3
+        correct: 1
     },
     {
         question: "How is a temporary flight plan indicated on the ND?",
@@ -491,7 +491,7 @@ const questions = [
     {
         question: "Which system/computer provides the reactive windshear detection function?",
         answers: ["ADIRU 1", "SDAC", "FAC", "The weather radar"],
-        correct: 3
+        correct: 
     },
     {
         question: "What is the maximum speed with the landing gear extended (VLE)?",
@@ -663,11 +663,259 @@ const questions = [
               "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
               "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
     correct: 3
-},
-
+	},
+	{
+		question: "What is the significance of a flashing red light on a cabin door?",
+		answers: ["It flashes red if the door is unlocked when at least one engine is running",
+				  "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.5hPa",
+				  "It indicates low pressure in the slide inflation cylinder",
+				  "The light flashes red if the door control handle is operated, and the slide is armed"],
+		correct: 2
+	},
+	{
+    question: "What is the significance of a flashing red light on a cabin door?",
+    answers: [
+      "It flashes red if the door is unlocked when at least one engine is running",
+      "It indicates residual cabin pressure. The light flashes red when one or both engines have stopped, the slide has been disarmed and the cabin differential pressure is above 2.5hPa",
+      "It indicates low pressure in the slide inflation cylinder",
+      "The light flashes red if the door control handle is operated, and the slide is armed"
+    ],
+    correct: 2
+  },
+  {
+    question: "In which MCDU page does the flight crew enter the ZFW and ZFWCG values during cockpit preparation?",
+    answers: [
+      "On the INIT A page",
+      "On the Fuel/ZFW page",
+      "On the PERF page",
+      "On the INIT B page"
+    ],
+    correct: 4
+  },
+  {
+    question: "When the ND is set to the PLAN mode, how is the map orientated?",
+    answers: [
+      "To true north",
+      "Oriented along the flight plan track",
+      "To the current true track",
+      "To the current magnetic track"
+    ],
+    correct: 1
+  },
+  {
+    question: "Which statement is correct regarding the STROBE switch in AUTO?",
+    answers: [
+      "The strobe lights come on automatically when the nose landing gear strut is not compressed",
+      "The strobe lights come on automatically when the main gear struts are not compressed",
+      "The strobe lights come on automatically when take-off thrust is set",
+      "The strobe lights come on automatically when both engines are started"
+    ],
+    correct: 2
+  },
+  {
+    question: "How many shut-off valves are there to isolate the toilets?",
+    answers: [
+      "Two per toilet",
+      "There is no way to isolate the toilets",
+      "One for the whole aircraft",
+      "One per toilet"
+    ],
+    correct: 4
+  },
+  {
+    question: "How can the secondary flight plan be activated in flight?",
+    answers: [
+      "The secondary flight plan can only be activated while the NAV mode is engaged When this condition is met the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU",
+      "When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This prompt will not be available in NAV unless the active leg in the primary and secondary are the same",
+      "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan",
+      "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times"
+    ],
+    correct: 2
+  },
+	{
+    question: "Which probes are not heated on the ground?",
+    answers: [
+      "Pitot probes",
+      "AoA probes",
+      "Static ports",
+      "TAT probes"
+    ],
+    correct: 4
+  },
+	{
+    question: "What is the standard method for disconnecting the A/THR?",
+    answers: [
+      "The flight crew press the A/THR instinctive disconnect pushbutton, or set both thrust levers to the IDLE detent",
+      "By moving the thrust levers forwards out of the CLB detent (AEO)",
+      "The flight crew press the A/THR instinctive disconnect pushbutton, or the A/THR button on the FCU",
+      "The A/THR instinctive disconnect pushbutton is the only standard method for disconnecting the A/THR"
+    ],
+    correct: 1
+	},
+	{
+    question: "During cruise flight, how are the cockpit panels and avionics compartment cooled?",
+    answers: [
+      "Both the avionics compartment and cockpit panels are cooled using air from the air conditioning system",
+      "The avionics ventilation system extracts air from the cockpit panels and avionics compartment, and then removes heat using a skin air heat exchanger",
+      "The avionics compartment is cooled by the avionics ventilation system, which uses air conditioned air in the closed configuration. The cabin ventilation system extract valve draws ambient cabin air through the cockpit panels, and then overboard via the outflow valve",
+      "The avionics compartment is unpressurised, allowing the avionics to be ventilated using ambient air. The cockpit panels are cooled using air from the air conditioning system"
+    ],
+    correct: 2
+  },
+  {
+    question: "What is the normal order of priority for supplying power to AC BUS 1?",
+    answers: [
+      "EXT PWR, APU, GEN1 then GEN2",
+      "(GEN1, GEN2), EXT PWR then APU",
+      "APU, EXT PWR, GEN1 then GEN2",
+      "GEN1, EXT PWR, APU, then GEN2"
+    ],
+    correct: 2
+  },
+  {
+    question: "What is the significance of a NW STRG DISC memo?",
+    answers: [
+      "The PF has pushed the rudder PEDALS DISC push button on the hand wheel, to disconnect the rudder pedals from the nose wheel during the flight control check",
+      "It indicates that the BSCU has been switched off",
+      "The memo appears when the nose wheel steering selector is in the towing position. It will be GREEN when the engines are not running, and AMBER when at least one engine is running",
+      "The memo appears when the nose wheel steering selector is in the towing position. It is always GREEN"
+    ],
+    correct: 3
+  },
+  {
+    question: "What is the normal mode of operation of the FMGS?",
+    answers: [
+      "Dual mode",
+      "Backup navigation mode",
+      "Independent mode",
+      "Single mode"
+    ],
+    correct: 1
+  },
+  {
+    question: "Which of the following statements is true regarding the APU Fire Extinguishing system (select the most complete answer)?",
+    answers: [
+      "3 sec after an APU FIRE warning on the ground, the APU performs an emergency shutdown, and the extinguisher bottle discharges automatically",
+      "Immediately after an APU fire warning on the ground, the APU automatically shuts down, and the extinguisher bottle discharges automatically",
+      "3 sec after a fire warning, the APU automatically shuts down. The flight crew should follow ECAM actions to secure the APU and fire the squib",
+      "There are two fire agent bottles for the APU one is discharged automatically if a fire is detected on the ground, and the other can be discharged by the flight crew at any time"
+    ],
+    correct: 1
+  },
+  {
+    question: "What is the meaning of a GREEN light in a flight deck pushbutton?",
+    answers: [
+      "Normal operation of a system used temporarily",
+      "A test result or maintenance information",
+      "An abnormal pushbutton position",
+      "Normal system operation"
+    ],
+    correct: 4
+  },
+  {
+    question: "What happens to the wing and engine anti-ice valves when the hot air supply is unavailable?",
+    answers: [
+      "Wing anti-ice valves close, engine anti-ice valves close",
+      "Wing anti-ice valves open, engine anti-ice valves open",
+      "Wing anti-ice valves close, engine anti-ice valves open",
+      "Wing anti-ice valves open, engine anti-ice valves close"
+    ],
+    correct: 1
+  },
+  {
+    question: "What would happen if the APU master switch was turned off immediately following the use of APU bleed?",
+    answers: [
+      "APU continues to run for a cooling period of 60 to 120 sec",
+      "APU continues to run for a cooling period of 30 to 60 sec",
+      "APU shuts down immediately",
+      "APU continues to run for a cooling period of 45 to 90 sec"
+    ],
+    correct: 1
+  },
+	{
+    question: "Select the most complete statement about mechanical backup",
+    answers: [
+      "Mechanical backup allows the flight crew to manage a temporary loss of 7 flight control computers. The THS and rudder are mechanically controlled and mechanically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD",
+      "While in mechanical backup USE MAN PITCH TRIM (RED) is displayed on the PFD, the THS and RUDDER can be actuated mechanically by the pilot",
+      "If the aircraft finds itself in an abnormal attitude AoB > 125°, AoA >40°, IAS >440kt, the flight law will transition to mechanical backup and stay in this flight law for the remainder of the flight. USE MAN PITCH TRIM (amber) will be displayed on the PFD",
+      "Mechanical backup allows the flight crew to manage a temporary loss of 5 flight control computers. The THS and rudder are mechanically controlled, and hydraulically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD"
+    ],
+    correct: 4
+  },
+  {
+    question: "What impact does a HYD G+Y SYS LO PR alert have on the braking system?",
+    answers: [
+      "The system will automatically select alternate brakes without anti-skid, using the brake accumulator only. The accumulator can supply at least 7 full brake application",
+      "The system will automatically select alternate brakes with anti-skid, using the blue hydraulic system",
+      "The system will automatically select alternate brakes with anti-skid, using the yellow hydraulic system accumulator only. Anti-skid remains available because the BSCU is serviceable",
+      "Normal braking will be lost. To recover brakes, the flight crew must manually select alternate brakes by moving the A/SKID and N/W STRG switch to OFF. Up to 7 brake applications will be possible using the braking accumulator"
+    ],
+    correct: 1
+  },
+ {
+    question: "What does an amber half box around the FOB on the EWD indicate?",
+    answers: [
+      "The fuel quantity indicated is unreliable",
+      "The indicated fuel quantity is less than 1,500 kg",
+      "The fuel quantity indicated is inaccurate",
+      "Not all of the displayed fuel quantity is usable"
+    ],
+    correct: 4
+  },
+  {
+    question: "Which of the following options contains only managed AP / FD modes?",
+    answers: [
+      "NAV, HDG, LOC, RWY, RWY TRK",
+      "NAV, LOC, GS, RWY, RWY TRK, GA TRK, FPA",
+      "NAV, APPR NAV, LOC, RWY, RWY TRK, GA TRK",
+      "NAV, OP CLB, OP DES, LOC, RWY, RWY TRK, GA TRK"
+    ],
+    correct: 3
+  },
+  {
+    question: "How is an altitude constraint, that the FMGS predicts will not be met, indicated?",
+    answers: [
+      "A magenta star on the MCDU CLIMB page, and a magenta circle around the affected waypoint on the ND",
+      "An amber star on the MCDU F-PLN page, and an amber circle around the affected waypoint on the ND",
+      "An amber altitude on the MCDU F-PLN page",
+      "A message in the MCDU scratchpad"
+    ],
+    correct: 2
+  },
+  {
+    question: "Which of the following statements best describes high speed protection?",
+    answers: [
+      "High speed protection will not allow the aircraft to overshoot VMO/MMO unless forward sidestick input is applied, in this case the airspeed will never exceed VMO+16 / MMO + 0.04. When the sidestick is released the bank angle is maintained, the maximum AoB is reduced to 45°",
+      "High speed protection is 1 of 5 protections in normal law, and is the only protection available in alternate law",
+      "High speed protection is activated at or above VMO/MMO (depending on the flight conditions), a permanent nose-up order is applied to aid recovery back towards normal flight conditions. With no sidestick input the aircraft will roll to wings level, and the maximum bank angle is reduced to 40°",
+      "High speed protection will activate at VMO + 16 kt / MMO + 0.04, a permanent nose-up order is applied to aid recovery back towards normal flight conditions. The airspeed will settle at or below VMO even with full forward sidestick input"
+    ],
+    correct: 3
+  },
+  {
+    question: "How can the flight crew dry crank an engine?",
+    answers: [
+      "Set the MODE selector to CRANK, and the MAN START push button to ON.",
+      "Leave the MODE selector in IGN/START, confirm that the MASTER switch is OFF, and set the MAN START push button to ON",
+      "Dry cranking (engine ventilation) is always performed automatically by the FADEC when then residual EGT temperature is too high",
+      "Set the MODE selector to CRANK, and the MASTER switch to ON."
+    ],
+    correct: 1
+  },
+  {
+    question: "What happens when the landing gear is selected down on approach?",
+    answers: [
+      "The WHEEL page appears on the LOWER ECAM DU",
+      "The STATUS page appears on the LOWER ECAM DU, in all cases",
+      "The WHEEL push button on the ECAM control panel illuminates",
+      "If it is not empty, the STATUS page appears on the LOWER ECAM DU"
+    ],
+    correct: 1
+  }
 ];
 
 window.questions = questions;
+
 
 
 
