@@ -49,22 +49,32 @@ function shuffleArray(arr) {
   return fisherYatesShuffle(arr);
 }
 
-// Normalize "correct" to be 0-based (only if it looks 1-based)
 function normalizeCorrectIndexes() {
   if (!Array.isArray(window.questions)) return;
+
   window.questions.forEach((q) => {
-    if (!q || !Array.isArray(q.answers)) return;
+    // Basic shape check
+    if (!q || !Array.isArray(q.answers) || q.answers.length === 0) {
+      q._invalid = true;
+      return;
+    }
+
+    // If correct is an integer 1..answers.length, convert to 0-based
     if (Number.isInteger(q.correct)) {
-      // If "correct" is 1..answers.length, convert to 0-based
-      if (q.correct >= 1 && q.correct <= q.answers.length) q.correct -= 1;
-      // Clamp for safety
-      q.correct = Math.max(0, Math.min(q.answers.length - 1, q.correct));
+      if (q.correct >= 1 && q.correct <= q.answers.length) {
+        q.correct = q.correct - 1; // convert to 0-based
+        q._invalid = false;
+      } else {
+        // out of range -> invalid
+        q._invalid = true;
+      }
     } else {
-      // Fallback if missing -> assume first is correct
-      q.correct = 0;
+      // missing or non-integer -> invalid (we will skip it)
+      q._invalid = true;
     }
   });
 }
+
 
 // --- App init ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -332,3 +342,4 @@ function updateThumbs(questionId, commentId, type) {
     localStorage.setItem('votedComments', JSON.stringify(voted));
   });
 }
+
