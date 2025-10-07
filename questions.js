@@ -639,7 +639,7 @@ const questions = [
               "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
               "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
               "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
-    correct: 4
+    correct: 2
 	},
 	{
 		question: "What is the significance of a flashing red light on a cabin door?",
@@ -1089,9 +1089,9 @@ const questions = [
 	{
     question: "On the PFD, what causes the indicated barometric altitude to change colour (digital value)?",
     answers: [
-        "Diverging > 250 ft from FCU altitude: The current altitude digits turn steady amber",
+        "Diverging > 250 from FCU altitude: The current altitude digits turn steady amber",
         "At and below 400RA: the current altitude digits are steady amber",
-        "Passing 750 ft to go to FCU altitude: The current altitude digits turn steady amber",
+        "Passing 750 to go to FCU altitude: The current altitude digits turn steady amber",
         "Below MDA (or the MDH) entered in the MCDU Perf Page: The current altitude digits are steady amber"
     ],
     correct: 1
@@ -1194,12 +1194,60 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
 				  "39100ft",
 				  "22500ft",
 				  "Maximum certified altitude"],
-	}
-
-	  
+		correct: 4
+	},
+	{
+		question: "If an emergency access procedure has been initiated by a cabin crew member, the buzzer in the cockpit will sound for:",
+		answers: ["90 sec",
+				  "9 sec",
+				  "9 times every 19 sec",
+				  "Continuously"],
+		correct: 4
+	},
+	{
+		question: "When does the FMGS automatically switch from takeoff to climb phase?",
+		answers: ["When the aircraft climb above thrust reduction altitude",
+				  "When the aircraft climb above acceleration altitude",
+				  "When the thrust levers are moved from FLX or TOGA to the CLB detent",
+				  "When the crew sets the cruise altitude in the FCU"],
+		correct: 2	
+	},
+	{
+  question: "Select the correct statement about an engine relight in flight:",
+  answers: [
+    "Automatic start is unavailable in flight",
+    "APU bleed can be used to assist with an engine start throughout the entire flight envelope",
+    "In flight the FADEC always commands a starter-assisted air start",
+    "During an automatic start in flight, the FADEC may not need to engage the starter motor if the engine is wind milling at a sufficient N2"
+  ],
+  correct: 4
+	},
+	{
+  question:
+    "Both engines and the APU are running, what must the flight crew do before selecting APU bleed? (X-BLEED set to AUTO)",
+  answers: [
+    "The engine bleeds must be selected OFF, and crossbleed set to OPEN, before selecting the APU bleed to ON",
+    "The engine bleeds must be selected OFF before selecting the APU bleed to ON. The crossbleed valve can remain in AUTO as it will open automatically",
+    "Turn ENG 1 bleed OFF, and confirm that the crossbleed is closed, before selecting APU bleed ON",
+    "Nothing, upon selecting APU bleed the crossbleed valve will automatically open, and each engine bleed valve will automatically close"
+  ],
+  correct: 4
+	},
+	{
+  question: "When will the FADEC select the modulated idle mode?",
+  answers: [
+    "Whenever the flaps are retracted (FLAPS at zero position)",
+    "When flaps are retracted in flight, or on the ground provided reverse is not selected",
+    "Whenever the thrust lever is in the REV IDLE position",
+    "In flight when the flap lever is not at the zero position"
+  ],
+  correct: 2
+}
+				  
 ];
 
 window.questions = questions;
+
 
 
 
