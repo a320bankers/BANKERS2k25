@@ -105,11 +105,6 @@ const questions = [
         correct: 4
     },
     {
-        question: "What happens when the landing gear is selected down on approach",
-    answers: ["The WHEEL push button on the ECAM control panel illuminates", "If it is not empty, the STATUS page appears on the LOWER ECAM DU", "The WHEEL page appears on the LOWER ECAM DU", "The STATUS page appears on the LOWER ECAM DU, in all cases"],
-    correct: 3
-    },
-    {
         question: "Is this alert HYD G ENG 1 PUMP LO PR a primary, secondary or independant failure? (PTU is operative, and hydraulic pressures are normal)",
         answers: ["Both primary and secondary", "Independant", "Secondary", "Primary"],
         correct: 2
@@ -392,14 +387,6 @@ const questions = [
         correct: 3
     },
     {
-        question: "What is the normal order of priority for supplying power to AC BUS 1?",
-        answers: ["GEN1, EXT PWR, APU, then GEN2",
-                  "APU, EXT PWR, GEN1 then GEN2",
-                  "(GEN1, GEN2), EXT PWR then APU",
-                  "EXT PWR, APU, GEN1 then GEN2"],
-        correct: 1
-    },
-    {
         question: "How can the flight crew arm the LOC and GS modes in order to fly an ILS approach?",
         answers: ["Push the APP pushbutton on the FCU. The ILS information (including LOC and G/S scales) will not be displayed on the PFD unless the LS push button is selected on the EFIS panels.",
                   "Push the LS button the EFIS panel located on the glare shield.",
@@ -617,11 +604,6 @@ const questions = [
         correct: 1
     },
     {
-    question: "Select the most complete statement about the APPR pushbutton on the FCU.",
-    answers: ["The APPR pushbutton will arm the LOC and G/S modes. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
-    correct: 3
-    },
-    {
     question: "Select the most complete statement about mechanical backup",
     answers: ["Mechanical backup allows the flight crew to manage a temporary loss of 5 flight control computers. The THS and rudder are mechanically controlled, and hydraulically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "While in mechanical backup USE MAN PITCH TRIM (RED) is displayed on the PFD, the THS and RUDDER can be actuated mechanically by the pilot", "Mechanical backup allows the flight crew to manage a temporary loss of 7 flight control computers. The THS and rudder are mechanically controlled and mechanically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD", "If the aircraft finds itself in an abnormal attitude AoB > 125°, AoA >40°, IAS >440kt, the flight law will transition to mechanical backup and stay in this flight law for the remainder of the flight. USE MAN PITCH TRIM (amber) will be displayed on the PFD"],
     correct: 1
@@ -822,16 +804,6 @@ const questions = [
     ],
     correct: 1
   },
-	{
-    question: "Select the most complete statement about mechanical backup",
-    answers: [
-      "Mechanical backup allows the flight crew to manage a temporary loss of 7 flight control computers. The THS and rudder are mechanically controlled and mechanically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD",
-      "While in mechanical backup USE MAN PITCH TRIM (RED) is displayed on the PFD, the THS and RUDDER can be actuated mechanically by the pilot",
-      "If the aircraft finds itself in an abnormal attitude AoB > 125°, AoA >40°, IAS >440kt, the flight law will transition to mechanical backup and stay in this flight law for the remainder of the flight. USE MAN PITCH TRIM (amber) will be displayed on the PFD",
-      "Mechanical backup allows the flight crew to manage a temporary loss of 5 flight control computers. The THS and rudder are mechanically controlled, and hydraulically actuated. MAN PITCH TRIM ONLY (RED) is displayed on the PFD"
-    ],
-    correct: 4
-  },
   {
     question: "What impact does a HYD G+Y SYS LO PR alert have on the braking system?",
     answers: [
@@ -962,16 +934,6 @@ const questions = [
     ],
     correct: 2
 },
-	{
-    question: "What happens to the avionics ventilation system if only the EXTRACT push button is set to override?",
-    answers: [
-        "The system enters closed circuit configuration, and air is added from the air conditioning system. This is a useful configuration to consider during heavy rain on the ground",
-        "The system enters the intermediate configuration, and air is added from the air conditioning system. This configuration may be selected to help exhaust smoke or fumes overboard",
-        "The extract fan will stop and the skin heat exchanger is bypassed. The open configuration will be selected on the ground, and intermediate in flight",
-        "Open configuration is selected, both fan remain running. This improves ventilation following a duct overheat"
-    ],
-    correct: 3
-}, 
 {
     question: "Select the correct statement about the potable water system:",
     answers: [
@@ -1129,16 +1091,6 @@ const questions = [
     ],
     correct: 2
 },
-{
-    question: "When is auto-start abort and automatic dry cranking available?",
-    answers: [
-        "Auto start abort is available during any automatic start cycle. However the flight crew must consider applying the engine ventilation (dry cranking) procedure following a start abort",
-        "During an automatic start on the ground only",
-        "During an automatic engine start in any phase of flight",
-        "During any engine start (manual or automatic) on the ground. However when in flight auto start abort is only available during automatic starts"
-    ],
-    correct: 1
-},
 	{
     question: "On the PFD, what causes the indicated barometric altitude to change colour (digital value)?",
     answers: [
@@ -1153,6 +1105,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
