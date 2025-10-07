@@ -1187,13 +1187,20 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
     question: "For sample aircraft G-EZGY, find the minimum control speed at landing — assume sea level, ISA conditions:",
     answers: ["116 kt", "110 kt", "114 kt", "113 kt"],
     correct: 4
-  }
-),
+  },
+	{
+		question: "What is the maximum altitude that the APU can be used for electrical power?",
+		answers: ["14500ft",
+				  "39100ft",
+				  "22500ft",
+				  "Maximum certified altitude"],
+	}
 
 	  
 ];
 
 window.questions = questions;
+
 
 
 
