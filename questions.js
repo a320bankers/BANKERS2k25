@@ -201,7 +201,7 @@ const questions = [
     },
     {
         question: "IF a SEC fails, what happens to the spoiler(s) it controls?",
-        answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflectionm it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical deployment of the spoilers"],
+        answers: ["The effected spoiler is automatically retracted, and the symmetrical one on the other wing is inhibited", "The effected spoiler is automatically retracted, and this may lead to asymmertrical spoiler deployment", "The effected spoiler retains the deflection it has at the time of the loss, and the symmetrical one on the other wing is inhibited", "The effected spoiler retains the deflection it has at the time of the loss, this may lead to asymmetrical deployment of the spoilers"],
         correct: 1
     },
     {
@@ -931,10 +931,229 @@ const questions = [
         "An input is required on the sidestick to hold any bank attitude. When the sidestick is released the aircraft will automatically roll wings level. Full deflection will give a roll rate of 15°/s and the bank angle will not exceed 67°"
     ],
     correct: 2
-}
+},
+	{
+    question: "What areas of the aircraft are anti-iced with hot air?",
+    answers: [
+        "Engine air intakes, the three outboard leading edge slats of each wing, the THS and rudder leading edge",
+        "Engine air intakes, all leading edge slats on each wing",
+        "Engine air intakes, the four outboard leading edge slats of each wing, and the flight deck windows",
+        "Engine air intakes, and the three outboard leading edge slats of each wing"
+    ],
+    correct: 4
+},
+	{
+    question: "Which statement about the FAC is true?",
+    answers: [
+        "The FAC is a flight control computer, and does not form part of the FMGS",
+        "When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function will automatically select the A.FLOOR A/THR mode, when the conditions for its activation are met",
+        "When the AP is engaged the master FMGC sends rudder trim orders to the FACs. The FACs sole purpose are to provide yaw damping, rudder trim and rudder travel limitation functions",
+        "When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function performs the alpha protection in normal law"
+    ],
+    correct: 4
+},
+	{
+    question: "What happens if the DITCHING push button is selected ON? (select the most complete answer)",
+    answers: [
+        "A close signal will be sent to the emergency ram air valve, and pack flow control valves",
+        "A close signal will be sent to the outflow valve, avionics ventilation inlet and outlet, emergency ram air valve, and pack flow control valves",
+        "A close signal will be sent to the outflow valve, emergency ram air valve, and pack flow control valves",
+        "A close signal will be sent to the outflow valve, avionics ventilation inlet and avionics ventilation outlet"
+    ],
+    correct: 2
+},
+	{
+    question: "What happens to the avionics ventilation system if only the EXTRACT push button is set to override?",
+    answers: [
+        "The system enters closed circuit configuration, and air is added from the air conditioning system. This is a useful configuration to consider during heavy rain on the ground",
+        "The system enters the intermediate configuration, and air is added from the air conditioning system. This configuration may be selected to help exhaust smoke or fumes overboard",
+        "The extract fan will stop and the skin heat exchanger is bypassed. The open configuration will be selected on the ground, and intermediate in flight",
+        "Open configuration is selected, both fan remain running. This improves ventilation following a duct overheat"
+    ],
+    correct: 2
+}, 
+{
+    question: "Select the correct statement about the potable water system:",
+    answers: [
+        "The potable water is normally pressurised by the pneumatic system",
+        "A vacuum generator is used to distribute potable water around the aircraft",
+        "The potable water tank is maintained at the same pressure as the cabin. Electric pumps are used to distribute the water",
+        "When the engines are not running a foot pump in each toilet can be used to pump water to the sink"
+    ],
+    correct: 1
+},
+	{
+    question: "What impact does a HYD G SYS LO PR alert have on the braking system?",
+    answers: [
+        "Normal braking will continue to operate using the yellow hydraulic system",
+        "Normal braking will be lost To recover brakes, the flight crew must manually select alternate brakes by moving the A/SKID and N/W STRG switch to OFF",
+        "The system will automatically select alternate brakes without anti-skid, using the yellow hydraulic system",
+        "The system will automatically select alternate brakes with anti-skid, using the yellow hydraulic system"
+    ],
+    correct: 4
+},
+	{
+    question: "What is the standard operating procedure for the EOSID stop altitude?",
+    answers: [
+        "MHA",
+        "MSA",
+        "SID stop altitude",
+        "No procedure specified"
+    ],
+    correct: 4
+},
+	{
+    question: "Where is the correct place to find RWY COND EFB entry for takeoff?",
+    answers: [
+        "EFB MORE app",
+        "OM-B",
+        "OM-A",
+        "QRH"
+    ],
+    correct: 2
+},
+	{
+    question: "What is the correct runway condition in EFB PERF for takeoff if the runway is damp?",
+    answers: [
+        "Dry",
+        "Neither dry nor wet",
+        "Wet"
+    ],
+    correct: 1
+},
+	{
+    question: "If using Reverse Idle, what is the correct choice in the EFB LDG PERF?",
+    answers: [
+        "Yes",
+        "No"
+    ],
+    correct: 2
+},
+	{
+    question: "Where can the *maximum* acceleration altitude be found on the EFB TO PERF page?",
+    answers: [
+        "Must be manually calculated using FCOM",
+        "Adding 4000ft to acceleration altitudes calculated",
+        "By tapping on the flex temperature",
+        "On the last page of computations"
+    ],
+    correct: 4
+},
+	{
+    question: "What is considered to be a 'forward' CG at takeoff?",
+    answers: [
+        "Less than or equal to 27%",
+        "Less than 30%",
+        "Less than 27%",
+        "Less than or equal to 30%"
+    ],
+    correct: 3
+},
+	{
+    question: "In the event of a last minute decision to use engine bleed to supply packs, what correction must be applied?",
+    answers: [
+        "Subtract two degrees from flex",
+        "Initial calculations cover this change. No action required.",
+        "Subtract one degree from flex",
+        "No correction available. Recalculate speeds and flex."
+    ],
+    correct: 4
+},
+	{
+    question: "For an in-flight landing calculation, what is the maximum crosswind with compacted snow at -13°C?",
+    answers: [
+        "25 kts",
+        "10 kts",
+        "29 kts",
+        "38 kts"
+    ],
+    correct: 1
+},
+{
+    question: "In the event of a QNH reduction by 2 hPa on taxi-out what correction must be applied?",
+    answers: [
+        "Subtract two degrees from flex",
+        "No correction available. Recalculate speeds and flex.",
+        "Subtract one degree from flex",
+        "Initial calculations cover this change. No action required."
+    ],
+    correct: 3
+},
+	{
+    question: "If a runway is wet and NOTAMed 'slippery when wet', what is the correct EFB TO PERF input for RWY COND?",
+    answers: [
+        "Slippery Wet",
+        "2-Medium to Poor",
+        "3-Medium",
+        "Wet"
+    ],
+    correct: 1
+},
+{
+    question: "For an in-flight landing calculation, what is the appropriate EFB input for RWY COND with 5mm of water on the runway?",
+    answers: [
+        "2- Medium to Poor",
+        "3- Medium",
+        "6- Dry",
+        "5- Good"
+    ],
+    correct: 1
+},
+{
+    question: "For an in-flight landing calculation, what is the maximum crosswind with 5 mm of water?",
+    answers: [
+        "10 kts",
+        "20 kts",
+        "29 kts",
+        "15 kts"
+    ],
+    correct: 2
+},
+{
+    question: "Following a double FMGC failure how can the navigation radios be tuned?",
+    answers: [
+        "Select the NAV key (under the transparent switch guard) on RMP 1, 2 or 3. Any RMP can tune any navigation radio",
+        "Select the NAV key (under the transparent switch guard) on RMP 1 and 2. Each RMP tunes its respective onside VOR and ADF radios. The both ILS receivers can be tuned from either RMP1 or 2",
+        "The MCDU can be used in back-up tuning mode, allowing the MCDU to communicate directly with the navigation radios",
+        "Select the NAV key (under the transparent switch guard) on RMP 1 and 2. The ILS frequency must be tuned separately in each RMP to ensure that the localiser and glideslope indications are available on both PFDs"
+    ],
+    correct: 4
+},
+{
+    question: "How many igniters are used during an automatic engine start?",
+    answers: [
+        "Igniter A is used by default for all start attempts on the ground, if A fails then B is automatically selected. In flight both igniters are used",
+        "One igniter (A or B) is used on the first automatic start attempt on the ground. In flight both igniters are used for all starts attempts",
+        "Only one igniter (A or B) is used for all automatic start attempts",
+        "Both igniters are used for all engines starts, unless a circuit breaker for an individual igniter has been pulled"
+    ],
+    correct: 2
+},
+{
+    question: "When is auto-start abort and automatic dry cranking available?",
+    answers: [
+        "Auto start abort is available during any automatic start cycle. However the flight crew must consider applying the engine ventilation (dry cranking) procedure following a start abort",
+        "During an automatic start on the ground only",
+        "During an automatic engine start in any phase of flight",
+        "During any engine start (manual or automatic) on the ground. However when in flight auto start abort is only available during automatic starts"
+    ],
+    correct: 1
+},
+	{
+    question: "On the PFD, what causes the indicated barometric altitude to change colour (digital value)?",
+    answers: [
+        "Diverging > 250 ft from FCU altitude: The current altitude digits turn steady amber",
+        "At and below 400RA: the current altitude digits are steady amber",
+        "Passing 750 ft to go to FCU altitude: The current altitude digits turn steady amber",
+        "Below MDA (or the MDH) entered in the MCDU Perf Page: The current altitude digits are steady amber"
+    ],
+    correct: 1
+},
+
 ];
 
 window.questions = questions;
+
 
 
 
