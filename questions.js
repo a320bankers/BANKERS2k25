@@ -1181,7 +1181,7 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
   {
     question: "During a flex takeoff, the thrust reduction must not exceed _____ of flat-rated thrust.",
     answers: ["No restrictions", "20%", "25%"],
-    correct: 
+    correct: 3
   },
   {
     question: "For sample aircraft G-EZGY, find the minimum control speed at landing — assume sea level, ISA conditions:",
@@ -1189,17 +1189,12 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
     correct: 4
   }
 ),
-{
-  question: "During a flex takeoff, the thrust reduction must not exceed _____ of flat-rated thrust.",
-  answers: ["No restrictions", "20%", "25%"],
-  correct: 3
-}
-),
 
 	  
 ];
 
 window.questions = questions;
+
 
 
 
