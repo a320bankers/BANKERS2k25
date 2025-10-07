@@ -950,7 +950,7 @@ const questions = [
         "When the AP is engaged the master FMGC sends rudder trim orders to the FACs. The FACs sole purpose are to provide yaw damping, rudder trim and rudder travel limitation functions",
         "When the AP is engaged, the rudder trim knob is inoperative, and the master FMGC sends rudder trim orders to the FACs. In addition the FAC flight envelope function performs the alpha protection in normal law"
     ],
-    correct: 4
+    correct: 2
 },
 	{
     question: "What happens if the DITCHING push button is selected ON? (select the most complete answer)",
@@ -970,7 +970,7 @@ const questions = [
         "The extract fan will stop and the skin heat exchanger is bypassed. The open configuration will be selected on the ground, and intermediate in flight",
         "Open configuration is selected, both fan remain running. This improves ventilation following a duct overheat"
     ],
-    correct: 2
+    correct: 3
 }, 
 {
     question: "Select the correct statement about the potable water system:",
@@ -1153,6 +1153,7 @@ const questions = [
 ];
 
 window.questions = questions;
+
 
 
 
