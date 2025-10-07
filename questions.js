@@ -392,7 +392,7 @@ const questions = [
                   "Push the LS button the EFIS panel located on the glare shield.",
                   "Push the APP pushbutton on the FCU. Once LOC and G/S are armed, ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels.",
                   "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels."],
-        correct: 1
+        correct: 4
     },
     {
         question: "How is a temporary flight plan indicated on the ND?",
@@ -639,7 +639,7 @@ const questions = [
               "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. These modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
               "The APPR pushbutton will arm the LOC and G/S modes independent of the approach selected in the active F-PLN. The LOC and G/S modes can be disarmed or disengaged by pushing the APPR pushbutton again.", 
               "The APPR pushbutton will arm either the LOC and G/S modes or APP NAV and FINAL modes depending on the approach selected in the active F-PLN. Once engaged these approach modes will only disengage in the event of a go-around, or disconnection of AP and FD."],
-    correct: 3
+    correct: 1
 	},
 	{
 		question: "What is the significance of a flashing red light on a cabin door?",
@@ -1194,6 +1194,7 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
 ];
 
 window.questions = questions;
+
 
 
 
