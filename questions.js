@@ -212,7 +212,7 @@ const questions = [
 
     {
         question: "What will trigger the CAB PR LDG ELEV FAULT (amber) alert?",
-        answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The active CPC is no longer receiving the landing fiel elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing"],
+        answers: ["The failure of CPC 1+2", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must set the MODE SEL push button to MAN on the CABIN PRESS panel", "The active CPC is no longer receiving the landing field elevation automatically from the FMGS. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel", "The outflow valve has failed to fully open after landing"],
         correct: 3
     },
     {
@@ -622,11 +622,6 @@ const questions = [
     question: "Roll control is provided by:",
     answers: ["Ailerons and spoilers 2, 3 and 4", "Ailerons and spoilers 3, 4, and 5", "Ailerons and spoilers 2, 3, 4 and 5", "Ailerons and spoilers 4 and 5"],
     correct: 3
-    },
-    {
-    question: "What supporting evidence would you expect to see following an EIS DMC 1(2)(3) FAULT alert?",
-    answers: ["PLEASE WAIT displayed on the affected DU(s)", "MAP NOT AVAIL displayed on the affected DU(s)", "The affected DU(s) will be blank", "INVALID DATA displayed on the affected DU(s)"],
-    correct: 4
     },
     {
     question: "If the Engine Interface Unit (EIU) fails, what information does the FADEC lose access to?",
@@ -1079,7 +1074,7 @@ const questions = [
         "The MCDU can be used in back-up tuning mode, allowing the MCDU to communicate directly with the navigation radios",
         "Select the NAV key (under the transparent switch guard) on RMP 1 and 2. The ILS frequency must be tuned separately in each RMP to ensure that the localiser and glideslope indications are available on both PFDs"
     ],
-    correct: 4
+    correct: 2
 },
 {
     question: "How many igniters are used during an automatic engine start?",
@@ -1101,10 +1096,96 @@ const questions = [
     ],
     correct: 1
 },
+{
+  question: "The aircraft is on the ground with external power plugged into the aircraft, and the APU running. How can the APU generator be connected to the electrical system?",
+  answers: [
+    "By pushing the EXT PWR pb when the green AVAIL light is illuminated",
+    "By pushing the APU MASTER SW pb-sw",
+    "By pushing the EXT PWR pb when the blue ON light is illuminated",
+    "By pushing the APU START pb-sw"
+  ],
+  correct: 3
+},
+{
+  question: "How many igniters are used during an automatic engine start?",
+  answers: [
+    "Only one igniter (A or B) is used for all automatic start attempts",
+    "Igniter A is used by default for all start attempts on the ground, if A fails then B is automatically selected. In flight both igniters are used",
+    "One igniter (A or B) is used on the first automatic start attempt on the ground. In flight both igniters are used for all starts attempts",
+    "Both igniters are used for all engines starts, unless a circuit breaker for an individual igniter has been pulled"
+  ],
+  correct: 3
+},
+{
+  question: "What supporting evidence would you expect to see following an EIS DMC 1(2)(3) FAULT alert?",
+  answers: [
+    "INVALID DATA displayed on the affected DU(s)",
+    "MAP NOT AVAIL displayed on the affected DU(s)",
+    "PLEASE WAIT displayed on the affected DU(s)",
+    "The affected DU(s) will be blank"
+  ],
+  correct: 1
+},
+{
+  question: "What are the basic modes of the AP / FD?",
+  answers: [
+    "ALT and NAV",
+    "Pitch and roll",
+    "HDG and VS",
+    "SPD and HDG"
+  ],
+  correct: 3
+},
+{
+  question: "What is the maximum altitude that APU bleed can be used to assist an engine start?",
+  answers: [
+    "15,000 ft",
+    "20,000 ft",
+    "25,000 ft",
+    "22,500 ft"
+  ],
+  correct: 2
+},
+{
+question: "What impact does a CAB PR SYS 1 FAULT alert have?",
+  answers: [
+    "The pressurisation system will be operating in semi-automatic mode. The flight crew must adjust the target landing elevation using the LDG ELEV rotary knob on the CABIN PRESS panel",
+    "If CPC 1 was active at the time of the failure, CPC 2 will need to be selected manually by the flight crew",
+    "The outflow valve will operate at half speed",
+    "If CPC 1 was active at the time of the failure, CPC 2 will take over automatically. This alert is for crew awareness only (Level 1 ECAM alert)"
+  ],
+  correct: 4
+},
+{
+  question:
+    "Optimised (fine adjustment) of cockpit and cabin zone temperatures is achieved via the use of:",
+  answers: [
+    "A hot air pressure regulating valve and 3 trim air valves",
+    "Emergency Ram air valve",
+    "Two pack control valves",
+    "PACK bypass valves"
+  ],
+  correct: 1
+},
+{
+  question:
+    "What does a blue ON light mean in the EXT PWR pushbutton?",
+  answers: [
+    "The external power line contactor is closed. EXT PWR will automatically connect to the AC1 and or AC2 busses following the normal bus tie priorities",
+    "The external power contactor is open",
+    "The EXT PWR contactor is closed. EXT PWR takes priority over all other sources of AC power",
+    "External power is plugged in and parameters are normal"
+  ],
+  correct: 1
+},
 
+	   
+
+	  
 ];
 
 window.questions = questions;
+
 
 
 
