@@ -1094,7 +1094,7 @@ const questions = [
         "Passing 750 to go to FCU altitude: The current altitude digits turn steady amber",
         "Below MDA (or the MDH) entered in the MCDU Perf Page: The current altitude digits are steady amber"
     ],
-    correct: 1
+    correct: 4
 },
 {
   question: "The aircraft is on the ground with external power plugged into the aircraft, and the APU running. How can the APU generator be connected to the electrical system?",
@@ -1242,11 +1242,42 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
     "In flight when the flap lever is not at the zero position"
   ],
   correct: 2
+},
+{
+  question: "Which DMCs can receive information from ADIRU 3?",
+  answers: [
+    "DMC 1, 2, or 3 depending on the configuration of the ATT HDG and AIR DATA rotary selectors on the switching panel",
+    "DMC 1 or 3. Following the failure of ADIRU1, ADIRU3 will automatically connect to the Captain's PFD",
+    "DMC 1, 2 and 3. However only air data can supplied by ADIRU3 to DMC 1 and 2",
+    "DMC 3 only. The EIS DMC selector on the switching panel, can be used to display ADIRU 3 data via DMC 3 on either the CAPT or FO PFD"
+  ],
+  correct: 1
+},
+{
+  question: "When does the window (windshield) heating come on automatically?",
+  answers: [
+    "After both engines are running or in flight",
+    "On the ground when AC power is available, and the outside temperature is less than 10°C",
+    "When AC power is available",
+    "When at least one engine is running or in flight"
+  ],
+  correct: 4
+},
+{
+  question: "If a system page push button fails on the ECAM control panel, can the corresponding system page still be viewed?",
+  answers: [
+    "Yes, but only if an ECAM alert is triggered for the related system, in this case the system page is automatically displayed. The page cannot be selected manually",
+    "Yes, the associated system page can still be viewed via the use of the RCL pushbutton",
+    "Yes, the ALL button allows the flight crew to select the desired SD page. This provides redundancy in the case of an ECAM control panel failure",
+    "No, the associated system page is no longer available"
+  ],
+  correct: 3
 }
 				  
 ];
 
 window.questions = questions;
+
 
 
 
