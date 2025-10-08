@@ -60,11 +60,6 @@ const questions = [
         correct: 3
     },
     {
-        question: "How can the secondary flight plan be activated in flight?",
-        answers: ["When HDG or TRK lateral guidance modes are engaged, select the ACTIVATE SECONDARY prompt on the SEC INDEX page on the MCDU. This prompt will not be available in NAV unless the active leg in the primary and secondary are the same", "Select the ACTIVATE SECONDARY prompt on the SEC INDEX page of the MCDU. This feature is available at all times.", "Use the ENABLE ALTN command in the lateral revision page for any waypoint on the flight plan", "The secondary flight plan can only be activated while the NAV mode is engaged. When this condition is met, the ACTIVATE SECONDARY prompt will be available on the SEC INDEX page of the MCDU"],
-        correct: 1
-    },
-    {
         question: "What happens to the wing and engine anti-ice valves when electrical power fails?",
         answers: ["Wing anti-ice valves close, engine anti-ice valves close", "Wing anti-ice valves open, engine anti-ice valves close", "Wing anti-ice valves close, engine anti-ice valves open", "Wing anti-ice valves open, engine anti-ice valves open"],
         correct: 3
@@ -1277,6 +1272,7 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
 ];
 
 window.questions = questions;
+
 
 
 
