@@ -387,7 +387,7 @@ const questions = [
                   "Push the LS button the EFIS panel located on the glare shield.",
                   "Push the APP pushbutton on the FCU. Once LOC and G/S are armed, ILS information (include G/S and LOC scales) will be displayed automatically on the PFD regardless of the selections made on the EFIS panels.",
                   "Push APP pushbutton FCU, however LOC and G/S modes will not arm or engage unless the LS button has been selected on both FO and CAPT EFIS panels."],
-        correct: 4
+        correct: 1
     },
     {
         question: "How is a temporary flight plan indicated on the ND?",
@@ -1272,6 +1272,7 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
 ];
 
 window.questions = questions;
+
 
 
 
