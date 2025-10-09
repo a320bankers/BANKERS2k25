@@ -872,7 +872,7 @@ const questions = [
         "The extract fan will stop and the skin heat exchanger is bypassed. The open configuration will be selected on the ground, and intermediate in flight",
         "Open configuration is selected, both fan remain running. This improves ventilation following a duct overheat"
 	],
-    correct: 2
+    correct: 1
 	},
 {
     question: "When is auto-start abort and automatic dry cranking available?",
@@ -1272,6 +1272,7 @@ question: "What impact does a CAB PR SYS 1 FAULT alert have?",
 ];
 
 window.questions = questions;
+
 
 
 
